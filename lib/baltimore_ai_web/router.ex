@@ -16,11 +16,16 @@ defmodule BaltimoreAiWeb.Router do
   scope "/", BaltimoreAiWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    resources "/listings", ListingController
+    resources "/users", UserController
+
+    get "/", ListingController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", BaltimoreAiWeb do
-  #   pipe_through :api
-  # end
+  scope "/auth", BaltimoreAiWeb do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :new
+  end
 end
