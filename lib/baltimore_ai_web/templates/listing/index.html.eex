@@ -1,0 +1,32 @@
+<h1>Listing Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Poster</th>
+      <th>External url</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for listing <- @listings do %>
+    <tr>
+      <td><%= listing.title %></td>
+      <td><%= listing.description %></td>
+      <td><%= listing.poster_id %></td>
+      <td><%= listing.external_url %></td>
+
+      <td>
+        <%= link "Show", to: Routes.listing_path(@conn, :show, listing) %>
+        <%= link "Edit", to: Routes.listing_path(@conn, :edit, listing) %>
+        <%= link "Delete", to: Routes.listing_path(@conn, :delete, listing), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Listing", to: Routes.listing_path(@conn, :new) %></span>

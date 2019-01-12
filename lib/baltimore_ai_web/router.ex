@@ -20,6 +20,7 @@ defmodule BaltimoreAiWeb.Router do
     resources "/users", UserController
 
     get "/", ListingController, :index
+    get "/about", PageController, :about
   end
 
   scope "/auth", BaltimoreAiWeb do

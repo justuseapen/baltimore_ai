@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-desktop">
+      <div class="column has-text-centered has-text-left-desktop">
+        <p>
+          <strong>
+            <%= raw gettext("Proudly powered by %{elixir_link} and %{phoenix_link}.",
+              elixir_link: "<a href=\"http://elixir-lang.org\" target=\"_blank\">Elixir</a>",
+              phoenix_link: "<a href=\"http://phoenixframework.org\" target=\"_blank\">Phoenix</a>") %>
+          </strong>
+        </p>
+        <p><%= raw gettext("Please contact <b>Justus Eapen</b> (%{eapen_link}) or %{github_link} if anything seems broken or worthy of improvement.",
+                eapen_link: "<a href=\"https://twitter.com/justuseapen\" target=\"_blank\">@justuseapen</a>",
+                github_link: "<a href=\"https://github.com/justuseapen/baltimore_ai/issues/new\" target=\"_blank\">create a GitHub issue</a>") %></p>
+      </div>
+      <div class="column has-text-centered has-text-right-desktop">
+      </div>
+    </div>
+    <div class="content has-text-centered">
+    </div>
+  </div>
+</footer>
