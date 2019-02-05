@@ -22,6 +22,7 @@ defmodule BaltimoreAi.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import BaltimoreAi.DataCase
+      import BaltimoreAi.TestHelpers
     end
   end
 

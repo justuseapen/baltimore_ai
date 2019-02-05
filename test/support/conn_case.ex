@@ -20,6 +20,7 @@ defmodule BaltimoreAiWeb.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
       alias BaltimoreAiWeb.Router.Helpers, as: Routes
+      import BaltimoreAi.TestHelpers
 
       # The default endpoint for testing
       @endpoint BaltimoreAiWeb.Endpoint
