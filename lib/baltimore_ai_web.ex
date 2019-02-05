@@ -41,6 +41,7 @@ defmodule BaltimoreAiWeb do
 
       import BaltimoreAiWeb.ErrorHelpers
       import BaltimoreAiWeb.Gettext
+      import BaltimoreAiWeb.ViewHelpers
       alias BaltimoreAiWeb.Router.Helpers, as: Routes
 
       def render_shared(template, assigns \\ []) do

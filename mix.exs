@@ -20,7 +20,7 @@ defmodule BaltimoreAi.MixProject do
   def application do
     [
       mod: {BaltimoreAi.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :scrivener_ecto]
     ]
   end
 
@@ -40,6 +40,7 @@ defmodule BaltimoreAi.MixProject do
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
+      {:phoenix_html_sanitizer, "~> 1.0.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
@@ -51,7 +52,11 @@ defmodule BaltimoreAi.MixProject do
       {:ja_serializer, "~> 0.11.2"},
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.0"},
-      {:guardian, "~> 1.0"}
+      {:guardian, "~> 1.0"},
+
+      # Misc
+      {:scrivener_ecto, "~> 2.0"},
+      {:slugger, "~> 0.2"}
     ]
   end
 
