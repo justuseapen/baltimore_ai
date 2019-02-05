@@ -16,6 +16,7 @@ defmodule BaltimoreAiWeb.Router do
 
   scope "/", BaltimoreAiWeb do
     pipe_through :browser
+    resources "/companies", CompanyController
 
     resources "/listings", ListingController
     get "/page/:page", ListingController, :index, as: :offer_page
