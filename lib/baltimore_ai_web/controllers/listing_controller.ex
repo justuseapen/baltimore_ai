@@ -4,9 +4,18 @@ defmodule BaltimoreAiWeb.ListingController do
   alias BaltimoreAi.Jobs
   alias BaltimoreAi.Jobs.Listing
 
-  def index(conn, _params) do
-    listings = Jobs.list_listings()
-    render(conn, "index.html", listings: listings)
+  @filters_available ["text", "job_type", "job_place"]
+
+  def index(conn, params) do
+    page_number = get_page_number(params)
+
+    page = Jobs.list_published_listings(page_number)
+
+    conn
+    |> assign(:listings, page.entries)
+    |> assign(:page_number, page.page_number)
+    |> assign(:total_pages, page.total_pages)
+    |> render("index.html")
   end
 
   def new(conn, _params) do
@@ -58,5 +67,41 @@ defmodule BaltimoreAiWeb.ListingController do
     conn
     |> put_flash(:info, "Listing deleted successfully.")
     |> redirect(to: Routes.listing_path(conn, :index))
+  end
+
+  def search(conn, params) do
+    page_number = get_page_number(params)
+
+    filters =
+      params
+      |> Map.get("filters", %{})
+      |> Enum.reduce(%{}, fn {k, v}, acc ->
+        case {k, v} do
+          {key, _} when key not in @filters_available -> acc
+          {_, val} when val in ["", nil] -> acc
+          {key, str} when is_binary(str) -> Map.put(acc, key, String.trim(str))
+          {key, val} -> Map.put(acc, key, val)
+        end
+      end)
+      |> Enum.reject(fn {_, v} -> is_nil(v) or v == "" end)
+      |> Enum.into(%{})
+
+    page = Jobs.filter_published_offers(filters, page_number)
+
+    conn
+    |> assign(:offers, page.entries)
+    |> assign(:page_number, page.page_number)
+    |> assign(:total_pages, page.total_pages)
+    |> render("search.html")
+  end
+
+  defp get_page_number(params) do
+    with {:ok, page_no} <- Map.fetch(params, "page"),
+         true <- is_binary(page_no),
+         {value, _} <- Integer.parse(page_no) do
+      value
+    else
+      _ -> 1
+    end
   end
 end

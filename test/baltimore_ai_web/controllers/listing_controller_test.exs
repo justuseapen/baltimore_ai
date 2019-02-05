@@ -5,7 +5,7 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
 
   @create_attrs %{description: "some description", external_url: "some external_url", poster_id: 42, title: "some title"}
   @update_attrs %{description: "some updated description", external_url: "some updated external_url", poster_id: 43, title: "some updated title"}
-  @invalid_attrs %{description: nil, external_url: nil, poster_id: nil, title: nil}
+  @invalid_attrs %{title: ""}
 
   def fixture(:listing) do
     {:ok, listing} = Jobs.create_listing(@create_attrs)
@@ -15,14 +15,14 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
   describe "index" do
     test "lists all listings", %{conn: conn} do
       conn = get(conn, Routes.listing_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Listings"
+      assert html_response(conn, 200) =~ "There is nothing here"
     end
   end
 
   describe "new listing" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.listing_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Listing"
+      assert html_response(conn, 200) =~ "Publishing a listing on Baltimore AI is free"
     end
   end
 
@@ -39,7 +39,7 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.listing_path(conn, :create), listing: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Listing"
+      assert length(conn.assigns.changeset.errors) == 3
     end
   end
 

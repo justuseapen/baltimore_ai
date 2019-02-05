@@ -17,6 +17,14 @@ defmodule BaltimoreAiWeb.Router do
     pipe_through :browser
 
     resources "/listings", ListingController
+    get "/page/:page", ListingController, :index, as: :offer_page
+    get "/search", ListingController, :search
+    get "/listings/place/:filter", ListingController, :index_filtered
+    get "/listings/type/:filter", ListingController, :index_filtered
+    post "/listings/preview", ListingController, :preview
+    put "/listings/preview", ListingController, :preview
+    get "/listings/:slug", ListingController, :show
+
     resources "/users", UserController
 
     get "/", ListingController, :index

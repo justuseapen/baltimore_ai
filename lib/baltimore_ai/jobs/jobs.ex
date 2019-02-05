@@ -5,6 +5,7 @@ defmodule BaltimoreAi.Jobs do
 
   import Ecto.Query, warn: false
   alias BaltimoreAi.Repo
+  alias BaltimoreAi.Jobs.Queries.Listing, as: ListingQuery
 
   alias BaltimoreAi.Jobs.Listing
 
@@ -16,10 +17,49 @@ defmodule BaltimoreAi.Jobs do
       iex> list_listings()
       [%Listing{}, ...]
 
+      iex> list_offers(page_no)
+      [%Listing{}, ...]
+
   """
-  def list_listings do
-    Repo.all(Listing)
+  def list_listings(page \\ nil) do
+    query = ListingQuery.order_inserted(Listing)
+
+    case page do
+      page_no when is_integer(page_no) and page_no > 0 ->
+        Repo.paginate(query, page: page)
+
+      _ ->
+        Repo.all(query)
+    end
   end
+
+  @doc """
+  Returns the list of published offers.
+
+  ## Examples
+
+      iex> list_published_listingss()
+      [%Listing{}, ...]
+
+      iex> list_published_listings(page_no)
+      [%Listing{}, ...]
+
+  """
+  def list_published_listings(page \\ nil) do
+    query =
+      Listing
+      |> ListingQuery.published()
+      |> ListingQuery.order_published()
+
+    case page do
+      page_no when is_integer(page_no) and page_no > 0 ->
+        Repo.paginate(query, page: page)
+
+      _ ->
+        Repo.all(query)
+    end
+  end
+
 
   @doc """
   Gets a single listing.
@@ -100,5 +140,42 @@ defmodule BaltimoreAi.Jobs do
   """
   def change_listing(%Listing{} = listing) do
     Listing.changeset(listing, %{})
+  end
+
+  @doc """
+  Updates a listing.
+
+  ## Examples
+
+      iex> update_listing(listing, %{field: new_value})
+      {:ok, %Listing{}}
+
+      iex> update_listing(listing, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_listing(%Listing{} = listing, attrs) do
+    listing
+    |> Listing.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Publishes an Listing.
+  Optionally you can provide a publication date
+
+  ## Examples
+
+      iex> publish_listing(listing)
+      {:ok, %Listing{}}
+
+      iex> publish_listing(listing, ~N[2002-01-13 23:00:07])
+      {:ok, %Listing{}}
+
+  """
+  def publish_listing(%Listing{} = listing), do: publish_listing(listing, NaiveDateTime.utc_now())
+
+  def publish_listing(%Listing{} = listing, date) do
+    update_listing(listing, %{published_at: date})
   end
 end

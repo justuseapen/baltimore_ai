@@ -1,5 +1,18 @@
-<h1>New Listing</h1>
+<div class="content">
+  <h2><%= gettext("Hire the best AI talent") %></h2>
+  <p><%= raw gettext("We're seeking to make Baltimore into the AI capital of the world. To start, we've built a platform for employers to find the regions best AI talent.") %></p>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.listing_path(@conn, :create)) %>
+  <h3><%= gettext("How does this works?") %></h3>
 
-<span><%= link "Back", to: Routes.listing_path(@conn, :index) %></span>
+  <p><%= raw gettext("Once you submit your offer, we will review it (just to avoid SPAM or dead links) and, if everything is correct, we will publish it as soon as possible!") %></p>
+
+  <p><%= raw gettext("<b>Publishing a listing on Baltimore AI is free</b> and will be also posted to our Twitter account, so feel free of %{follow_link} and retweet your offer when published!",
+    follow_link: "<a href=\"https://twitter.com/jobs_elixir\" taget=\"_blank\">#{gettext("follow us")}</a>") %></p>
+</div>
+<hr />
+
+<%= render "_form.html",
+  changeset: @changeset,
+  action: Routes.listing_path(@conn, :create),
+  conn: @conn,
+  css_class: "offer-new" %>
