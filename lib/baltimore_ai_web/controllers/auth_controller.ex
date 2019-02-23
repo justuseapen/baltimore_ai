@@ -5,21 +5,16 @@ defmodule BaltimoreAiWeb.AuthController do
   alias BaltimoreAi.Accounts.User
   alias BaltimoreAi.Repo
 
-  def new(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    user_params = %{token: auth.credentials.token, first_name: auth.info.first_name, last_name: auth.info.last_name, email: auth.info.email, provider: "google"}
+  def request(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    user_params = user_params(auth)
     changeset = User.changeset(%User{}, user_params)
 
-    create(conn, changeset)
+    callback(conn, changeset)
   end
 
-  def create(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    user_params = %{
-      token: auth.credentials.token,
-      first_name: auth.info.first_name,
-      last_name: auth.info.last_name,
-      email: auth.info.email,
-      provider: "google"
-    }
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    user_params = user_params(auth)
+
     changeset = User.changeset(%User{}, user_params)
     case insert_or_update_user(changeset) do
       {:ok, user} ->
@@ -34,8 +29,15 @@ defmodule BaltimoreAiWeb.AuthController do
     end
   end
 
+  def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
+    conn
+    |> put_flash(:error, "Failed to authenticate.")
+    |> redirect(to: Routes.listing_path(conn, :index))
+  end
+
   def delete(conn, _params) do
     conn
+    |> put_flash(:info, "You have been logged out!")
     |> configure_session(drop: true)
     |> redirect(to: Routes.listing_path(conn, :index))
   end
@@ -47,5 +49,15 @@ defmodule BaltimoreAiWeb.AuthController do
       user ->
         {:ok, user}
     end
+  end
+
+  defp user_params(auth, provider \\ "google") do
+    %{
+      token: auth.credentials.token,
+      first_name: auth.info.first_name,
+      last_name: auth.info.last_name,
+      email: auth.info.email,
+      provider: provider
+    }
   end
 end
