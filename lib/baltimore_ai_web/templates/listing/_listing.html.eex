@@ -9,7 +9,7 @@
           <%= link(@listing.title, to: Routes.listing_path(@conn, :show, @listing.slug)) %>
           <% end %>
         </strong>
-        <small><%= @listing.company %> - <%= @listing.location %></small>
+        <small><%= @listing.company.name %> - <%= @listing.location %></small>
       </p>
       <div class="field is-grouped is-grouped-multiline">
         <div class="control">
@@ -27,17 +27,25 @@
         <div class="control">
           <span class="tags has-addons">
             <span class="tag"><%= gettext("Workplace") %></span>
-            <span class="tag is-warning"><%= HumanizeHelper.human_get_place(@listing.job_place, gettext("Unknown")) %></span>
+            <span class="tag is-warning">
+              <%= unless is_nil(@listing.job_place) do
+                HumanizeHelper.human_get_place(@listing.job_place, gettext("Unknown"))
+              end %>
+            </span>
           </span>
         </div>
         <div class="control">
           <span class="tags has-addons">
             <span class="tag"><%= gettext("Type") %></span>
-            <span class="tag is-primary"><%= HumanizeHelper.human_get_type(@listing.job_type, gettext("Unknown")) %></span>
+            <span class="tag is-primary">
+              <%= unless is_nil(@listing.job_type) do
+                HumanizeHelper.human_get_type(@listing.job_type, gettext("Unknown"))
+              end %>
+            </span>
           </span>
         </div>
       </div>
-      <p><%= @listing.summary %></p>
+      <p><%= # @listing.summary => this field doesn't exist. what should be its purpose here? %></p>
       <%= if not @details do %>
       <p><%= link(gettext("Read more"), to: Routes.listing_path(@conn, :show, @listing.slug)) %></p>
       <% end %>

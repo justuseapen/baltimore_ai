@@ -19,13 +19,15 @@
         <label class="label"><%= gettext("Company") %></label>
       </div>
       <div class="field-body">
-        <div class="field">
-          <%= text_input(f, :company,
-                id: "offer_company",
-                class: "input is-medium",
-                placeholder: gettext("Company name")) %>
-          <%= error_tag(f, :company) %>
-        </div>
+        <%= inputs_for f, :company, fn c -> %>
+          <div class="field">
+            <%= text_input(c, :name,
+                  id: "offer_company",
+                  class: "input is-medium",
+                  placeholder: gettext("Company name")) %>
+            <%= error_tag(c, :name) %>
+          </div>
+        <% end %>
         <div class="field">
           <%= text_input(f, :location,
                 id: "offer_location",

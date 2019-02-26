@@ -3,19 +3,23 @@ defmodule BaltimoreAi.Jobs.Listing do
   import Ecto.Changeset
 
   schema "listings" do
-    field :company_id, :integer
     field :description, :string
+    field :location, :string
+    field :job_place, :string
+    field :job_type, :string
     field :external_url, :string
-    field :poster_id, :integer
     field :title, :string
     field :published_at, :naive_datetime
     field :slug, :string
 
+    belongs_to(:company, BaltimoreAi.Companies.Company)
+    belongs_to(:poster, BaltimoreAi.Accounts.User)
+
     timestamps()
   end
 
-  @required_attrs [:title, :external_url, :description]
-  @optional_attrs [:published_at, :slug, :poster_id, :company_id]
+  @required_attrs [:title, :external_url, :description, :location]
+  @optional_attrs [:published_at, :slug, :job_place, :job_type]
   @attributes @required_attrs ++ @optional_attrs
   @url_regexp ~r/^\b((https?:\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/)))$/
 
@@ -23,6 +27,7 @@ defmodule BaltimoreAi.Jobs.Listing do
   def changeset(listing, attrs) do
     listing
     |> cast(attrs, @attributes)
+    |> cast_assoc(:company)
     |> validate_required(@required_attrs)
     |> validate_length(:title, min: 5, max: 50)
     |> unique_constraint(:slug)

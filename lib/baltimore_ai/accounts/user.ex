@@ -11,6 +11,8 @@ defmodule BaltimoreAi.Accounts.User do
     field :hashed_password, :string
     field :permissions, :map
 
+    has_many(:listings, BaltimoreAi.Jobs.Listing)
+    
     timestamps()
   end
 

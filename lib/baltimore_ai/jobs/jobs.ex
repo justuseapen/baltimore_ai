@@ -75,7 +75,9 @@ defmodule BaltimoreAi.Jobs do
       ** (Ecto.NoResultsError)
 
   """
-  def get_listing!(id), do: Repo.get!(Listing, id)
+  # as we expect the url to be ``/listings/:slug`, we should get listing by
+  # slug instead id here.
+  def get_listing!(slug), do: Repo.get_by!(Listing, slug: slug)
 
   @doc """
   Creates a listing.
@@ -91,6 +93,27 @@ defmodule BaltimoreAi.Jobs do
   """
   def create_listing(attrs \\ %{}) do
     %Listing{}
+    |> Listing.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Creates a listing for a user.
+
+  ## Examples
+
+      iex> create_listing(%{field: value}, user)
+      {:ok, %Listing{}}
+
+      iex> create_listing(%{field: bad_value}, user)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  # If login is mandatory to create a job offer, we can use this function to
+  # associate it to the current user
+  def create_listing(attrs, user) do
+    user
+    |> Ecto.build_assoc(:listings)
     |> Listing.changeset(attrs)
     |> Repo.insert()
   end
