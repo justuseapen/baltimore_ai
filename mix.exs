@@ -20,7 +20,7 @@ defmodule BaltimoreAi.MixProject do
   def application do
     [
       mod: {BaltimoreAi.Application, []},
-      extra_applications: [:logger, :runtime_tools, :scrivener_ecto]
+      extra_applications: [:logger, :runtime_tools, :scrivener_ecto, :ueberauth_google, :httpotion]
     ]
   end
 
@@ -45,10 +45,11 @@ defmodule BaltimoreAi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
+      {:httpotion, "~> 3.1.0"},
 
       # Authentication
       {:ueberauth, "~> 0.5.0"},
-      {:ueberauth_google, "~> 0.5"},
+      {:ueberauth_google, "~> 0.8"},
       {:ja_serializer, "~> 0.11.2"},
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.0"},
@@ -56,7 +57,10 @@ defmodule BaltimoreAi.MixProject do
 
       # Misc
       {:scrivener_ecto, "~> 2.0"},
-      {:slugger, "~> 0.2"}
+      {:slugger, "~> 0.2"},
+
+      # Tests
+      {:mock, "~> 0.3.0", only: :test}
     ]
   end
 
