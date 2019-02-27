@@ -8,6 +8,8 @@ defmodule BaltimoreAi.Companies.Company do
     field :name, :string
     field :slug, :string
 
+    has_many(:listings, BaltimoreAi.Jobs.Listing)
+
     timestamps()
   end
 

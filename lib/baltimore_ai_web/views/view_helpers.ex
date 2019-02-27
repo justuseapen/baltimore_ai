@@ -59,15 +59,15 @@ defmodule BaltimoreAiWeb.ViewHelpers do
   # Private functions
   ###
 
-  defp this_year?(date), do: date.year == Ecto.DateTime.utc().year
+  defp this_year?(date), do: date.year == DateTime.utc_now().year
 
   defp today?(date) do
-    now = Ecto.DateTime.utc()
+    now = DateTime.utc_now()
     date.day == now.day && date.month == now.month && date.year == now.year
   end
 
   def yesterday?(date) do
-    now = Ecto.DateTime.utc()
+    now = DateTime.utc_now()
     difference = BaltimoreAi.Date.diff(now, date)
     difference < 2 * 24 * 60 * 60 && difference > 1 * 24 * 60 * 60
   end

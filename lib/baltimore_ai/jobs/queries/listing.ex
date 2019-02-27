@@ -40,8 +40,10 @@ defmodule BaltimoreAi.Jobs.Queries.Listing do
   end
 
   def published(query) do
-    from o in query,
-      where: not is_nil(o.published_at) and o.published_at <= ^NaiveDateTime.utc_now()
+    from(o in query,
+      where: not is_nil(o.published_at) and o.published_at <= ^NaiveDateTime.utc_now(),
+      preload: [:company]
+    )
   end
 
   def unpublished(query) do
