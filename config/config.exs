@@ -13,7 +13,7 @@ config :baltimore_ai,
 # Configures the endpoint
 config :baltimore_ai, BaltimoreAiWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "5/UbnIgm+qaIonYOS6eh6kt8DKec2Oc12upETIBvykyejB0Z6X1Yzrd+z3TwZh/C",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: BaltimoreAiWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: BaltimoreAi.PubSub, adapter: Phoenix.PubSub.PG2]
 
@@ -39,6 +39,14 @@ config :ueberauth, Ueberauth,
 config :ueberauth, Ueberauth.Strategy.Google.OAuth,
   client_id: System.get_env("GOOGLE_CLIENT_ID"),
   client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
+
+# Configures authentication with Guardian
+config :baltimore_ai, BaltimoreAi.Auth.Guardian,
+  issuer: "BaltimoreAi",
+  ttl: {30, :days},
+  # optional
+  allowed_algos: ["HS256"],
+  verify_issuer: true
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

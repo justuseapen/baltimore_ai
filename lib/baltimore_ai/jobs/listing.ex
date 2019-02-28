@@ -18,8 +18,8 @@ defmodule BaltimoreAi.Jobs.Listing do
     timestamps()
   end
 
-  @required_attrs [:title, :external_url, :description, :location]
-  @optional_attrs [:published_at, :slug, :job_place, :job_type]
+  @required_attrs [:title, :external_url, :description]
+  @optional_attrs [:published_at, :slug, :job_place, :job_type, :location]
   @attributes @required_attrs ++ @optional_attrs
   @url_regexp ~r/^\b((https?:\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/)))$/
 

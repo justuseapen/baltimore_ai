@@ -18,6 +18,7 @@ defmodule BaltimoreAiWeb.AuthController do
     changeset = User.changeset(%User{}, user_params)
     case insert_or_update_user(changeset) do
       {:ok, user} ->
+
         conn
         |> put_flash(:info, "Thank you for signing in!")
         |> put_session(:user_id, user.id)

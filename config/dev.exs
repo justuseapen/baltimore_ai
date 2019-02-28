@@ -48,6 +48,9 @@ config :baltimore_ai, BaltimoreAiWeb.Endpoint,
     ]
   ]
 
+config :baltimore_ai, BaltimoreAi.Auth.Guardian,
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY")
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -60,8 +63,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 config :baltimore_ai, BaltimoreAi.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATA_DB_USER"),
-  password: System.get_env("DATA_DB_PASS"),
-  hostname: System.get_env("DATA_DB_HOST"),
+  username: System.get_env("DATA_DB_USER") || "postgres",
+  password: System.get_env("DATA_DB_PASS") || "postgres",
+  hostname: System.get_env("DATA_DB_HOST") || "localhost",
   database: "baltimore_ai_dev",
   pool_size: 10

@@ -69,6 +69,9 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
 
+config :baltimore_ai, BaltimoreAi.Auth.Guardian,
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY")
+
 config :baltimore_ai, BaltimoreAi.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: System.get_env("DATA_DB_USER"),
