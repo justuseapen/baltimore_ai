@@ -45,7 +45,7 @@
           </span>
         </div>
       </div>
-      <p><%= # @listing.summary => this field doesn't exist. what should be its purpose here? %></p>
+      <p><%= @listing.description %></p>
       <%= if not @details do %>
       <p><%= link(gettext("Read more"), to: Routes.listing_path(@conn, :show, @listing.slug)) %></p>
       <% end %>

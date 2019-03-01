@@ -35,8 +35,8 @@ defmodule BaltimoreAiWeb.ListingController do
     end
   end
 
-  def show(conn, %{"slug" => slug}) do
-    listing = Jobs.get_listing!(slug)
+  def show(conn, %{"slug_or_id" => slug_or_id}) do
+    listing = Jobs.get_listing!(slug_or_id)
     render(conn, "show.html", listing: listing)
   end
 

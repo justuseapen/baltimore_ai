@@ -27,7 +27,6 @@ defmodule BaltimoreAiWeb.Router do
 
     get "/", ListingController, :index
     get "/page/:page", ListingController, :index, as: :offer_page
-    get "/listings/:slug", ListingController, :show
     get "/listings/place/:filter", ListingController, :index_filtered
     get "/listings/type/:filter", ListingController, :index_filtered
     post "/listings/preview", ListingController, :preview
@@ -48,7 +47,8 @@ defmodule BaltimoreAiWeb.Router do
   scope "/", BaltimoreAiWeb do
     pipe_through [:browser, :auth, :ensure_auth]
 
-    resources "/listings", ListingController, only: [:new, :create, :show, :edit, :update, :delete]
+    resources "/listings", ListingController, only: [:new, :create, :edit, :update, :delete]
+    get "/listings/:slug_or_id", ListingController, :show
     resources "/users", UserController
     resources "/companies", CompanyController
   end
