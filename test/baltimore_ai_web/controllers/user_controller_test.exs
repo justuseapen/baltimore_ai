@@ -12,6 +12,12 @@ defmodule BaltimoreAiWeb.UserControllerTest do
     user
   end
 
+  setup do
+    user = fixture(:user)
+    conn = BaltimoreAi.Auth.Guardian.Plug.sign_in(conn, user)
+    {:ok, %{conn: conn}}
+  end
+
   describe "index" do
     test "lists all users", %{conn: conn} do
       conn = get(conn, Routes.user_path(conn, :index))

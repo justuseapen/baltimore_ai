@@ -26,6 +26,8 @@ defmodule BaltimoreAiWeb.Router do
     pipe_through [:browser, :auth]
 
     get "/", ListingController, :index
+    get "/signup", RegistrationController, :new
+    post "/signup", RegistrationController, :create
     get "/page/:page", ListingController, :index, as: :offer_page
     get "/listings/place/:filter", ListingController, :index_filtered
     get "/listings/type/:filter", ListingController, :index_filtered
