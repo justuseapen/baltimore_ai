@@ -24,8 +24,11 @@ defmodule BaltimoreAiWeb.ListingController do
   end
 
   def create(conn, %{"listing" => listing_params}) do
-    case Jobs.create_listing(listing_params) do
+    current_user = Guardian.Plug.current_resource(conn)
+
+    case Jobs.create_listing(listing_params, current_user) do
       {:ok, listing} ->
+        IO.inspect listing
         conn
         |> put_flash(:info, "Listing created successfully.")
         |> redirect(to: Routes.listing_path(conn, :show, listing))

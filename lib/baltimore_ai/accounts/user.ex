@@ -14,7 +14,7 @@ defmodule BaltimoreAi.Accounts.User do
     field :permissions, :map
     field :password, :string, virtual: true
 
-    has_many(:listings, BaltimoreAi.Jobs.Listing)
+    has_many(:listings, BaltimoreAi.Jobs.Listing, foreign_key: :poster_id)
 
     timestamps()
   end

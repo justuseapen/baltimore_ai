@@ -21,7 +21,6 @@ defmodule BaltimoreAiWeb.SessionController do
         conn
         |> Guardian.Plug.sign_in(user)
         |> put_session(:user_id, user.id)
-        |> put_flash(:info, "Hi, #{user.first_name}!")
         |> redirect(to: Routes.listing_path(conn, :index))
 
       {:error, message} ->
