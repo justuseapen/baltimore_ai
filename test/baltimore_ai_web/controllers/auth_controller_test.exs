@@ -7,8 +7,8 @@ defmodule BaltimoreAiWeb.AuthControllerTest do
   alias BaltimoreAi.Accounts.User
 
   @google_oauth_url "https://accounts.google.com/o/oauth2/v2/auth"
-  @query_strings "?client_id=&redirect_uri=http%3A%2F%2Fwww.example.com%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=emails+profile+plus.me"
-  @google_oauth_html_response "<html><body>You are being <a href=\"#{@google_oauth_url}?client_id=&amp;redirect_uri=http%3A%2F%2Fwww.example.com%2Fauth%2Fgoogle%2Fcallback&amp;response_type=code&amp;scope=emails+profile+plus.me\">redirected</a>.</body></html>"
+  @query_strings "?client_id=google-client-id&redirect_uri=http%3A%2F%2Fwww.example.com%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=emails+profile+plus.me"
+  @google_oauth_html_response "<html><body>You are being <a href=\"#{@google_oauth_url}?client_id=google-client-id&amp;redirect_uri=http%3A%2F%2Fwww.example.com%2Fauth%2Fgoogle%2Fcallback&amp;response_type=code&amp;scope=emails+profile+plus.me\">redirected</a>.</body></html>"
   @ueberauth_auth %Ueberauth.Auth{
     credentials: %Ueberauth.Auth.Credentials{
       token: "some_token",

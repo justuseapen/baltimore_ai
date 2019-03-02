@@ -20,7 +20,15 @@ defmodule BaltimoreAi.MixProject do
   def application do
     [
       mod: {BaltimoreAi.Application, []},
-      extra_applications: [:logger, :runtime_tools, :scrivener_ecto, :ueberauth_google, :httpotion, :timex]
+      extra_applications: [
+        :logger,
+        :runtime_tools,
+        :scrivener_ecto,
+        :ueberauth_google,
+        :httpotion,
+        :timex,
+        :ex_machina
+      ]
     ]
   end
 
@@ -61,7 +69,9 @@ defmodule BaltimoreAi.MixProject do
       {:timex, "~> 3.1"},
 
       # Tests
-      {:mock, "~> 0.3.0", only: :test}
+      {:mock, "~> 0.3.0", only: :test},
+      {:faker_elixir_octopus, "~> 1.0.0",  only: [:dev, :test]},
+      {:ex_machina, "~> 2.3", only: :test},
     ]
   end
 

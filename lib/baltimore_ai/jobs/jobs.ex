@@ -156,7 +156,7 @@ defmodule BaltimoreAi.Jobs do
   """
   def update_listing(%Listing{} = listing, attrs) do
     listing
-    |> Listing.changeset(attrs)
+    |> Listing.changeset_update(attrs)
     |> Repo.update()
   end
 

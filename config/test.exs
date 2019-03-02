@@ -13,9 +13,13 @@ config :logger, level: :warn
 config :ueberauth, Ueberauth,
   providers: [ google: { Ueberauth.Strategy.Google, [default_scope: "emails profile plus.me"] } ]
 
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  client_id: "google-client-id",
+  client_secret: "google-client-secret"
+
 config :baltimore_ai, BaltimoreAi.Auth.Guardian,
   secret_key: System.get_env("GUARDIAN_SECRET_KEY")
-  
+
 # Configure your database
 config :baltimore_ai, BaltimoreAi.Repo,
   adapter: Ecto.Adapters.Postgres,

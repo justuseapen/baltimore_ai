@@ -28,7 +28,6 @@ defmodule BaltimoreAiWeb.ListingController do
 
     case Jobs.create_listing(listing_params, current_user) do
       {:ok, listing} ->
-        IO.inspect listing
         conn
         |> put_flash(:info, "Listing created successfully.")
         |> redirect(to: Routes.listing_path(conn, :show, listing))
@@ -44,13 +43,13 @@ defmodule BaltimoreAiWeb.ListingController do
   end
 
   def edit(conn, %{"id" => id}) do
-    listing = Jobs.get_listing!(id)
+    listing = Jobs.get_listing!(id) |> BaltimoreAi.Repo.preload(:company)
     changeset = Jobs.change_listing(listing)
     render(conn, "edit.html", listing: listing, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "listing" => listing_params}) do
-    listing = Jobs.get_listing!(id)
+    listing = Jobs.get_listing!(id) |> BaltimoreAi.Repo.preload(:company)
 
     case Jobs.update_listing(listing, listing_params) do
       {:ok, listing} ->

@@ -3,13 +3,44 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
 
   alias BaltimoreAi.Jobs
 
-  @create_attrs %{description: "some description", external_url: "some external_url", poster_id: 42, title: "some title"}
-  @update_attrs %{description: "some updated description", external_url: "some updated external_url", poster_id: 43, title: "some updated title"}
-  @invalid_attrs %{title: ""}
+  @create_attrs %{
+    description: Faker.Lorem.sentence(),
+    location: Faker.Address.city(),
+    job_place: Enum.random(["remote", "onsite"]),
+    job_type: Enum.random(["full-time", "part-time", "contract"]),
+    external_url: Faker.Internet.url(:safe),
+    title: Faker.Name.title(),
+    published_at: Faker.Date.forward(1..5),
+    slug: Faker.Internet.user_name()
+  }
 
-  def fixture(:listing) do
-    {:ok, listing} = Jobs.create_listing(@create_attrs)
-    listing
+  @update_attrs %{
+    description: Faker.Lorem.sentence(),
+    location: Faker.Address.city(),
+    job_place: Enum.random(["remote", "onsite"]),
+    job_type: Enum.random(["full-time", "part-time", "contract"]),
+    external_url: Faker.Internet.url(:safe),
+    title: Faker.Name.title(),
+    published_at: Faker.Date.forward(1..5),
+    slug: Faker.Internet.user_name()
+  }
+  @invalid_attrs %{
+    description: nil,
+    location: nil,
+    job_place: nil,
+    job_type: nil,
+    external_url: nil,
+    title: nil,
+    published_at: nil,
+    slug: nil
+  }
+
+  setup do
+    {:ok, conn: conn, user: user} = authenticated_session()
+
+    listing = insert(:listing, poster: user)
+
+    {:ok, %{conn: conn, listing: listing}}
   end
 
   describe "index" do
@@ -30,7 +61,7 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post(conn, Routes.listing_path(conn, :create), listing: @create_attrs)
 
-      assert %{id: id} = redirected_params(conn)
+      assert %{slug_or_id: id} = redirected_params(conn)
       assert redirected_to(conn) == Routes.listing_path(conn, :show, id)
 
       conn = get(conn, Routes.listing_path(conn, :show, id))
@@ -44,8 +75,6 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
   end
 
   describe "edit listing" do
-    setup [:create_listing]
-
     test "renders form for editing chosen listing", %{conn: conn, listing: listing} do
       conn = get(conn, Routes.listing_path(conn, :edit, listing))
       assert html_response(conn, 200) =~ "Edit Listing"
@@ -53,14 +82,12 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
   end
 
   describe "update listing" do
-    setup [:create_listing]
-
     test "redirects when data is valid", %{conn: conn, listing: listing} do
       conn = put(conn, Routes.listing_path(conn, :update, listing), listing: @update_attrs)
       assert redirected_to(conn) == Routes.listing_path(conn, :show, listing)
 
       conn = get(conn, Routes.listing_path(conn, :show, listing))
-      assert html_response(conn, 200) =~ "some updated description"
+      assert html_response(conn, 200) =~ @update_attrs.description
     end
 
     test "renders errors when data is invalid", %{conn: conn, listing: listing} do
@@ -70,8 +97,6 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
   end
 
   describe "delete listing" do
-    setup [:create_listing]
-
     test "deletes chosen listing", %{conn: conn, listing: listing} do
       conn = delete(conn, Routes.listing_path(conn, :delete, listing))
       assert redirected_to(conn) == Routes.listing_path(conn, :index)
@@ -79,10 +104,5 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
         get(conn, Routes.listing_path(conn, :show, listing))
       end
     end
-  end
-
-  defp create_listing(_) do
-    listing = fixture(:listing)
-    {:ok, listing: listing}
   end
 end

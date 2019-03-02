@@ -34,6 +34,16 @@ defmodule BaltimoreAi.Jobs.Listing do
     |> generate_slug()
   end
 
+  def changeset_update(listing, attrs) do
+    listing
+    |> cast(attrs, [:title, :external_url, :description, :job_place, :job_type, :location])
+    |> cast_assoc(:company)
+    |> validate_required(:title)
+    |> validate_length(:title, min: 5, max: 50)
+    |> unique_constraint(:slug)
+    |> generate_slug()
+  end
+
   defp generate_slug(%Ecto.Changeset{valid?: false} = changeset) do
     changeset
   end

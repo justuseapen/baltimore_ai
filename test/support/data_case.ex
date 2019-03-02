@@ -17,12 +17,13 @@ defmodule BaltimoreAi.DataCase do
   using do
     quote do
       alias BaltimoreAi.Repo
-
+      alias FakerElixir, as: Faker
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
       import BaltimoreAi.DataCase
       import BaltimoreAi.TestHelpers
+      import BaltimoreAi.Factory
     end
   end
 
