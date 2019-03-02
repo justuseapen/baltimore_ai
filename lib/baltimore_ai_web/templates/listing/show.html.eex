@@ -1,0 +1,28 @@
+<h1>Show Listing</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @listing.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @listing.description %>
+  </li>
+
+  <li>
+    <strong>Poster:</strong>
+    <%= @listing.poster_id %>
+  </li>
+
+  <li>
+    <strong>External url:</strong>
+    <%= @listing.external_url %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.listing_path(@conn, :edit, @listing) %></span>
+<span><%= link "Back", to: Routes.listing_path(@conn, :index) %></span>

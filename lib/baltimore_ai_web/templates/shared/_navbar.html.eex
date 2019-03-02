@@ -1,0 +1,51 @@
+<nav id="navbar" class="navbar is-transparent is-fixed-top is-primary">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="<%= Routes.listing_path(@conn, :index) %>">
+        <%= img_tag Routes.static_path(@conn, "/images/logo.svg"), class: "logo" %>
+        <%= gettext("Baltimore Ai") %>
+      </a>
+      <span class="navbar-burger burger" data-target="navbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="<%= Routes.listing_path(@conn, :new) %>"><%= gettext "Publish an offer" %></a>
+        <a class="navbar-item" href="<%= Routes.page_path(@conn, :about) %>"><%= gettext "About" %></a>
+      </div>
+      <div class="navbar-end">
+
+        <%= if @conn.assigns.user do %>
+
+          <span class="navbar-item">
+            Welcome, <%= @conn.assigns.user.first_name %>!
+          </span>
+
+          <%= if @conn.assigns.user.provider == "google" do %>
+            <%= link(gettext("Sign out"), to: Routes.auth_path(@conn, :delete), class: "navbar-item") %>
+          <% else %>
+            <%= link "Sign Out", to: Routes.session_path(@conn, :delete), method: :delete, class: "navbar-item" %>
+          <% end %>
+
+        <% else %>
+
+          <%= link "Sign Up", to: Routes.registration_path(@conn, :new), class: "navbar-item" %>
+          <%= link "Sign In", to: Routes.session_path(@conn, :new), class: "navbar-item" %>
+          <a href="/auth/google?scope=email%20profile" class="navbar-item">
+            Sign in with Google
+          </a>
+
+        <% end %>
+
+        <!-- Twitter -->
+        <a class="navbar-item" href="https://twitter.com/justuseapen" target="_blank">
+          <i class="fab fa-twitter"></i><span class="is-hidden-desktop">&nbsp;&nbsp;Twitter</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</nav>

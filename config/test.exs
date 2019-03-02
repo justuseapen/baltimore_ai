@@ -9,10 +9,22 @@ config :baltimore_ai, BaltimoreAiWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+# Ueberauth Config for oauth
+config :ueberauth, Ueberauth,
+  providers: [ google: { Ueberauth.Strategy.Google, [default_scope: "emails profile plus.me"] } ]
+
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  client_id: "google-client-id",
+  client_secret: "google-client-secret"
+
+config :baltimore_ai, BaltimoreAi.Auth.Guardian,
+  secret_key: System.get_env("GUARDIAN_SECRET_KEY")
+
 # Configure your database
 config :baltimore_ai, BaltimoreAi.Repo,
-  username: "postgres",
-  password: "postgres",
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DATA_DB_USER") || "postgres",
+  password: System.get_env("DATA_DB_PASS") || "postgres",
+  hostname: System.get_env("DATA_DB_HOST") || "localhost",
   database: "baltimore_ai_test",
-  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

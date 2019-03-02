@@ -1,0 +1,10 @@
+<article class="media no-offer">
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <i><%= gettext("Oops. There is nothing here") %></i>
+      </p>
+      <a class="button is-primary is-medium" href="<%= Routes.listing_path(@conn, :new) %>"><%= gettext "Post a job" %></a>
+    </div>
+  </div>
+</article>

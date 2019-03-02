@@ -1,0 +1,11 @@
+<%= render("_filters.html", conn: @conn, aspect: "small", page_number: @page_number, total_pages: @total_pages) %>
+
+<%= for listing <- @listings do %>
+  <%= render("_listing.html", conn: @conn, listing: listing, details: false) %>
+<% end %>
+
+<%= if length(@listings) == 0 do %>
+  <%= render("_no-listing.html", conn: @conn) %>
+<% end %>
+
+<%= render("_pagination.html", conn: @conn, page_number: @page_number, total_pages: @total_pages) %>

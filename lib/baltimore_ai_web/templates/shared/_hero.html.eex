@@ -1,0 +1,14 @@
+<section class="hero main is-info is-medium is-bold">
+  <div class="hero-body particles-container">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <%= gettext("The Future of AI is in Baltimore") %>
+      </h1>
+      <h2 class="subtitle">
+        <%= gettext("AI jobs, news, and events out of Baltimore, Maryland!") %>
+      </h2>
+      <%= link(gettext("Post a job offer!"), to: Routes.listing_path(@conn, :new), class: "button new-offer-btn is-primary is-large") %>
+    </div>
+    <div id="particles"></div>
+  </div>
+</section>

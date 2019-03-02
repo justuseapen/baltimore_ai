@@ -41,7 +41,14 @@ defmodule BaltimoreAiWeb do
 
       import BaltimoreAiWeb.ErrorHelpers
       import BaltimoreAiWeb.Gettext
+      import BaltimoreAiWeb.ViewHelpers
       alias BaltimoreAiWeb.Router.Helpers, as: Routes
+
+      def render_shared(template, assigns \\ []) do
+        render(BaltimoreAiWeb.SharedView, template, assigns)
+      end
+
+      def user_logged_in?(conn), do: !is_nil(Map.get(conn.assigns, :current_user))
     end
   end
 
