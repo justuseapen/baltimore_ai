@@ -74,10 +74,34 @@ defmodule BaltimoreAi.Jobs do
       iex> get_listing!(456)
       ** (Ecto.NoResultsError)
 
+      iex> get_listing!("some-slug")
+      %Listing{}
+
+      iex> get_listing!("some-wrong-slug")
+      ** (Ecto.NoResultsError)
+
   """
-  # as we expect the url to be ``/listings/:slug`, we should get listing by
-  # slug instead id here.
-  def get_listing!(slug), do: Repo.get_by!(Listing, slug: slug)
+  # filters when id comes as 1, "1" or "some slug-name"
+  def get_listing!(slug_or_id) when is_integer(slug_or_id) do
+    Repo.get!(Listing, slug_or_id)
+  end
+
+  def get_listing!(slug_or_id) when is_bitstring(slug_or_id) do
+    query =
+      case Integer.parse(slug_or_id) do
+        {id, _} ->
+          from(l in Listing,
+            where: l.id == ^id
+          )
+
+        :error ->
+          from(l in Listing,
+            where: l.slug == ^slug_or_id
+          )
+      end
+
+    Repo.one!(query)
+  end
 
   @doc """
   Creates a listing.
@@ -132,7 +156,7 @@ defmodule BaltimoreAi.Jobs do
   """
   def update_listing(%Listing{} = listing, attrs) do
     listing
-    |> Listing.changeset(attrs)
+    |> Listing.changeset_update(attrs)
     |> Repo.update()
   end
 

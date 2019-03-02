@@ -18,8 +18,8 @@ defmodule BaltimoreAi.Jobs.Listing do
     timestamps()
   end
 
-  @required_attrs [:title, :external_url, :description, :location]
-  @optional_attrs [:published_at, :slug, :job_place, :job_type]
+  @required_attrs [:title, :external_url, :description, :poster_id]
+  @optional_attrs [:published_at, :slug, :job_place, :job_type, :location]
   @attributes @required_attrs ++ @optional_attrs
   @url_regexp ~r/^\b((https?:\/\/?)[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|\/)))$/
 
@@ -29,6 +29,16 @@ defmodule BaltimoreAi.Jobs.Listing do
     |> cast(attrs, @attributes)
     |> cast_assoc(:company)
     |> validate_required(@required_attrs)
+    |> validate_length(:title, min: 5, max: 50)
+    |> unique_constraint(:slug)
+    |> generate_slug()
+  end
+
+  def changeset_update(listing, attrs) do
+    listing
+    |> cast(attrs, [:title, :external_url, :description, :job_place, :job_type, :location])
+    |> cast_assoc(:company)
+    |> validate_required(:title)
     |> validate_length(:title, min: 5, max: 50)
     |> unique_constraint(:slug)
     |> generate_slug()

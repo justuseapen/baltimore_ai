@@ -43,16 +43,16 @@ defmodule BaltimoreAiWeb.ViewHelpers do
           "Yesterday"
 
         true ->
-          BaltimoreAi.Date.strftime(date, "%e %b")
+          Timex.format!(date, "%e %b", :strftime)
       end
     else
-      BaltimoreAi.Date.strftime(date, "%e %b %Y")
+      Timex.format!(date, "%e %b %Y", :strftime)
     end
   end
 
   @doc "Returns a date formatted for RSS clients."
   def xml_readable_date(date) do
-    BaltimoreAi.Date.strftime(date, "%e %b %Y %T %z")
+    Timex.format!(date, "%e %b %Y %T %z", :strftime)
   end
 
   ###
@@ -68,7 +68,7 @@ defmodule BaltimoreAiWeb.ViewHelpers do
 
   def yesterday?(date) do
     now = DateTime.utc_now()
-    difference = BaltimoreAi.Date.diff(now, date)
+    difference = Date.diff(now, date)
     difference < 2 * 24 * 60 * 60 && difference > 1 * 24 * 60 * 60
   end
 end

@@ -24,7 +24,9 @@ defmodule BaltimoreAiWeb.ListingController do
   end
 
   def create(conn, %{"listing" => listing_params}) do
-    case Jobs.create_listing(listing_params) do
+    current_user = Guardian.Plug.current_resource(conn)
+
+    case Jobs.create_listing(listing_params, current_user) do
       {:ok, listing} ->
         conn
         |> put_flash(:info, "Listing created successfully.")
@@ -35,19 +37,19 @@ defmodule BaltimoreAiWeb.ListingController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    listing = Jobs.get_listing!(id)
+  def show(conn, %{"slug_or_id" => slug_or_id}) do
+    listing = Jobs.get_listing!(slug_or_id)
     render(conn, "show.html", listing: listing)
   end
 
   def edit(conn, %{"id" => id}) do
-    listing = Jobs.get_listing!(id)
+    listing = Jobs.get_listing!(id) |> BaltimoreAi.Repo.preload(:company)
     changeset = Jobs.change_listing(listing)
     render(conn, "edit.html", listing: listing, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "listing" => listing_params}) do
-    listing = Jobs.get_listing!(id)
+    listing = Jobs.get_listing!(id) |> BaltimoreAi.Repo.preload(:company)
 
     case Jobs.update_listing(listing, listing_params) do
       {:ok, listing} ->

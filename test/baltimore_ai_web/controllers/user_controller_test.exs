@@ -3,13 +3,20 @@ defmodule BaltimoreAiWeb.UserControllerTest do
 
   alias BaltimoreAi.Accounts
 
-  @create_attrs %{hashed_password: "some hashed_password", permissions: %{}, email: "some email"}
-  @update_attrs %{permissions: %{}, email: "some updated email"}
-  @invalid_attrs %{hashed_password: nil, permissions: nil, email: nil}
+  import BaltimoreAiWeb.SessionHelper
+
+  @create_attrs %{first_name: "Ann", last_name: "Vega", email: "ann.vega@email.com", password: "qwertyasdfgh"}
+  @update_attrs %{first_name: "Anne", last_name: "Vegas", email: "anne.vegas@email.com", password: "qwertyasdfgh"}
+  @invalid_attrs %{first_name: nil, last_name: nil, email: nil, password: nil}
 
   def fixture(:user) do
     {:ok, user} = Accounts.create_user(@create_attrs)
     user
+  end
+
+  setup do
+    {:ok, conn: conn, user: _user} = authenticated_session()
+    {:ok, %{conn: conn}}
   end
 
   describe "index" do
@@ -60,7 +67,7 @@ defmodule BaltimoreAiWeb.UserControllerTest do
       assert redirected_to(conn) == Routes.user_path(conn, :show, user)
 
       conn = get(conn, Routes.user_path(conn, :show, user))
-      assert html_response(conn, 200) =~ "some updated email"
+      assert html_response(conn, 200) =~ "anne.vegas@email.com"
     end
 
     test "renders errors when data is invalid", %{conn: conn, user: user} do

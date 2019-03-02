@@ -2,6 +2,7 @@ defmodule BaltimoreAiWeb.AuthController do
   use BaltimoreAiWeb, :controller
   plug Ueberauth
 
+  alias BaltimoreAi.Auth.Guardian
   alias BaltimoreAi.Accounts.User
   alias BaltimoreAi.Repo
 
@@ -18,10 +19,13 @@ defmodule BaltimoreAiWeb.AuthController do
     changeset = User.changeset(%User{}, user_params)
     case insert_or_update_user(changeset) do
       {:ok, user} ->
+
         conn
+        |> Guardian.Plug.sign_in(user)
         |> put_flash(:info, "Thank you for signing in!")
         |> put_session(:user_id, user.id)
         |> redirect(to: Routes.listing_path(conn, :index))
+
       {:error, _reason} ->
         conn
         |> put_flash(:error, "Error signing in")

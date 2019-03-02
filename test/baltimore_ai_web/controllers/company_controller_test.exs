@@ -4,16 +4,27 @@ defmodule BaltimoreAiWeb.CompanyControllerTest do
   alias BaltimoreAi.Companies
 
   @create_attrs %{
-    name: "Baltimore AI"
+    name: Faker.App.name(),
+    description: Faker.Lorem.sentence(),
+    slug: Faker.Internet.user_name()
   }
-  @update_attrs %{}
+  @update_attrs %{
+    name: Faker.App.name(),
+    description: Faker.Lorem.sentence(),
+    slug: Faker.Internet.user_name()
+  }
   @invalid_attrs %{
-    name: ""
+    name: nil,
+    description: nil,
+    slug: nil
   }
 
-  def fixture(:company) do
-    {:ok, company} = Companies.create_company(@create_attrs)
-    company
+  setup do
+    {:ok, conn: conn, user: user} = authenticated_session()
+
+    company = insert(:company)
+
+    {:ok, %{conn: conn, company: company}}
   end
 
   describe "index" do
@@ -48,8 +59,6 @@ defmodule BaltimoreAiWeb.CompanyControllerTest do
   end
 
   describe "edit company" do
-    setup [:create_company]
-
     test "renders form for editing chosen company", %{conn: conn, company: company} do
       conn = get(conn, Routes.company_path(conn, :edit, company))
       assert html_response(conn, 200) =~ "Edit Company"
@@ -57,8 +66,6 @@ defmodule BaltimoreAiWeb.CompanyControllerTest do
   end
 
   describe "update company" do
-    setup [:create_company]
-
     test "redirects when data is valid", %{conn: conn, company: company} do
       conn = put(conn, Routes.company_path(conn, :update, company), company: @update_attrs)
       assert redirected_to(conn) == Routes.company_path(conn, :show, company)
@@ -74,8 +81,6 @@ defmodule BaltimoreAiWeb.CompanyControllerTest do
   end
 
   describe "delete company" do
-    setup [:create_company]
-
     test "deletes chosen company", %{conn: conn, company: company} do
       conn = delete(conn, Routes.company_path(conn, :delete, company))
       assert redirected_to(conn) == Routes.company_path(conn, :index)
@@ -83,10 +88,5 @@ defmodule BaltimoreAiWeb.CompanyControllerTest do
         get(conn, Routes.company_path(conn, :show, company))
       end
     end
-  end
-
-  defp create_company(_) do
-    company = fixture(:company)
-    {:ok, company: company}
   end
 end
