@@ -51,9 +51,9 @@ defmodule BaltimoreAi.MixProject do
       {:ueberauth, "~> 0.5.0"},
       {:ueberauth_google, "~> 0.8"},
       {:ja_serializer, "~> 0.11.2"},
+      {:guardian, "~> 1.0"},
       {:comeonin, "~> 4.1"},
       {:bcrypt_elixir, "~> 1.0"},
-      {:guardian, "~> 1.0"},
 
       # Misc
       {:scrivener_ecto, "~> 2.0"},

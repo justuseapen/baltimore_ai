@@ -1,0 +1,55 @@
+<div class="offer-new">
+  <%= form_for @changeset, @action, fn f -> %>
+
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-medium">
+        <label class="label"><%= gettext("Email") %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= email_input(f, :email,
+                id: "email",
+                class: "input is-medium",
+                placeholder: gettext("Email")) %>
+          <%= error_tag(f, :email) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-medium">
+        <label class="label"><%= gettext("Password") %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= password_input(f, :password,
+                id: "email",
+                class: "input is-medium",
+                placeholder: gettext("Password")) %>
+          <%= error_tag(f, :password) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <!-- Left empty for spacing -->
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <%= link "Cancel", to: Routes.listing_path(@conn, :index), class: "button is-medium" %>
+            <%= submit(gettext("Submit"), class: "button is-info is-medium") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>

@@ -28,6 +28,8 @@ defmodule BaltimoreAiWeb.Router do
     get "/", ListingController, :index
     get "/signup", RegistrationController, :new
     post "/signup", RegistrationController, :create
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
     get "/page/:page", ListingController, :index, as: :offer_page
     get "/listings/place/:filter", ListingController, :index_filtered
     get "/listings/type/:filter", ListingController, :index_filtered
@@ -51,6 +53,7 @@ defmodule BaltimoreAiWeb.Router do
 
     resources "/listings", ListingController, only: [:new, :create, :edit, :update, :delete]
     get "/listings/:slug_or_id", ListingController, :show
+    delete "/logout", SessionController, :delete
     resources "/users", UserController
     resources "/companies", CompanyController
   end

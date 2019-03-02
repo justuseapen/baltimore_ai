@@ -1,5 +1,8 @@
 <div class="offer-new">
   <%= form_for @changeset, @action, fn f -> %>
+
+    <%= hidden_input f, :poster_id %>
+    
     <div class="field is-horizontal">
       <div class="field-label is-large">
         <label class="label"><%= gettext("Title") %></label>

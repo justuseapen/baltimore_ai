@@ -1,5 +1,7 @@
 defmodule BaltimoreAi.Auth.Guardian do
-  use Guardian, otp_app: :storytape
+  @moduledoc false
+
+  use Guardian, otp_app: :baltimore_ai
 
   alias BaltimoreAi.{Accounts, Accounts.User}
 
@@ -27,5 +29,5 @@ defmodule BaltimoreAi.Auth.Guardian do
   def resource_from_claims(_claims) do
     {:error, :invalid_claims}
   end
-  
+
 end

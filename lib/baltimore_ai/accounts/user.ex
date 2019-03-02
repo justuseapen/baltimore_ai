@@ -38,7 +38,7 @@ defmodule BaltimoreAi.Accounts.User do
   def changeset_registration(%User{} = user, attrs) do
     user
     |> cast(attrs, [:first_name, :last_name, :email, :password])
-    |> validate_required([:first_nmae, :email, :password])
+    |> validate_required([:first_name, :email, :password])
     |> unique_constraint(:email)
     |> put_hashed_password()
   end
