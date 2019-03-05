@@ -17,9 +17,9 @@
             <span class="tag"><%= gettext("Date") %></span>
             <span class="tag is-danger">
               <%= if @listing.published_at do %>
-              <%= human_readable_date(@listing.published_at) %>
+                <%= human_readable_date(@listing.published_at) %>
               <% else %>
-              <%= human_readable_date(@listing.inserted_at) %>
+                <%= human_readable_date(@listing.inserted_at) %>
               <% end %>
             </span>
           </span>
@@ -28,9 +28,7 @@
           <span class="tags has-addons">
             <span class="tag"><%= gettext("Workplace") %></span>
             <span class="tag is-warning">
-              <%= unless is_nil(@listing.job_place) do
-                HumanizeHelper.human_get_place(@listing.job_place, gettext("Unknown"))
-              end %>
+              <%= @listing.job_place %>
             </span>
           </span>
         </div>
@@ -38,9 +36,7 @@
           <span class="tags has-addons">
             <span class="tag"><%= gettext("Type") %></span>
             <span class="tag is-primary">
-              <%= unless is_nil(@listing.job_type) do
-                HumanizeHelper.human_get_type(@listing.job_type, gettext("Unknown"))
-              end %>
+              <%= @listing.job_type %>
             </span>
           </span>
         </div>

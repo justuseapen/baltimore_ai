@@ -1,22 +1,60 @@
 <div class="offer-new">
   <%= form_for @changeset, @action, fn f -> %>
 
-    <%= hidden_input f, :poster_id %>
-    
     <div class="field is-horizontal">
-      <div class="field-label is-large">
+      <div class="field-label is-medium">
         <label class="label"><%= gettext("Title") %></label>
       </div>
       <div class="field-body">
         <div class="field">
           <%= text_input(f, :title,
                 id: "offer_title",
-                class: "input is-large",
+                class: "input is-medium",
                 placeholder: gettext("Title goes here (will be tweeted)")) %>
           <%= error_tag(f, :title) %>
         </div>
       </div>
     </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-medium">
+        <label class="label"><%= gettext("Job Type") %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= select(f, :job_type,
+            [
+              "Full-time": "full_time",
+              "Part-time": "part_time",
+              "Contract": "contract"
+            ],
+            id: "offer_job_type",
+            class: "input is-medium",
+          ) %>
+          <%= error_tag(f, :job_type) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label is-medium">
+        <label class="label"><%= gettext("Job Place") %></label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <%= select(f, :job_place,
+            [
+              "Remote": "remote",
+              "Onsite": "onsite"
+            ],
+            id: "offer_job_place",
+            class: "input is-medium"
+          ) %>
+          <%= error_tag(f, :job_place) %>
+        </div>
+      </div>
+    </div>
+
     <div class="field is-horizontal">
       <div class="field-label is-medium">
         <label class="label"><%= gettext("Company") %></label>
