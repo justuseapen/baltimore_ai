@@ -26,8 +26,7 @@ defmodule BaltimoreAi.MixProject do
         :scrivener_ecto,
         :ueberauth_google,
         :httpotion,
-        :timex,
-        :ex_machina
+        :timex
       ]
     ]
   end

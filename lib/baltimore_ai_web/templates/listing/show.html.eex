@@ -8,6 +8,16 @@
   </li>
 
   <li>
+    <strong>Job Type:</strong>
+    <%= @listing.job_type %>
+  </li>
+
+  <li>
+    <strong>Job Place:</strong>
+    <%= @listing.job_place %>
+  </li>
+
+  <li>
     <strong>Description:</strong>
     <%= @listing.description %>
   </li>
