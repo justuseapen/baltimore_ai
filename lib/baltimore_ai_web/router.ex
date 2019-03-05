@@ -33,8 +33,6 @@ defmodule BaltimoreAiWeb.Router do
     get "/page/:page", ListingController, :index, as: :offer_page
     get "/listings/place/:filter", ListingController, :index_filtered
     get "/listings/type/:filter", ListingController, :index_filtered
-    post "/listings/preview", ListingController, :preview
-    put "/listings/preview", ListingController, :preview
     get "/search", ListingController, :search
 
     get "/about", PageController, :about
