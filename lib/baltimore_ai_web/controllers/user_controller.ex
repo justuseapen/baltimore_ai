@@ -4,6 +4,8 @@ defmodule BaltimoreAiWeb.UserController do
   alias BaltimoreAi.Accounts
   alias BaltimoreAi.Accounts.User
 
+  plug :load_and_authorize_resource, model: User, only: [:edit, :update, :delete]
+
   def index(conn, _params) do
     users = Accounts.list_users()
     render(conn, "index.html", users: users)

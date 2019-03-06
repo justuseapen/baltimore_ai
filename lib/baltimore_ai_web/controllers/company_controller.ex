@@ -4,6 +4,8 @@ defmodule BaltimoreAiWeb.CompanyController do
   alias BaltimoreAi.Companies
   alias BaltimoreAi.Companies.Company
 
+  plug :load_and_authorize_resource, model: Company, only: [:edit, :update, :delete]
+
   def index(conn, _params) do
     companies = Companies.list_companies()
     render(conn, "index.html", companies: companies)

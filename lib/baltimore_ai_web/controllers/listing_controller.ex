@@ -6,6 +6,8 @@ defmodule BaltimoreAiWeb.ListingController do
 
   @filters_available ["text", "job_type", "job_place"]
 
+  plug :load_and_authorize_resource, model: Listing, only: [:edit, :update, :delete]
+
   def index(conn, params) do
     page_number = get_page_number(params)
 
