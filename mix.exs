@@ -67,6 +67,10 @@ defmodule BaltimoreAi.MixProject do
       {:slugger, "~> 0.2"},
       {:timex, "~> 3.1"},
 
+      # Permissions
+      {:canada, "~> 1.0.1"},
+      {:canary, "~> 1.1.1"},
+
       # Tests
       {:mock, "~> 0.3.0", only: :test},
       {:faker_elixir_octopus, "~> 1.0.0",  only: [:dev, :test]},

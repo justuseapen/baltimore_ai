@@ -9,4 +9,7 @@ defmodule BaltimoreAi.Auth.Pipeline do
   plug Guardian.Plug.VerifyHeader, claims: %{"typ" => "access"}
   # Load the user if either of the verifications worked
   plug Guardian.Plug.LoadResource, allow_blank: true
+  # By default Canary will look for a current_user map in the conn to handle
+  # permissions.
+  plug BaltimoreAi.Plugs.CurrentUser
 end

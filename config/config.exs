@@ -40,6 +40,11 @@ config :ueberauth, Ueberauth.Strategy.Google.OAuth,
   client_id: System.get_env("GOOGLE_CLIENT_ID"),
   client_secret: System.get_env("GOOGLE_CLIENT_SECRET")
 
+config :canary,
+  repo: BaltimoreAi.Repo,
+  unauthorized_handler: {BaltimoreAi.Auth.ErrorHandler, :handle_unauthorized},
+  not_found_handler: {BaltimoreAi.Auth.ErrorHandler, :handle_not_found}
+
 # Configures authentication with Guardian
 config :baltimore_ai, BaltimoreAi.Auth.Guardian,
   issuer: "BaltimoreAi",

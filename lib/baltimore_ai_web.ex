@@ -23,7 +23,10 @@ defmodule BaltimoreAiWeb do
 
       import Plug.Conn
       import BaltimoreAiWeb.Gettext
+      # TODO: the alias below could be an import instead so that we could use
+      # its helpers without calling the module name.
       alias BaltimoreAiWeb.Router.Helpers, as: Routes
+      import Canary.Plugs
     end
   end
 

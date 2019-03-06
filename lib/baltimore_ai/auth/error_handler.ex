@@ -9,4 +9,18 @@ defmodule BaltimoreAi.Auth.ErrorHandler do
     |> Plug.Conn.halt()
   end
 
+  def handle_unauthorized(conn) do
+    conn
+    |> Phoenix.Controller.put_flash(:error, "Access Denied")
+    |> Phoenix.Controller.redirect(to: BaltimoreAiWeb.Router.Helpers.listing_path(conn, :index))
+    |> Plug.Conn.halt()
+  end
+
+  def handle_not_found(conn) do
+    conn
+    |> Phoenix.Controller.put_flash(:error, "Not Found")
+    |> Phoenix.Controller.redirect(to: BaltimoreAiWeb.Router.Helpers.listing_path(conn, :index))
+    |> Plug.Conn.halt()
+  end
+
 end
