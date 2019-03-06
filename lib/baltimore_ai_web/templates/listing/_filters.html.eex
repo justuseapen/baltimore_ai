@@ -13,7 +13,7 @@
             <%= text_input(f, :text,
                   id: "filter_text",
                   class: "input is-rounded",
-                  placeholder: gettext("Search listings...")) %>
+                  placeholder: gettext("Search by title, workplace, type")) %>
             <span class="icon is-small is-left">
               <i class="fas fa-search"></i>
             </span>

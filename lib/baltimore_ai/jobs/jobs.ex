@@ -103,6 +103,14 @@ defmodule BaltimoreAi.Jobs do
     Repo.one!(query)
   end
 
+  def filter_published_offers(filters, page) do
+    Listing
+    |> ListingQuery.published()
+    |> ListingQuery.order_published()
+    |> ListingQuery.by_text(filters["text"])
+    |> Repo.paginate(page: page)
+  end
+
   @doc """
   Creates a listing.
 

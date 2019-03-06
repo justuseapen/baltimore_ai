@@ -34,8 +34,12 @@ defmodule BaltimoreAi.Jobs.Queries.Listing do
     |> Enum.reduce(query, fn keyword, q ->
       from o in q,
         where:
-          ilike(o.title, ^keyword) or ilike(o.company, ^keyword) or ilike(o.summary, ^keyword) or
-            ilike(o.location, ^keyword)
+          ilike(o.title, ^keyword) or
+          ilike(o.description, ^keyword) or
+          ilike(o.location, ^keyword) or
+          ilike(o.external_url, ^keyword) or
+          ilike(o.job_type, ^keyword) or
+          ilike(o.job_place, ^keyword)
     end)
   end
 
