@@ -7,7 +7,15 @@ defimpl Canada.Can, for: BaltimoreAi.Accounts.User do
 
   import Ecto.Query
 
-  def can?(%User{id: id}, action, %Listing{poster_id: poster_id}) when action in [:edit, :update, :delete] do
+  def can?(%User{admin: true}, _, _), do: true
+
+  def can?(%User{id: id}, action, %Listing{poster_id: poster_id}) when action in [
+    :unpublished_listings,
+    :unpublished_search,
+    :edit,
+    :update,
+    :delete
+  ] do
     id == poster_id
   end
 
@@ -28,5 +36,6 @@ defimpl Canada.Can, for: BaltimoreAi.Accounts.User do
 
     Repo.all(query) != []
   end
+
 
 end

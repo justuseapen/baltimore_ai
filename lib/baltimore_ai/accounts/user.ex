@@ -12,6 +12,7 @@ defmodule BaltimoreAi.Accounts.User do
     field :token, :string
     field :hashed_password, :string
     field :permissions, :map
+    field :admin, :boolean, default: false
     field :password, :string, virtual: true
 
     has_many(:listings, BaltimoreAi.Jobs.Listing, foreign_key: :poster_id)

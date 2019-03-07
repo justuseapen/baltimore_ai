@@ -33,6 +33,18 @@ defmodule BaltimoreAi.Jobs do
     end
   end
 
+  def list_unpublished_listings(page \\ nil) do
+    query = ListingQuery.unpublished(Listing)
+
+    case page do
+      page_no when is_integer(page_no) and page_no > 0 ->
+        Repo.paginate(query, page: page)
+
+      _ ->
+        Repo.all(query)
+    end
+  end
+
   @doc """
   Returns the list of published offers.
 
@@ -106,6 +118,14 @@ defmodule BaltimoreAi.Jobs do
   def filter_published_offers(filters, page) do
     Listing
     |> ListingQuery.published()
+    |> ListingQuery.order_published()
+    |> ListingQuery.by_text(filters["text"])
+    |> Repo.paginate(page: page)
+  end
+
+  def filter_unpublished_offers(filters, page) do
+    Listing
+    |> ListingQuery.unpublished()
     |> ListingQuery.order_published()
     |> ListingQuery.by_text(filters["text"])
     |> Repo.paginate(page: page)

@@ -14,6 +14,9 @@
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="<%= Routes.listing_path(@conn, :new) %>"><%= gettext "Publish an offer" %></a>
+        <%= if @conn.assigns.current_user && @conn.assigns.current_user.admin do %>
+          <a class="navbar-item" href="<%= Routes.listing_path(@conn, :unpublished_listings) %>"><%= gettext "Unpublished offers" %></a>
+        <% end %>
         <a class="navbar-item" href="<%= Routes.page_path(@conn, :about) %>"><%= gettext "About" %></a>
       </div>
       <div class="navbar-end">

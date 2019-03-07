@@ -105,10 +105,28 @@
                 id: "offer_summary",
                 class: "textarea",
                 placeholder: gettext("Description (max 450 characters)")) %>
-          <%= error_tag(f, :summary) %>
+          <%= error_tag(f, :description) %>
         </div>
       </div>
     </div>
+
+    <%= if @conn.assigns.current_user.admin do %>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label"><%= gettext("Published At") %></label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <%= datetime_select(f, :published_at,
+              id: "offer_published_at",
+              class: "input is-medium",
+              value: Timex.now
+            ) %>
+            <%= error_tag(f, :published_at) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
 
     <div class="field is-horizontal">
       <div class="field-label">
