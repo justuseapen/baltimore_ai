@@ -126,7 +126,7 @@ defmodule BaltimoreAi.Jobs do
   def filter_unpublished_offers(filters, page) do
     Listing
     |> ListingQuery.unpublished()
-    |> ListingQuery.order_published()
+    |> ListingQuery.order_inserted()
     |> ListingQuery.by_text(filters["text"])
     |> Repo.paginate(page: page)
   end
