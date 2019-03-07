@@ -36,7 +36,7 @@ defmodule BaltimoreAi.Jobs.Listing do
 
   def changeset_update(listing, attrs) do
     listing
-    |> cast(attrs, [:title, :external_url, :description, :job_place, :job_type, :location])
+    |> cast(attrs, [:title, :external_url, :description, :job_place, :job_type, :location, :published_at])
     |> cast_assoc(:company)
     |> validate_required(:title)
     |> validate_length(:title, min: 5, max: 50)

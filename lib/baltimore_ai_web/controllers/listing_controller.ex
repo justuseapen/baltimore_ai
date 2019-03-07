@@ -6,7 +6,12 @@ defmodule BaltimoreAiWeb.ListingController do
 
   @filters_available ["text", "job_type", "job_place"]
 
-  plug :load_and_authorize_resource, model: Listing, only: [:edit, :update, :delete]
+  plug(
+    :load_and_authorize_resource,
+    model: Listing,
+    non_id_actions: [:unpublished_search, :unpublished_listings],
+    only: [:edit, :update, :delete]
+  )
 
   def index(conn, params) do
     page_number = get_page_number(params)
@@ -18,6 +23,28 @@ defmodule BaltimoreAiWeb.ListingController do
     |> assign(:page_number, page.page_number)
     |> assign(:total_pages, page.total_pages)
     |> render("index.html")
+  end
+
+  def unpublished_listings(conn, params) do
+    current_user = Guardian.Plug.current_resource(conn)
+
+    if current_user && current_user.admin do
+      page_number = get_page_number(params)
+
+      page = Jobs.list_unpublished_listings(page_number)
+
+      conn
+      |> assign(:listings, page.entries)
+      |> assign(:page_number, page.page_number)
+      |> assign(:total_pages, page.total_pages)
+      |> render("unpublished_listings.html")
+
+    else
+      conn
+      |> put_flash(:info, "Access Denied")
+      |> redirect(to: Routes.listing_path(conn, :index))
+
+    end
   end
 
   def new(conn, _params) do
@@ -97,6 +124,42 @@ defmodule BaltimoreAiWeb.ListingController do
     |> assign(:page_number, page.page_number)
     |> assign(:total_pages, page.total_pages)
     |> render("search.html")
+  end
+
+  def unpublished_search(conn, params) do
+    current_user = Guardian.Plug.current_resource(conn)
+
+    if current_user && current_user.admin do
+      page_number = get_page_number(params)
+
+      filters =
+        params
+        |> Map.get("filters", %{})
+        |> Enum.reduce(%{}, fn {k, v}, acc ->
+          case {k, v} do
+            {key, _} when key not in @filters_available -> acc
+            {_, val} when val in ["", nil] -> acc
+            {key, str} when is_binary(str) -> Map.put(acc, key, String.trim(str))
+            {key, val} -> Map.put(acc, key, val)
+          end
+        end)
+        |> Enum.reject(fn {_, v} -> is_nil(v) or v == "" end)
+        |> Enum.into(%{})
+
+      page = Jobs.filter_unpublished_offers(filters, page_number)
+
+      conn
+      |> assign(:offers, page.entries)
+      |> assign(:page_number, page.page_number)
+      |> assign(:total_pages, page.total_pages)
+      |> render("unpublished_search.html")
+
+    else
+      conn
+      |> put_flash(:info, "Access Denied")
+      |> redirect(to: Routes.listing_path(conn, :index))
+
+    end
   end
 
   defp get_page_number(params) do

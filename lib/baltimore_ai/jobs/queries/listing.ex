@@ -51,14 +51,14 @@ defmodule BaltimoreAi.Jobs.Queries.Listing do
   end
 
   def unpublished(query) do
-    from o in query, where: is_nil(o.published_at)
+    from o in query, where: is_nil(o.published_at), preload: [:company]
   end
 
   def order_published(query) do
-    from o in query, order_by: [desc: o.published_at]
+    from o in query, order_by: [desc: o.published_at], preload: [:company]
   end
 
   def order_inserted(query) do
-    from o in query, order_by: [desc: o.inserted_at]
+    from o in query, order_by: [desc: o.inserted_at], preload: [:company]
   end
 end

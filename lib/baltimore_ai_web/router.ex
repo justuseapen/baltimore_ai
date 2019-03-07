@@ -31,8 +31,11 @@ defmodule BaltimoreAiWeb.Router do
     get "/login", SessionController, :new
     post "/login", SessionController, :create
     get "/page/:page", ListingController, :index, as: :offer_page
-    get "/listings/place/:filter", ListingController, :index_filtered
-    get "/listings/type/:filter", ListingController, :index_filtered
+
+    # TODO: not implemented yet
+    # get "/listings/place/:filter", ListingController, :index_filtered
+    # get "/listings/type/:filter", ListingController, :index_filtered
+
     get "/search", ListingController, :search
 
     get "/about", PageController, :about
@@ -50,7 +53,9 @@ defmodule BaltimoreAiWeb.Router do
     pipe_through [:browser, :auth, :ensure_auth]
 
     resources "/listings", ListingController, only: [:new, :create, :edit, :update, :delete]
+    get "/unpublished_search", ListingController, :unpublished_search
     get "/listings/:slug_or_id", ListingController, :show
+    get "/unpublished_listings", ListingController, :unpublished_listings
     delete "/logout", SessionController, :delete
     resources "/users", UserController
     resources "/companies", CompanyController
