@@ -9,8 +9,8 @@ defmodule BaltimoreAiWeb.ListingController do
   plug(
     :load_and_authorize_resource,
     model: Listing,
-    only: [:edit, :update, :delete],
-    non_id_actions: [:unpublished_search, :unpublished_listings]
+    non_id_actions: [:unpublished_search, :unpublished_listings],
+    only: [:edit, :update, :delete]
   )
 
   def index(conn, params) do
@@ -26,15 +26,25 @@ defmodule BaltimoreAiWeb.ListingController do
   end
 
   def unpublished_listings(conn, params) do
-    page_number = get_page_number(params)
+    current_user = Guardian.Plug.current_resource(conn)
 
-    page = Jobs.list_unpublished_listings(page_number)
+    if current_user && current_user.admin do
+      page_number = get_page_number(params)
 
-    conn
-    |> assign(:listings, page.entries)
-    |> assign(:page_number, page.page_number)
-    |> assign(:total_pages, page.total_pages)
-    |> render("unpublished_listings.html")
+      page = Jobs.list_unpublished_listings(page_number)
+
+      conn
+      |> assign(:listings, page.entries)
+      |> assign(:page_number, page.page_number)
+      |> assign(:total_pages, page.total_pages)
+      |> render("unpublished_listings.html")
+
+    else
+      conn
+      |> put_flash(:info, "Access Denied")
+      |> redirect(to: Routes.listing_path(conn, :index))
+
+    end
   end
 
   def new(conn, _params) do
