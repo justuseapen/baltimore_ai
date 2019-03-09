@@ -17,7 +17,8 @@ defmodule BaltimoreAiWeb.SessionHelper do
           first_name: Faker.Name.first_name(),
           last_name: Faker.Name.last_name(),
           email: Faker.Internet.email(),
-          hashed_password: "$2b$12$HaSA5EZeWPmBzynzOU.7cutROZ.5wRqM/zJwu3kWACWUZbZ7JdKwi"
+          hashed_password: "$2b$12$HaSA5EZeWPmBzynzOU.7cutROZ.5wRqM/zJwu3kWACWUZbZ7JdKwi",
+          admin: true
         }
       )
 

@@ -95,7 +95,9 @@ defmodule BaltimoreAi.Jobs do
   """
   # filters when id comes as 1, "1" or "some slug-name"
   def get_listing!(slug_or_id) when is_integer(slug_or_id) do
-    Repo.get!(Listing, slug_or_id)
+    Listing
+    |> Repo.get!(slug_or_id)
+    |> Repo.preload(:company)
   end
 
   def get_listing!(slug_or_id) when is_bitstring(slug_or_id) do
@@ -103,12 +105,14 @@ defmodule BaltimoreAi.Jobs do
       case Integer.parse(slug_or_id) do
         {id, _} ->
           from(l in Listing,
-            where: l.id == ^id
+            where: l.id == ^id,
+            preload: [:company]
           )
 
         :error ->
           from(l in Listing,
-            where: l.slug == ^slug_or_id
+            where: l.slug == ^slug_or_id,
+            preload: [:company]
           )
       end
 
