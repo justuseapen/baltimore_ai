@@ -8,7 +8,7 @@
         <%= gettext("AI jobs, news, and events out of Baltimore, Maryland!") %>
       </h2>
       <%= link(gettext("Post a job offer!"), to: Routes.listing_path(@conn, :new), class: "button btn new-offer-btn is-primary is-large") %>
-      <%= link(gettext("Learn More"), to: Routes.page_path(@conn, :about), class: "button btn is-large") %>
+      <%= link(gettext("Learn More"), to: Routes.page_path(@conn, :about), class: "button btn learn-more-btn is-large") %>
     </div>
     <div id="particles"></div>
   </div>

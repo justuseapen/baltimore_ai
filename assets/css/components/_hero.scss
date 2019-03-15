@@ -23,6 +23,11 @@
     border: 1px solid $primary-light;
   }
 
+  .learn-more-btn {
+    background-color: #fff;
+    border: 1px solid $primary-light;
+  }
+
   @media screen and (min-width: $tablet) {
     .hero-body {
       padding-bottom: 4.5rem;
