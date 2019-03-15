@@ -1,3 +1,14 @@
-<p>
-Baltimore AI is a group of AI enthusiasts that meets weekly in downtown Baltimore.
-</p>
+<div class="box">
+  <p>
+  Baltimore AI is a group of AI enthusiasts that meets weekly in downtown Baltimore.
+  </p>
+  <br>
+  <p>
+  We're on a mission to <strong>make Baltimore beautiful, prosperous, and safe</strong> using Artificial Intelligence.
+  </p>
+  <br>
+  <p>
+  We meet every week. Everyone is welcome to join us. See our <a href="https://www.meetup.com/Baltimore-AI/">Meetup page for event details</a>.
+  </p>
+
+</div>
