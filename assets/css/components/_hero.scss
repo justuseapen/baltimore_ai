@@ -13,10 +13,13 @@
     font-size: 1rem;
   }
 
-  .new-offer-btn {
-    background-color: $navbar_color;
+  .btn{
     margin-top: 0.9rem;
     z-index: 20;
+  }
+
+  .new-offer-btn {
+    background-color: $navbar_color;
     border: 1px solid $primary-light;
   }
 

@@ -23,7 +23,8 @@ defmodule BaltimoreAi.Factory do
       title: Faker.Name.title(),
       published_at: Faker.Date.forward(1..5),
       slug: Faker.Internet.user_name(),
-      poster: build(:user)
+      poster: build(:user),
+      company: build(:company)
     }
   end
 

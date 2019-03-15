@@ -9,14 +9,9 @@ defmodule BaltimoreAiWeb.UserControllerTest do
   @update_attrs %{first_name: "Anne", last_name: "Vegas", email: "anne.vegas@email.com", password: "qwertyasdfgh"}
   @invalid_attrs %{first_name: nil, last_name: nil, email: nil, password: nil}
 
-  def fixture(:user) do
-    {:ok, user} = Accounts.create_user(@create_attrs)
-    user
-  end
-
   setup do
-    {:ok, conn: conn, user: _user} = authenticated_session()
-    {:ok, %{conn: conn}}
+    {:ok, conn: conn, user: user} = authenticated_session()
+    {:ok, %{conn: conn, user: user}}
   end
 
   describe "index" do
@@ -51,8 +46,6 @@ defmodule BaltimoreAiWeb.UserControllerTest do
   end
 
   describe "edit user" do
-    setup [:create_user]
-
     test "renders form for editing chosen user", %{conn: conn, user: user} do
       conn = get(conn, Routes.user_path(conn, :edit, user))
       assert html_response(conn, 200) =~ "Edit User"
@@ -60,8 +53,6 @@ defmodule BaltimoreAiWeb.UserControllerTest do
   end
 
   describe "update user" do
-    setup [:create_user]
-
     test "redirects when data is valid", %{conn: conn, user: user} do
       conn = put(conn, Routes.user_path(conn, :update, user), user: @update_attrs)
       assert redirected_to(conn) == Routes.user_path(conn, :show, user)
@@ -77,8 +68,6 @@ defmodule BaltimoreAiWeb.UserControllerTest do
   end
 
   describe "delete user" do
-    setup [:create_user]
-
     test "deletes chosen user", %{conn: conn, user: user} do
       conn = delete(conn, Routes.user_path(conn, :delete, user))
       assert redirected_to(conn) == Routes.user_path(conn, :index)
@@ -88,8 +77,4 @@ defmodule BaltimoreAiWeb.UserControllerTest do
     end
   end
 
-  defp create_user(_) do
-    user = fixture(:user)
-    {:ok, user: user}
-  end
 end

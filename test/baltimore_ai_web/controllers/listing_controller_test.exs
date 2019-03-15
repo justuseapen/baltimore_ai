@@ -70,7 +70,7 @@ defmodule BaltimoreAiWeb.ListingControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.listing_path(conn, :create), listing: @invalid_attrs)
-      assert length(conn.assigns.changeset.errors) == 3
+      assert length(conn.assigns.changeset.errors) == 5
     end
   end
 
