@@ -1,0 +1,10 @@
+<%# locals: (company:) %>
+<%= link_to company_path(company), class: "block py-3 border-b border-stone-100 group" do %>
+  <div class="flex items-baseline justify-between gap-4">
+    <div class="font-semibold text-stone-900 group-hover:text-red-700"><%= company.name %></div>
+    <div class="text-xs uppercase tracking-wider text-stone-500 shrink-0"><%= category_label(company.primary_category) %></div>
+  </div>
+  <% if company.tagline.present? %>
+    <div class="text-sm text-stone-600 mt-1 line-clamp-1"><%= company.tagline %></div>
+  <% end %>
+<% end %>

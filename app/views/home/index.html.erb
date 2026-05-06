@@ -1,0 +1,60 @@
+<% content_for :title, "Baltimore.ai · The directory of AI in Baltimore" %>
+<% content_for :meta_description, "A curated directory of #{@total_companies} AI companies, research labs, and resources across the Baltimore metro." %>
+
+<section class="py-8 md:py-16 border-b border-stone-200">
+  <div class="max-w-3xl">
+    <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-4">Baltimore · Maryland · USA</p>
+    <h1 class="text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-stone-900">
+      The directory of <span class="text-red-700">AI</span> in Baltimore.
+    </h1>
+    <p class="mt-6 text-xl text-stone-600 leading-relaxed">
+      <%= @total_companies %> companies, <%= @resources.size %> labs and accelerators, and the people building applied AI in the city &mdash; from Hopkins APL spinouts to Hampden basements.
+    </p>
+    <div class="mt-8 flex gap-3 flex-wrap">
+      <%= link_to "Browse companies →", companies_path, class: "inline-block bg-stone-900 text-white px-5 py-3 text-sm font-semibold rounded-md hover:bg-stone-700" %>
+      <%= link_to "By category", categories_path, class: "inline-block bg-white text-stone-900 px-5 py-3 text-sm font-semibold rounded-md border border-stone-300 hover:bg-stone-100" %>
+    </div>
+  </div>
+</section>
+
+<section class="py-12">
+  <div class="flex items-baseline justify-between mb-6">
+    <h2 class="text-2xl font-black tracking-tight">Recently added</h2>
+    <%= link_to "All companies →", companies_path, class: "text-sm text-stone-600 hover:text-stone-900" %>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+    <% @featured_companies.each do |company| %>
+      <%= render "companies/row", company: company %>
+    <% end %>
+  </div>
+</section>
+
+<section class="py-12 border-t border-stone-200">
+  <div class="flex items-baseline justify-between mb-6">
+    <h2 class="text-2xl font-black tracking-tight">Categories</h2>
+    <%= link_to "All categories →", categories_path, class: "text-sm text-stone-600 hover:text-stone-900" %>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <% @category_counts.sort_by { |_k, v| -v }.each do |slug, count| %>
+      <%= link_to category_path(slug), class: "block p-4 bg-white border border-stone-200 rounded-md hover:border-stone-400" do %>
+        <div class="font-semibold text-stone-900"><%= category_label(slug) %></div>
+        <div class="text-sm text-stone-500 mt-1"><%= count %> <%= "company".pluralize(count) %></div>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+
+<section class="py-12 border-t border-stone-200">
+  <div class="flex items-baseline justify-between mb-6">
+    <h2 class="text-2xl font-black tracking-tight">Labs & resources</h2>
+    <%= link_to "All resources →", resources_path, class: "text-sm text-stone-600 hover:text-stone-900" %>
+  </div>
+  <ul class="space-y-2">
+    <% @resources.each do |resource| %>
+      <li class="border-b border-stone-100 last:border-0 py-3 flex items-baseline justify-between gap-4">
+        <%= link_to resource.name, resource_path(resource), class: "font-semibold text-stone-900 hover:text-red-700" %>
+        <span class="text-xs uppercase tracking-wider text-stone-500"><%= resource_type_label(resource.resource_type) %></span>
+      </li>
+    <% end %>
+  </ul>
+</section>

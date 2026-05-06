@@ -1,0 +1,37 @@
+<% content_for :title, page_title("AI companies in Baltimore") %>
+<% content_for :meta_description, "Browse #{@companies.size} AI companies based in or with significant presence in Baltimore, Maryland." %>
+
+<%= render "shared/breadcrumbs", crumbs: [ [ "Home", root_path ], [ "Companies", nil ] ] %>
+
+<header class="mb-10">
+  <h1 class="text-4xl md:text-5xl font-black tracking-tight">AI companies in Baltimore</h1>
+  <p class="mt-3 text-lg text-stone-600 max-w-2xl">
+    Companies headquartered in Baltimore or with significant operations in the metro that are building AI products or applying machine learning at the core of their work.
+  </p>
+</header>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
+  <% @companies.each do |company| %>
+    <%= render "row", company: company %>
+  <% end %>
+</div>
+
+<script type="application/ld+json">
+<%=
+  ld = {
+    "@context" => "https://schema.org",
+    "@type" => "ItemList",
+    "name" => "AI companies in Baltimore",
+    "numberOfItems" => @companies.size,
+    "itemListElement" => @companies.each_with_index.map do |company, i|
+      {
+        "@type" => "ListItem",
+        "position" => i + 1,
+        "url" => URI.join(request.base_url, company_path(company)).to_s,
+        "name" => company.name
+      }
+    end
+  }
+  raw ld.to_json
+%>
+</script>
