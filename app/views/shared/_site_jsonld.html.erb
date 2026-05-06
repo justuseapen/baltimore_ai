@@ -1,0 +1,24 @@
+<script type="application/ld+json">
+<%=
+  ld = {
+    "@context" => "https://schema.org",
+    "@graph" => [
+      {
+        "@type" => "Organization",
+        "@id" => "#{request.base_url}/#organization",
+        "name" => "Baltimore.ai",
+        "url" => request.base_url,
+        "description" => "A curated directory of AI companies, research labs, and resources in the Baltimore metro."
+      },
+      {
+        "@type" => "WebSite",
+        "@id" => "#{request.base_url}/#website",
+        "url" => request.base_url,
+        "name" => "Baltimore.ai",
+        "publisher" => { "@id" => "#{request.base_url}/#organization" }
+      }
+    ]
+  }
+  raw ld.to_json
+%>
+</script>

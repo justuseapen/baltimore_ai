@@ -1,0 +1,35 @@
+<%# locals: (crumbs: []) — array of [label, path] %>
+<nav aria-label="Breadcrumb" class="text-sm text-stone-500 mb-6">
+  <ol class="flex flex-wrap items-center gap-2">
+    <% crumbs.each_with_index do |(label, path), i| %>
+      <li class="flex items-center gap-2">
+        <% if path && i < crumbs.length - 1 %>
+          <%= link_to label, path, class: "hover:text-stone-900" %>
+        <% else %>
+          <span class="text-stone-700"><%= label %></span>
+        <% end %>
+        <% if i < crumbs.length - 1 %>
+          <span aria-hidden="true">/</span>
+        <% end %>
+      </li>
+    <% end %>
+  </ol>
+</nav>
+
+<script type="application/ld+json">
+<%=
+  ld = {
+    "@context" => "https://schema.org",
+    "@type" => "BreadcrumbList",
+    "itemListElement" => crumbs.each_with_index.map do |(label, path), i|
+      {
+        "@type" => "ListItem",
+        "position" => i + 1,
+        "name" => label,
+        "item" => path ? URI.join(request.base_url, path).to_s : nil
+      }.compact
+    end
+  }
+  raw ld.to_json
+%>
+</script>

@@ -1,0 +1,52 @@
+# fly.toml — Fly.io configuration for baltimore.ai
+#
+# To launch:
+#   fly launch --no-deploy --copy-config   # confirms app name + region
+#   fly postgres create --name baltimore-ai-db --region iad
+#   fly postgres attach --app baltimore-ai baltimore-ai-db
+#   fly secrets set RAILS_MASTER_KEY=$(cat config/master.key)
+#   fly deploy
+
+app = "baltimore-ai"
+primary_region = "iad"
+
+[build]
+
+[deploy]
+  release_command = "./bin/rails db:prepare"
+
+[env]
+  PORT = "8080"
+  RAILS_LOG_TO_STDOUT = "true"
+  RAILS_SERVE_STATIC_FILES = "true"
+  APP_HOST = "https://baltimore.ai"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 200
+    soft_limit = 100
+
+[[http_service.checks]]
+  interval = "30s"
+  timeout = "5s"
+  grace_period = "10s"
+  method = "GET"
+  path = "/up"
+
+[processes]
+  app = "./bin/thrust ./bin/rails server"
+  worker = "bundle exec rake solid_queue:start"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1

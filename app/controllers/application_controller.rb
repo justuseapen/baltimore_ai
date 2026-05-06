@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
-
-  # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
+
+  helper_method :canonical_url
+
+  private
+
+  def canonical_url(path = request.path)
+    URI.join(request.base_url, path).to_s
+  end
 end

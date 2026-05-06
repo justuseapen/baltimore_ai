@@ -1,0 +1,33 @@
+<% content_for :title, page_title("#{category_label(@category)} companies in Baltimore") %>
+<% content_for :meta_description, "Baltimore-area companies working in #{category_label(@category)} — #{@companies.size} listed on Baltimore.ai." %>
+
+<% if @thin %>
+  <% content_for :head do %>
+    <meta name="robots" content="noindex,follow">
+  <% end %>
+<% end %>
+
+<%= render "shared/breadcrumbs", crumbs: [
+  [ "Home", root_path ],
+  [ "Categories", categories_path ],
+  [ category_label(@category), nil ]
+] %>
+
+<header class="mb-10">
+  <h1 class="text-4xl md:text-5xl font-black tracking-tight"><%= category_label(@category) %> in Baltimore</h1>
+  <p class="mt-3 text-lg text-stone-600">
+    <%= @companies.size %> Baltimore-area <%= "company".pluralize(@companies.size) %> in <%= category_label(@category) %>.
+  </p>
+</header>
+
+<% if @companies.any? %>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
+    <% @companies.each do |company| %>
+      <%= render "companies/row", company: company %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="bg-white border border-stone-200 rounded-md p-8 text-stone-600">
+    No companies listed in this category yet. <%= link_to "Browse all companies", companies_path, class: "text-red-700 hover:underline" %>.
+  </div>
+<% end %>
