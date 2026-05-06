@@ -1,0 +1,51 @@
+<h1 class="text-2xl font-black mb-6">Claims</h1>
+
+<section class="mb-10">
+  <h2 class="text-xs uppercase tracking-wider text-stone-500 mb-3">Pending review (<%= @pending.size %>)</h2>
+  <% if @pending.any? %>
+    <div class="bg-white border border-stone-200 rounded-md overflow-hidden">
+      <% @pending.each do |claim| %>
+        <div class="p-4 border-b border-stone-100 last:border-0 flex flex-wrap items-baseline justify-between gap-3">
+          <div class="min-w-0">
+            <div class="font-semibold"><%= link_to claim.company.name, admin_profile_claim_path(claim), class: "hover:text-red-700" %></div>
+            <div class="text-sm text-stone-600">
+              <%= claim.claimant_name %> &lt;<%= claim.email %>&gt; · domain <strong><%= claim.email.split('@').last %></strong> vs site <strong><%= claim.company.domain %></strong>
+            </div>
+            <div class="text-xs text-stone-500 mt-1">Submitted <%= time_ago_in_words(claim.created_at) %> ago</div>
+          </div>
+          <div class="flex gap-2">
+            <%= button_to "Approve", approve_admin_profile_claim_path(claim), method: :post, class: "bg-emerald-700 text-white px-3 py-1.5 rounded text-sm hover:bg-emerald-800" %>
+            <%= button_to "Reject",  reject_admin_profile_claim_path(claim), method: :post, class: "bg-stone-200 text-stone-700 px-3 py-1.5 rounded text-sm hover:bg-stone-300", data: { turbo_confirm: "Reject this claim?" } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="bg-white border border-stone-200 rounded-md p-6 text-stone-600 text-sm">Nothing in the queue.</div>
+  <% end %>
+</section>
+
+<section>
+  <h2 class="text-xs uppercase tracking-wider text-stone-500 mb-3">Recent activity</h2>
+  <div class="bg-white border border-stone-200 rounded-md overflow-hidden">
+    <% @recent.each do |claim| %>
+      <div class="p-3 border-b border-stone-100 last:border-0 flex items-baseline justify-between gap-3 text-sm">
+        <div>
+          <span class="font-semibold"><%= claim.company.name %></span>
+          <span class="text-stone-500"><%= claim.email %></span>
+        </div>
+        <div class="text-xs">
+          <span class="px-2 py-0.5 rounded
+            <%= case claim.review_status
+                when 'auto_approved', 'approved' then 'bg-emerald-50 text-emerald-700'
+                when 'rejected' then 'bg-stone-200 text-stone-700'
+                else 'bg-stone-100 text-stone-600'
+                end %>">
+            <%= claim.review_status %>
+          </span>
+          <span class="text-stone-500 ml-2"><%= time_ago_in_words(claim.updated_at) %> ago</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

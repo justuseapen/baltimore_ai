@@ -4,6 +4,15 @@
 # Editorial blurbs are unique per entry to satisfy Google's thin-content threshold.
 # Run with: bin/rails db:seed
 
+puts "Seeding admin user..."
+
+if (admin_email = ENV["ADMIN_EMAIL"]).present?
+  admin = User.find_or_initialize_by(email: admin_email)
+  admin.role = "admin"
+  admin.save!
+  puts "  -> admin user: #{admin.email}"
+end
+
 puts "Seeding tags..."
 
 TAGS = {

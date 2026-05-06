@@ -1,0 +1,13 @@
+<div style="font-family: -apple-system, sans-serif; max-width: 480px; padding: 24px; color: #1c1917;">
+  <p style="margin: 0 0 16px; font-size: 16px;">Click below to sign in to Baltimore.ai:</p>
+  <p style="margin: 0 0 24px;">
+    <a href="<%= @url %>" style="display: inline-block; background: #b91c1c; color: white; padding: 10px 16px; text-decoration: none; border-radius: 4px; font-size: 14px;">Sign in</a>
+  </p>
+  <p style="margin: 0 0 16px; font-size: 13px; color: #78716c; word-break: break-all;">
+    Or copy this link: <%= @url %>
+  </p>
+  <p style="margin: 0 0 16px; font-size: 14px; color: #57534e;">
+    This link expires in <%= @ttl_minutes %> minutes. If you didn't request it, you can ignore this email.
+  </p>
+  <p style="margin: 24px 0 0; font-size: 13px; color: #a8a29e;">— Baltimore.ai</p>
+</div>

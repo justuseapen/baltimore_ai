@@ -1,0 +1,38 @@
+<div class="mb-4 text-sm">
+  <%= link_to "← Back to claims", admin_profile_claims_path, class: "text-stone-600 hover:text-stone-900" %>
+</div>
+
+<h1 class="text-2xl font-black mb-2"><%= @claim.company.name %></h1>
+<p class="text-stone-600 mb-6">Claim by <strong><%= @claim.claimant_name %></strong> &lt;<%= @claim.email %>&gt;</p>
+
+<div class="grid md:grid-cols-2 gap-6">
+  <div class="bg-white border border-stone-200 rounded-md p-5">
+    <h2 class="text-xs uppercase tracking-wider text-stone-500 mb-3">Claim</h2>
+    <dl class="space-y-2 text-sm">
+      <div class="flex justify-between"><dt class="text-stone-500">Status</dt><dd class="font-semibold"><%= @claim.review_status %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Method</dt><dd><%= @claim.verification_method || "—" %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Verified at</dt><dd><%= @claim.verified_at&.strftime("%Y-%m-%d %H:%M") %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Submitted</dt><dd><%= @claim.created_at.strftime("%Y-%m-%d %H:%M") %></dd></div>
+      <% if @claim.reviewed_by %>
+        <div class="flex justify-between"><dt class="text-stone-500">Reviewed by</dt><dd><%= @claim.reviewed_by %></dd></div>
+      <% end %>
+    </dl>
+  </div>
+  <div class="bg-white border border-stone-200 rounded-md p-5">
+    <h2 class="text-xs uppercase tracking-wider text-stone-500 mb-3">Company</h2>
+    <dl class="space-y-2 text-sm">
+      <div class="flex justify-between"><dt class="text-stone-500">Slug</dt><dd><%= link_to @claim.company.slug, company_path(@claim.company), class: "text-red-700 hover:underline", target: "_blank" %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Website</dt><dd><%= @claim.company.website %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Domain</dt><dd><%= @claim.company.domain %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Email domain</dt><dd><%= @claim.email.split("@").last %></dd></div>
+      <div class="flex justify-between"><dt class="text-stone-500">Currently claimed?</dt><dd><%= @claim.company.claimed? ? "Yes" : "No" %></dd></div>
+    </dl>
+  </div>
+</div>
+
+<% if @claim.review_status == "pending_review" %>
+  <div class="mt-6 flex gap-3">
+    <%= button_to "Approve and publish", approve_admin_profile_claim_path(@claim), method: :post, class: "bg-emerald-700 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-emerald-800" %>
+    <%= button_to "Reject", reject_admin_profile_claim_path(@claim), method: :post, class: "bg-stone-200 text-stone-700 px-5 py-2.5 rounded-md font-semibold hover:bg-stone-300", data: { turbo_confirm: "Reject this claim?" } %>
+  </div>
+<% end %>

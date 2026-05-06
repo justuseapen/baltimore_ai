@@ -1,0 +1,24 @@
+<h1 class="text-2xl font-black mb-6">Dashboard</h1>
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+  <div class="bg-white p-4 rounded-md border border-stone-200">
+    <div class="text-xs uppercase tracking-wider text-stone-500">Pending review</div>
+    <div class="text-3xl font-black mt-1 <%= @pending_count > 0 ? 'text-red-700' : 'text-stone-900' %>"><%= @pending_count %></div>
+  </div>
+  <div class="bg-white p-4 rounded-md border border-stone-200">
+    <div class="text-xs uppercase tracking-wider text-stone-500">Stale (>30d)</div>
+    <div class="text-3xl font-black mt-1 <%= @stale_count > 0 ? 'text-amber-700' : 'text-stone-900' %>"><%= @stale_count %></div>
+  </div>
+  <div class="bg-white p-4 rounded-md border border-stone-200">
+    <div class="text-xs uppercase tracking-wider text-stone-500">Published</div>
+    <div class="text-3xl font-black mt-1"><%= @published_companies %> / <%= @total_companies %></div>
+  </div>
+  <div class="bg-white p-4 rounded-md border border-stone-200">
+    <div class="text-xs uppercase tracking-wider text-stone-500">Claimed</div>
+    <div class="text-3xl font-black mt-1"><%= @claimed_companies %></div>
+  </div>
+</div>
+
+<div class="bg-white p-4 rounded-md border border-stone-200">
+  <%= link_to "Review pending claims →", admin_profile_claims_path, class: "text-stone-900 font-semibold hover:text-red-700" %>
+</div>
