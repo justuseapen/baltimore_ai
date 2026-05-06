@@ -217,15 +217,15 @@ Word count isn't a ranking factor; **topical coverage is**. Each company page ta
 ## Acceptance Criteria
 
 ### Functional
-- [ ] User can browse all published companies at `/companies` with category filter.
-- [ ] Each company has its own page at `/companies/[slug]` with full schema.org `Organization` JSON-LD.
+- [x] User can browse all published companies at `/companies` with category filter.
+- [x] Each company has its own page at `/companies/[slug]` with full schema.org `Organization` JSON-LD.
 - [ ] User can initiate a claim at `/claim/[slug]`, receive a verification code, complete the wizard, and the company appears as `claimed` with their edits live.
 - [ ] Domain-matching emails auto-approve; non-matching go to admin queue.
 - [ ] Admin can approve/reject pending claims at `/admin/profile_claims`.
 - [ ] Owner can edit their claimed company at `/companies/[slug]/edit` (gated by `current_user.company == @company`).
-- [ ] sitemap.xml lists all published companies, resources, categories, and guides.
-- [ ] robots.txt allows crawling of public pages, disallows `/admin`, `/claim`.
-- [ ] At least 30 seeded companies + 10 resources visible at launch.
+- [x] sitemap.xml lists all published companies, resources, categories, and guides.
+- [x] robots.txt allows crawling of public pages, disallows `/admin`, `/claim`.
+- [x] At least 30 seeded companies + 10 resources visible at launch.
 - [ ] 5 handcrafted `/guides/[slug]` "top X" editorial pages live at launch.
 
 ### Non-functional
@@ -266,19 +266,19 @@ Word count isn't a ranking factor; **topical coverage is**. Each company page ta
 
 ## Implementation Phases (rough sequencing)
 
-### Phase 1 — Foundation (week 1)
-- `rails new baltimore_ai --css tailwind --database=postgresql`
-- Fly.io setup, secrets, deploy a "hello world" with `/up` health check.
-- Schema: Company, Resource, Tag, ProfileClaim, User. Migrations.
-- Basic admin (use `avo` or `administrate`, or hand-roll thin admin — pick what's fastest).
-- Seed script with 30 real Baltimore AI companies pulled from public sources.
+### Phase 1 — Foundation (week 1) ✅ DONE 2026-05-06
+- [x] `rails new baltimore_ai --css tailwind --database=postgresql`
+- [x] Fly.io setup (fly.toml + DEPLOY.md), secrets documented, `/up` health check wired
+- [x] Schema: Company, Resource, Tag, CompanyTag, ProfileClaim, User. Migrations + indexes.
+- [ ] Basic admin (deferred to Phase 3 alongside claim moderation)
+- [x] Seed script with 30 real Baltimore AI companies + 10 resources + 18 tags
 
-### Phase 2 — Public directory (week 2)
-- Routes, controllers, views for `/`, `/companies`, `/companies/[slug]`, `/categories/[slug]`, `/resources`.
-- JSON-LD partials (`Organization`, `ItemList`, `BreadcrumbList`).
-- Sitemap + robots.
-- Tailwind design pass — distinctive, not generic AI-aesthetic. Use the `frontend-design` skill.
-- Mobile-first. Verify Core Web Vitals on real device.
+### Phase 2 — Public directory (week 2) ✅ DONE 2026-05-06
+- [x] Routes, controllers, views for `/`, `/companies`, `/companies/[slug]`, `/categories/[slug]`, `/resources`, `/resources/[slug]`
+- [x] JSON-LD partials (`Organization`, `ItemList`, `BreadcrumbList`, site-wide `Organization`+`WebSite` graph)
+- [x] Sitemap (sitemap_generator) + robots.txt with sitemap pointer
+- [x] Tailwind design pass — newspaper-style, red accent, distinctive
+- [ ] Mobile/Core Web Vitals verification on real device (still TODO)
 
 ### Phase 3 — Claim flow (week 3)
 - Port ProfileClaim model + controller from RooferRate, adapted to Company.
