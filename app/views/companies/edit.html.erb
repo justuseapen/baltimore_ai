@@ -1,0 +1,86 @@
+<% content_for :title, page_title("Edit #{@company.name}") %>
+<% content_for :head do %>
+  <meta name="robots" content="noindex,follow">
+<% end %>
+
+<div class="max-w-2xl mx-auto py-12">
+  <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-3">Edit listing</p>
+  <h1 class="text-3xl md:text-4xl font-black tracking-tight mb-8"><%= @company.name %></h1>
+
+  <% if flash[:alert] %>
+    <div class="mb-4 p-3 bg-red-50 text-red-800 border border-red-200 rounded-md text-sm"><%= flash[:alert] %></div>
+  <% end %>
+
+  <%= form_with model: @company, url: company_path(@company), method: :patch, local: true, class: "space-y-5" do |f| %>
+    <div>
+      <%= f.label :tagline, "Tagline", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+      <%= f.text_field :tagline, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+    </div>
+    <div>
+      <%= f.label :description, "Description", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+      <%= f.text_area :description, rows: 8, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+    </div>
+    <div>
+      <%= f.label :website, "Website", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+      <%= f.url_field :website, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <%= f.label :linkedin_url, "LinkedIn", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.url_field :linkedin_url, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+      <div>
+        <%= f.label :github_url, "GitHub", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.url_field :github_url, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+      <div>
+        <%= f.label :crunchbase_url, "Crunchbase", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.url_field :crunchbase_url, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+      <div>
+        <%= f.label :twitter_url, "X / Twitter", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.url_field :twitter_url, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+      <div>
+        <%= f.label :city, class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.text_field :city, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+      <div>
+        <%= f.label :state, class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.text_field :state, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+      <div>
+        <%= f.label :founded_year, "Founded", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+        <%= f.number_field :founded_year, min: 1900, max: Date.current.year, class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+      </div>
+    </div>
+
+    <div>
+      <%= f.label :employee_count_bucket, "Team size", class: "block text-sm font-semibold text-stone-700 mb-1" %>
+      <%= f.select :employee_count_bucket,
+            [ [ "Just me", "1" ], [ "2-10", "2-10" ], [ "11-50", "11-50" ], [ "51-200", "51-200" ], [ "201-500", "201-500" ], [ "501-1000", "501-1000" ], [ "1000+", "1000+" ] ],
+            { include_blank: "Choose..." },
+            class: "w-full px-3 py-2 border border-stone-300 rounded-md" %>
+    </div>
+
+    <div>
+      <p class="block text-sm font-semibold text-stone-700 mb-2">Tags</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <% Tag.order(:name).each do |tag| %>
+          <label class="flex items-center gap-2 p-2 border border-stone-200 rounded-md hover:bg-stone-50 cursor-pointer">
+            <%= check_box_tag "tag_ids[]", tag.id, @company.tag_ids.include?(tag.id),
+                  class: "h-4 w-4 text-stone-900 border-stone-300 rounded" %>
+            <span class="text-sm"><%= tag.name %></span>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between pt-6 border-t border-stone-200">
+      <%= link_to "Cancel", company_path(@company), class: "text-stone-600 hover:text-stone-900 text-sm" %>
+      <%= f.submit "Save changes", class: "bg-stone-900 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-stone-700" %>
+    </div>
+  <% end %>
+</div>

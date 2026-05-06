@@ -1,0 +1,12 @@
+<% content_for :title, page_title("Check your email") %>
+<% content_for :head do %>
+  <meta name="robots" content="noindex,follow">
+<% end %>
+
+<div class="max-w-md mx-auto py-12 text-center">
+  <h1 class="text-3xl font-black tracking-tight mb-3">Check your email</h1>
+  <p class="text-stone-600">If an account exists for that address, we just sent a sign-in link. It expires in 15 minutes.</p>
+  <p class="text-stone-500 text-sm mt-6">
+    <%= link_to "Try a different email", sign_in_request_path, class: "underline hover:text-stone-900" %>
+  </p>
+</div>

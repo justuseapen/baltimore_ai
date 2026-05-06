@@ -1,0 +1,13 @@
+<div style="font-family: -apple-system, sans-serif; max-width: 520px; padding: 24px;">
+  <h1 style="margin: 0 0 16px; font-size: 18px;">Manual review needed</h1>
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+    <tr><td style="padding: 6px 0; color: #78716c; width: 110px;">Company</td><td style="padding: 6px 0;"><strong><%= @company.name %></strong></td></tr>
+    <tr><td style="padding: 6px 0; color: #78716c;">Website</td><td style="padding: 6px 0;"><%= @company.website %></td></tr>
+    <tr><td style="padding: 6px 0; color: #78716c;">Claimant</td><td style="padding: 6px 0;"><%= @claim.claimant_name %></td></tr>
+    <tr><td style="padding: 6px 0; color: #78716c;">Email</td><td style="padding: 6px 0;"><%= @claim.email %></td></tr>
+    <tr><td style="padding: 6px 0; color: #78716c;">Domain match</td><td style="padding: 6px 0; color: #b91c1c;">No</td></tr>
+  </table>
+  <p style="margin-top: 24px;">
+    <a href="<%= admin_profile_claims_url %>" style="display: inline-block; background: #1c1917; color: white; padding: 10px 16px; text-decoration: none; border-radius: 4px; font-size: 14px;">Review queue</a>
+  </p>
+</div>

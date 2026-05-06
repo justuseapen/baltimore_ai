@@ -1,0 +1,10 @@
+<div style="font-family: -apple-system, sans-serif; max-width: 480px; padding: 24px; color: #1c1917;">
+  <p style="margin: 0 0 16px; font-size: 16px;"><strong><%= @company.name %></strong> is now live on Baltimore.ai.</p>
+  <p style="margin: 0 0 24px;">
+    <a href="<%= company_url(@company) %>" style="display: inline-block; background: #b91c1c; color: white; padding: 10px 16px; text-decoration: none; border-radius: 4px; font-size: 14px;">View your listing</a>
+  </p>
+  <p style="margin: 0 0 16px; font-size: 14px; color: #57534e;">
+    To edit it later, request a sign-in link at <a href="<%= sign_in_request_url %>"><%= sign_in_request_url %></a> using <strong><%= @user.email %></strong>.
+  </p>
+  <p style="margin: 24px 0 0; font-size: 13px; color: #a8a29e;">— Baltimore.ai</p>
+</div>

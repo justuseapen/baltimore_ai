@@ -19,9 +19,13 @@
         <% end %>
       </div>
       <% if @company.claimed? %>
-        <span class="text-xs uppercase tracking-wider px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">Claimed</span>
+        <% if signed_in? && current_user.company == @company %>
+          <%= link_to "Edit your listing →", edit_company_path(@company), class: "text-xs uppercase tracking-wider px-3 py-1.5 bg-stone-900 text-white rounded hover:bg-stone-700" %>
+        <% else %>
+          <span class="text-xs uppercase tracking-wider px-2 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded">Claimed</span>
+        <% end %>
       <% else %>
-        <span class="text-xs uppercase tracking-wider px-2 py-1 bg-stone-50 text-stone-600 border border-stone-200 rounded">Unclaimed</span>
+        <%= link_to "Claim this listing →", claim_path(@company), class: "text-xs uppercase tracking-wider px-3 py-1.5 bg-red-700 text-white rounded hover:bg-red-800" %>
       <% end %>
     </div>
 

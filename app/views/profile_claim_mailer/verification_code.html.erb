@@ -1,0 +1,11 @@
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; max-width: 480px; margin: 0 auto; padding: 24px; color: #1c1917;">
+  <p style="margin: 0 0 8px; font-size: 14px; color: #78716c;">Your Baltimore.ai verification code:</p>
+  <p style="margin: 0 0 24px; font-size: 36px; font-weight: 800; letter-spacing: 0.1em; color: #b91c1c;"><%= @code %></p>
+  <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.5;">
+    Enter this on the claim page to verify ownership of <strong><%= @company.name %></strong>.
+  </p>
+  <p style="margin: 0 0 16px; font-size: 14px; color: #78716c;">
+    This code expires in <%= @ttl_minutes %> minutes. If you didn't request it, you can ignore this email.
+  </p>
+  <p style="margin: 24px 0 0; font-size: 13px; color: #a8a29e;">— Baltimore.ai</p>
+</div>

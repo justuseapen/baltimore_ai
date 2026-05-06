@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin · Baltimore.ai</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-stone-100 text-stone-900 antialiased font-sans min-h-screen">
+    <header class="bg-stone-900 text-stone-100 border-b border-stone-700">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-6">
+          <%= link_to admin_root_path, class: "font-black tracking-tight" do %>
+            baltimore<span class="text-red-500">.ai</span> <span class="text-stone-400 text-sm font-normal">/ admin</span>
+          <% end %>
+          <nav class="flex gap-4 text-sm text-stone-300">
+            <%= link_to "Dashboard", admin_root_path, class: "hover:text-white" %>
+            <%= link_to "Claims", admin_profile_claims_path, class: "hover:text-white" %>
+          </nav>
+        </div>
+        <div class="text-sm text-stone-300">
+          <%= current_user&.email %> ·
+          <%= button_to "Sign out", sign_out_path, method: :delete, class: "underline hover:text-white", form_class: "inline" %>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-8">
+      <% if flash[:notice] %>
+        <div class="mb-4 p-3 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-md text-sm"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="mb-4 p-3 bg-red-50 text-red-800 border border-red-200 rounded-md text-sm"><%= flash[:alert] %></div>
+      <% end %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

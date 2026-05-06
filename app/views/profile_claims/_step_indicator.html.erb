@@ -1,0 +1,15 @@
+<%# locals: (current:, steps: ProfileClaimsController::WIZARD_STEPS) %>
+<ol class="flex items-center gap-2 text-xs uppercase tracking-wider text-stone-500 mb-8">
+  <% steps.each_with_index do |step, i| %>
+    <% active = step == current %>
+    <% done   = steps.index(current) > i %>
+    <li class="flex items-center gap-2">
+      <span class="<%= active ? 'text-stone-900 font-semibold' : (done ? 'text-stone-700' : '') %>">
+        <%= i + 1 %>. <%= step %>
+      </span>
+      <% if i < steps.length - 1 %>
+        <span aria-hidden="true">/</span>
+      <% end %>
+    </li>
+  <% end %>
+</ol>
