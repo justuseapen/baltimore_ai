@@ -31,3 +31,46 @@
     No companies listed in this category yet. <%= link_to "Browse all companies", companies_path, class: "text-red-700 hover:underline" %>.
   </div>
 <% end %>
+
+<% if @companies.any? %>
+  <% label = category_label(@category) %>
+  <% sample_names = @companies.first(3).map(&:name).join(", ") %>
+  <% faqs = [
+    [ "How many #{label} companies are based in Baltimore?",
+      "Baltimore.ai lists #{@companies.size} #{label} #{@companies.size == 1 ? 'company' : 'companies'} in or with significant presence in the Baltimore metro." ],
+    [ "Who are the most established #{label} companies in Baltimore?",
+      "Notable #{label} companies in Baltimore include #{sample_names}. See the full list above." ],
+    [ "Where in Baltimore is the #{label} cluster concentrated?",
+      "Baltimore-area #{label} companies are clustered around Johns Hopkins's East Baltimore campus, the bwtech@UMBC research park, and the I-95 / Fort Meade corridor between Baltimore and DC." ],
+    [ "How can a #{label} company get listed on Baltimore.ai?",
+      "Baltimore.ai accepts self-serve claims. If you work at a Baltimore-area #{label} company that should be listed, contact us or claim an existing listing to add or update an entry." ]
+  ] %>
+<script type="application/ld+json">
+<%=
+  ld = {
+    "@context" => "https://schema.org",
+    "@type" => "FAQPage",
+    "mainEntity" => faqs.map do |q, a|
+      {
+        "@type" => "Question",
+        "name" => q,
+        "acceptedAnswer" => { "@type" => "Answer", "text" => a }
+      }
+    end
+  }
+  raw ld.to_json
+%>
+</script>
+
+<section class="mt-16 border-t border-stone-200 pt-8 max-w-3xl">
+  <h2 class="text-xs uppercase tracking-wider text-stone-500 mb-4">Frequently asked</h2>
+  <dl class="space-y-6">
+    <% faqs.each do |q, a| %>
+      <div>
+        <dt class="font-semibold text-stone-900"><%= q %></dt>
+        <dd class="mt-1 text-stone-700"><%= a %></dd>
+      </div>
+    <% end %>
+  </dl>
+</section>
+<% end %>

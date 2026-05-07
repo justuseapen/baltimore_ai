@@ -226,7 +226,7 @@ Word count isn't a ranking factor; **topical coverage is**. Each company page ta
 - [x] sitemap.xml lists all published companies, resources, categories, and guides.
 - [x] robots.txt allows crawling of public pages, disallows `/admin`, `/claim`.
 - [x] At least 30 seeded companies + 10 resources visible at launch.
-- [ ] 5 handcrafted `/guides/[slug]` "top X" editorial pages live at launch.
+- [x] 5 handcrafted `/guides/[slug]` "top X" editorial pages live at launch.
 
 ### Non-functional
 - [ ] Lighthouse SEO score ≥95 on home, `/companies`, `/companies/[slug]`, a category hub.

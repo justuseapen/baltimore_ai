@@ -23,6 +23,9 @@ gem "bcrypt", "~> 3.1.7"
 # Sitemap generation for SEO [https://github.com/kjvarga/sitemap_generator]
 gem "sitemap_generator"
 
+# Markdown rendering for editorial guides [https://github.com/gjtorikian/commonmarker]
+gem "commonmarker"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

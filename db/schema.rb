@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_06_153442) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_06_180218) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -55,6 +55,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_06_153442) do
     t.index ["company_id", "tag_id"], name: "index_company_tags_on_company_id_and_tag_id", unique: true
     t.index ["company_id"], name: "index_company_tags_on_company_id"
     t.index ["tag_id"], name: "index_company_tags_on_tag_id"
+  end
+
+  create_table "guides", force: :cascade do |t|
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.text "intro"
+    t.string "meta_description"
+    t.string "meta_title"
+    t.datetime "published_at"
+    t.string "slug", null: false
+    t.string "status", default: "draft", null: false
+    t.string "title", null: false
+    t.datetime "updated_at", null: false
+    t.index ["published_at"], name: "index_guides_on_published_at"
+    t.index ["slug"], name: "index_guides_on_slug", unique: true
+    t.index ["status"], name: "index_guides_on_status"
   end
 
   create_table "profile_claims", force: :cascade do |t|
