@@ -29,6 +29,27 @@
   </div>
 </section>
 
+<% if @guides.any? %>
+<section class="py-12 border-t border-stone-200">
+  <div class="flex items-baseline justify-between mb-6">
+    <h2 class="text-2xl font-black tracking-tight">Guides</h2>
+    <%= link_to "All guides →", guides_path, class: "text-sm text-stone-600 hover:text-stone-900" %>
+  </div>
+  <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <% @guides.each do |guide| %>
+      <li class="bg-white border border-stone-200 rounded-md p-5 hover:border-stone-400">
+        <%= link_to guide_path(guide), class: "block group" do %>
+          <h3 class="font-black tracking-tight text-stone-900 group-hover:text-red-700 leading-snug"><%= guide.title %></h3>
+          <% if guide.intro.present? %>
+            <p class="mt-2 text-sm text-stone-600 line-clamp-3"><%= guide.intro %></p>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+<% end %>
+
 <section class="py-12 border-t border-stone-200">
   <div class="flex items-baseline justify-between mb-6">
     <h2 class="text-2xl font-black tracking-tight">Categories</h2>

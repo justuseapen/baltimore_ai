@@ -1,0 +1,57 @@
+<% content_for :title, page_title(@guide.meta_title.presence || @guide.title) %>
+<% content_for :meta_description, (@guide.meta_description.presence || @guide.intro.to_s.truncate(160)) %>
+<% content_for :og_type, "article" %>
+
+<%= render "shared/breadcrumbs", crumbs: [
+  [ "Home", root_path ],
+  [ "Guides", guides_path ],
+  [ @guide.title, nil ]
+] %>
+
+<article class="max-w-3xl">
+  <header class="border-b border-stone-200 pb-8 mb-8">
+    <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-3">Guide · <%= @guide.published_at.strftime("%B %Y") %></p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight"><%= @guide.title %></h1>
+    <% if @guide.intro.present? %>
+      <p class="mt-4 text-xl text-stone-600 leading-relaxed"><%= @guide.intro %></p>
+    <% end %>
+  </header>
+
+  <div class="prose-editorial">
+    <%= render_markdown(@guide.body) %>
+  </div>
+</article>
+
+<% if @related.any? %>
+  <aside class="max-w-3xl mt-16 border-t border-stone-200 pt-8">
+    <h2 class="text-xs uppercase tracking-wider text-stone-500 mb-4">More guides</h2>
+    <ul class="space-y-3">
+      <% @related.each do |g| %>
+        <li>
+          <%= link_to guide_path(g), class: "block group" do %>
+            <div class="font-semibold text-stone-900 group-hover:text-red-700"><%= g.title %></div>
+            <% if g.intro.present? %>
+              <div class="text-sm text-stone-600 line-clamp-1"><%= g.intro %></div>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<script type="application/ld+json">
+<%=
+  ld = {
+    "@context" => "https://schema.org",
+    "@type" => "Article",
+    "headline" => @guide.title,
+    "description" => @guide.intro,
+    "datePublished" => @guide.published_at.iso8601,
+    "dateModified" => @guide.updated_at.iso8601,
+    "author" => { "@type" => "Organization", "name" => "Baltimore.ai" },
+    "publisher" => { "@type" => "Organization", "name" => "Baltimore.ai", "url" => request.base_url }
+  }.compact
+  raw ld.to_json
+%>
+</script>

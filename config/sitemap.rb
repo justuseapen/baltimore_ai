@@ -5,6 +5,11 @@ SitemapGenerator::Sitemap.create do
   add companies_path, priority: 0.9, changefreq: "weekly"
   add categories_path, priority: 0.7, changefreq: "monthly"
   add resources_path, priority: 0.7, changefreq: "monthly"
+  add guides_path,    priority: 0.8, changefreq: "weekly"
+
+  Guide.published.find_each do |guide|
+    add guide_path(guide), lastmod: guide.updated_at, priority: 0.9, changefreq: "monthly"
+  end
 
   Company.published.find_each do |company|
     add company_path(company), lastmod: company.updated_at, priority: 0.8, changefreq: "monthly"

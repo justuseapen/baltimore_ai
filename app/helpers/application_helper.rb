@@ -31,4 +31,9 @@ module ApplicationHelper
   def page_title(*parts)
     parts.compact.push("Baltimore.ai").join(" · ")
   end
+
+  def render_markdown(text)
+    return "" if text.blank?
+    sanitize(Commonmarker.to_html(text, options: { extension: { table: true, strikethrough: true, autolink: true } }))
+  end
 end

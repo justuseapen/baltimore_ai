@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :companies, only: [ :index, :show, :edit, :update ], param: :slug
   resources :categories, only: [ :index, :show ], param: :slug
   resources :resources, only: [ :index, :show ], param: :slug
+  resources :guides, only: [ :index, :show ], param: :slug
 
   # Sessions (magic link auth)
   get    "sign-in",         to: "sessions#new",     as: :sign_in_request

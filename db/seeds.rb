@@ -213,6 +213,8 @@ COMPANIES = [
     tags: %w[cybersecurity-ai defense-ai],
     status: "published"
   },
+  # TODO(curator): Stride.ai's Baltimore presence is unverified. Hidden until confirmed
+  # or replaced. See pre-launch notes.
   {
     slug: "stride-pharma",
     name: "Stride.ai",
@@ -223,7 +225,7 @@ COMPANIES = [
     founded_year: 2017,
     employee_count_bucket: "51-200",
     tags: %w[natural-language-processing healthcare-ai fintech-ai],
-    status: "published"
+    status: "hidden"
   },
   {
     slug: "remesh",
@@ -321,6 +323,8 @@ COMPANIES = [
     tags: %w[healthcare-ai machine-learning],
     status: "published"
   },
+  # TODO(curator): Element Biosciences is San Diego-based. Hidden until a verified
+  # Baltimore-area office or substantive collaboration can be cited.
   {
     slug: "loop-genomics",
     name: "Element Biosciences (Baltimore presence)",
@@ -331,8 +335,10 @@ COMPANIES = [
     founded_year: 2017,
     employee_count_bucket: "201-500",
     tags: %w[genomics machine-learning biotech-ai],
-    status: "published"
+    status: "hidden"
   },
+  # TODO(curator): Vita Inclinata is Denver-based. Hidden until Baltimore connection
+  # can be substantiated.
   {
     slug: "cresta-baltimore",
     name: "Vita Inclinata",
@@ -343,8 +349,10 @@ COMPANIES = [
     founded_year: 2015,
     employee_count_bucket: "51-200",
     tags: %w[robotics defense-ai],
-    status: "published"
+    status: "hidden"
   },
+  # TODO(curator): Scopio is Israeli with US ops in Boston. Hidden until bwtech
+  # connection is verified directly with the company.
   {
     slug: "scopio-labs-bwtech",
     name: "Scopio Labs (Bwtech presence)",
@@ -355,7 +363,7 @@ COMPANIES = [
     founded_year: 2015,
     employee_count_bucket: "51-200",
     tags: %w[computer-vision healthcare-ai],
-    status: "published"
+    status: "hidden"
   },
   {
     slug: "qomplx",
@@ -369,6 +377,8 @@ COMPANIES = [
     tags: %w[cybersecurity-ai fintech-ai machine-learning],
     status: "published"
   },
+  # TODO(curator): Sparkfly is Atlanta-based and remote. Hidden — distributed team
+  # presence isn't a strong enough Baltimore claim.
   {
     slug: "argo-ai-baltimore",
     name: "Sparkfly",
@@ -379,8 +389,11 @@ COMPANIES = [
     founded_year: 2011,
     employee_count_bucket: "51-200",
     tags: %w[machine-learning fintech-ai],
-    status: "published"
+    status: "hidden"
   },
+  # TODO(curator): WillowTree is Charlottesville-HQ. They acquired Mindgrub but the
+  # "Baltimore studio" framing is still a stretch as a standalone entry. Hidden
+  # in favor of keeping the Mindgrub entry.
   {
     slug: "lumen-ai-baltimore",
     name: "WillowTree (Baltimore studio)",
@@ -391,7 +404,7 @@ COMPANIES = [
     founded_year: 2008,
     employee_count_bucket: "1000+",
     tags: %w[ai-consulting llm],
-    status: "published"
+    status: "hidden"
   },
   {
     slug: "rooferrate",
@@ -536,8 +549,12 @@ end
 
 puts "  -> #{Resource.count} resources (#{Resource.published.count} published)"
 
+puts "Seeding guides..."
+load Rails.root.join("db/seeds/guides.rb")
+
 puts ""
 puts "Seed complete."
 puts "  Tags:      #{Tag.count}"
 puts "  Companies: #{Company.count} (#{Company.published.count} published)"
 puts "  Resources: #{Resource.count} (#{Resource.published.count} published)"
+puts "  Guides:    #{Guide.count} (#{Guide.published.count} published)"

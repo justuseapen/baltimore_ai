@@ -13,8 +13,20 @@ fly postgres attach --app baltimore-ai baltimore-ai-db
 # 3. Set secrets
 fly secrets set RAILS_MASTER_KEY=$(cat config/master.key)
 fly secrets set APP_HOST=https://baltimore.ai
+fly secrets set APP_HOST_NAME=baltimore.ai
+fly secrets set MAIL_FROM="Baltimore.ai <hello@baltimore.ai>"
+fly secrets set ADMIN_EMAIL=you@yourdomain.com
 
-# 4. Deploy
+# 4. Configure outbound email (Postmark)
+#    a. Sign up at postmarkapp.com
+#    b. Verify the baltimore.ai sender domain (DKIM + Return-Path DNS records)
+#    c. Generate a server token; that's the SMTP password
+fly secrets set SMTP_USERNAME=<postmark-server-token> SMTP_PASSWORD=<same-token>
+# Optional, defaults to Postmark:
+#   SMTP_ADDRESS=smtp.postmarkapp.com
+#   SMTP_PORT=587
+
+# 5. Deploy
 fly deploy
 ```
 
