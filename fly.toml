@@ -20,6 +20,7 @@ primary_region = "iad"
   RAILS_LOG_TO_STDOUT = "true"
   RAILS_SERVE_STATIC_FILES = "true"
   APP_HOST = "https://baltimore.ai"
+  SOLID_QUEUE_IN_PUMA = "true"
 
 [http_service]
   internal_port = 8080
@@ -43,10 +44,18 @@ primary_region = "iad"
 
 [processes]
   app = "./bin/thrust ./bin/rails server"
-  worker = "bundle exec rake solid_queue:start"
+
+# Solid Queue runs in-process via SOLID_QUEUE_IN_PUMA at this volume.
+# When mail/job throughput grows, split out a worker process group:
+#   worker = "bundle exec rake solid_queue:start"
 
 [[vm]]
   size = "shared-cpu-1x"
   memory = "1gb"
   cpu_kind = "shared"
   cpus = 1
+
+[[mounts]]
+  source = "baltimore_ai_storage"
+  destination = "/rails/storage"
+  initial_size = "1gb"
