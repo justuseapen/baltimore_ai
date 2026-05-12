@@ -99,22 +99,10 @@ total ~1 week of part-time effort.
 
 ## Open questions
 
-- **How do we structure the "Request an introduction" flow?**
-  Options: (a) form on every claimed company page, (b) form on category
-  hubs that routes to 2-3 vendors, (c) both. The RooferRate analog is
-  closer to (b) — buyer self-qualifies by category, you route to top vendors.
-- **Who decides which 2-3 vendors a lead routes to?**
-  Options: round-robin among paying vendors; pinned editorial choice;
-  buyer picks from a list. Different revenue/UX trade-offs.
-- **How transparent is the "Featured" label?**
-  RooferRate makes it explicit. Worth doing the same here — opacity erodes
-  the directory's editorial credibility, which is the entire moat.
-- **Stripe vs Lemon Squeezy for billing?**
-  Stripe is standard; LS handles VAT/sales tax automatically. For B2B
-  US billing Stripe is fine.
 - **Is the editorial standards page strong enough to survive a sponsored guide?**
   Need to draft the policy *before* taking the first sponsorship.
-  "Sponsored doesn't mean we recommend" must be unambiguous.
+  "Sponsored doesn't mean we recommend" must be unambiguous. Resolve
+  during /editorial-standards drafting in the foundational-pages phase.
 
 ## Resolved questions
 
@@ -126,6 +114,13 @@ total ~1 week of part-time effort.
 - **What about E (hold and sell)?** → Considered. User prefers continued
   development.
 - **Build sequence?** → Foundational pages first; C, A, B in order.
+- **Lead-gen entry points?** → Both surfaces: category hubs (browse-mode
+  buyers) AND individual company pages (targeted buyers).
+- **Lead routing?** → Round-robin among paying vendors in that category.
+  Predictable for vendors, fair, easy to explain.
+- **Featured-label transparency?** → Yes, explicit "Featured" / "Sponsored"
+  labels on every paid placement.
+- **Billing?** → Stripe for B2B US billing.
 
 ## Risk register
 
