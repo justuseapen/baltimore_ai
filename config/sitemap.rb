@@ -7,6 +7,14 @@ SitemapGenerator::Sitemap.create do
   add resources_path, priority: 0.7, changefreq: "monthly"
   add guides_path,    priority: 0.8, changefreq: "weekly"
 
+  # Foundational pages (low priority; rarely change)
+  add "/about",                priority: 0.5, changefreq: "yearly"
+  add editorial_standards_path, priority: 0.5, changefreq: "yearly"
+  add how_it_works_path,       priority: 0.5, changefreq: "yearly"
+  add contact_path,            priority: 0.4, changefreq: "yearly"
+  add "/privacy",              priority: 0.3, changefreq: "yearly"
+  add "/terms",                priority: 0.3, changefreq: "yearly"
+
   Guide.published.find_each do |guide|
     add guide_path(guide), lastmod: guide.updated_at, priority: 0.9, changefreq: "monthly"
   end

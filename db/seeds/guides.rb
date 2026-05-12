@@ -20,7 +20,7 @@ GUIDES = [
 
       **Cybersecurity AI** is the loudest and most commercial cluster. [Tenable](/companies/tenable), [ZeroFox](/companies/zerofox), [Huntress](/companies/huntress), [Blackpoint Cyber](/companies/blackpoint-cyber), [QOMPLX](/companies/qomplx), [CyberPoint International](/companies/cyberpoint) — most of these are not headquartered in Baltimore proper but in the suburbs along the I-95 / NSA corridor. They share an unusual hiring pool: former NSA, former military, and Hopkins APL alumni. AI in this cluster is mostly ML for anomaly detection and triage, not LLMs for chat.
 
-      **Generalist applied AI and consulting** is the smallest but most visible cluster. [RedShred](/companies/redshred), [Mindgrub](/companies/mindgrub), [Fearless](/companies/fearless), [Huntr](/companies/huntr) — these are the companies that show up at local meetups and run the city's AI Twitter discourse. They're the ones building LLM-powered features for clients and shipping consumer-ish products. If you're new to Baltimore tech, this is the cluster you'll meet first; it's also the one that gets most of the press coverage despite being the smallest by headcount.
+      **Generalist applied AI and consulting** is the smallest but most visible cluster. [RedShred](/companies/redshred), [Mindgrub](/companies/mindgrub), [Fearless](/companies/fearless), [Huntr](/companies/huntr) — these are the companies that run the city's AI conversation on social media and show up at the occasional ad-hoc tech event. They're the ones building LLM-powered features for clients and shipping consumer-ish products. If you're new to Baltimore tech, this is the cluster you'll meet first; it's also the one that gets most of the press coverage despite being the smallest by headcount.
 
       ## What's missing
 
@@ -194,9 +194,9 @@ GUIDES = [
   {
     slug: "where-to-learn-ai-baltimore",
     title: "Where to learn AI in Baltimore",
-    intro: "Universities, programs, meetups, and the free option — a practical guide to picking up AI skills in the Baltimore metro.",
+    intro: "Universities, programs, and the free option — a practical guide to picking up AI skills in the Baltimore metro.",
     meta_title: "Where to learn AI in Baltimore (universities & programs)",
-    meta_description: "An honest guide to learning AI in Baltimore — universities, accelerators, meetups, and how to start without spending a dollar.",
+    meta_description: "An honest guide to learning AI in Baltimore — universities, accelerators, and how to start without spending a dollar.",
     body: <<~MD
       The honest version of this guide is: you can learn AI from anywhere, and the most credentialed paths in Baltimore are also the most expensive. That said, there are real reasons to learn here specifically — proximity to the people doing the work, access to research seminars, and a meaningful local job market that's hungry for talent.
 
@@ -215,18 +215,17 @@ GUIDES = [
       A few options that work:
 
       - **[FastForward U](/resources/fastforward-u)**, JHU's startup accelerator, runs programming aimed at student and alumni founders, but it also produces a lot of learnable content. Many of their workshops are open to non-students.
-      - **[Baltimore AI/ML Meetup](/resources/baltimore-ai-meetup)** is the most reliable monthly touchpoint for the local practitioner community. Free, mixed-skill audiences, talks range from intro to research-level.
       - **APL public seminars.** [Hopkins APL](/resources/johns-hopkins-apl) runs public AI seminars throughout the year. The talks are technical but accessible, and you'll meet people you can't easily meet otherwise.
       - **TEDCO programs.** [TEDCO](/resources/tedco) runs regular events for Maryland tech founders, several of which include AI-specific programming.
 
       ## The free path
 
-      You don't need any of the above to get good. The same free resources that have built a generation of AI engineers — [Karpathy's Zero-to-Hero](https://karpathy.ai), [fast.ai](https://www.fast.ai), [3Blue1Brown's neural network series](https://www.3blue1brown.com), the [original Transformer paper](https://arxiv.org/abs/1706.03762), and a steady diet of arxiv-sanity — work just as well from a Baltimore apartment as anywhere else. What being in Baltimore adds is a community to test your understanding against and a job market to land in.
+      You don't need any of the above to get good. The same free resources that have built a generation of AI engineers — [Karpathy's Zero-to-Hero](https://karpathy.ai), [fast.ai](https://www.fast.ai), [3Blue1Brown's neural network series](https://www.3blue1brown.com), the [original Transformer paper](https://arxiv.org/abs/1706.03762), and a steady diet of arxiv-sanity — work just as well from a Baltimore apartment as anywhere else. What being in Baltimore adds is access to a real job market and proximity to Hopkins APL / UMBC / JHU seminars — *not* a thriving public practitioner community, which the city currently lacks.
 
       A reasonable self-taught track for someone in Baltimore today:
 
       1. Three months of fundamentals (linear algebra refresher, Python, fast.ai, Karpathy's nn-zero-to-hero series).
-      2. Pick a project. Ship it. Talk about it at the AI/ML meetup.
+      2. Pick a project. Ship it. Post it publicly — GitHub, Twitter, a blog. Local meetups have been thin lately, so visibility comes from online communities first.
       3. Apply to entry-level ML roles at the [companies in our directory](/companies). Many of them prefer self-taught engineers with portfolio over fresh CS grads with no project.
 
       ## What you can't easily get here
@@ -234,7 +233,7 @@ GUIDES = [
       Baltimore is weak on a few things:
 
       - **Pure ML research community at scale.** Hopkins and APL are excellent, but the conversation density is lower than Boston or the Bay Area. If you want to be deeply embedded in research, plan for travel.
-      - **Generative-AI / LLM specialization.** The local cluster skews ML-on-data, not LLM-application. You'll find better LLM-specific content online than in Baltimore meetups.
+      - **Generative-AI / LLM specialization.** The local cluster skews ML-on-data, not LLM-application. LLM-specific community is essentially all online; Baltimore doesn't currently have a local LLM scene worth seeking out.
 
       ## What to read next
 

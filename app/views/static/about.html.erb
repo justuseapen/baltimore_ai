@@ -1,0 +1,36 @@
+<% content_for :title, page_title("About") %>
+<% content_for :meta_description, "Baltimore.ai is a curated directory of AI companies, research labs, and resources in the Baltimore metro, run by Justus Eapen." %>
+
+<%= render "shared/breadcrumbs", crumbs: [ [ "Home", root_path ], [ "About", nil ] ] %>
+
+<article class="max-w-2xl">
+  <header class="border-b border-stone-200 pb-8 mb-8">
+    <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-3">About</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight">About Baltimore.ai</h1>
+  </header>
+
+  <div class="prose-editorial">
+    <p>
+      <strong>Baltimore.ai is a curated directory of AI companies, research labs, and resources in the Baltimore metro.</strong>
+    </p>
+
+    <p>
+      The directory is run by <a href="https://justuseapen.com" rel="me">Justus Eapen</a>. It exists because Baltimore has a real, growing AI scene &mdash; Hopkins APL, UMBC, the I-95 cybersecurity-AI corridor, the healthcare-AI cluster around Johns Hopkins &mdash; and no good single place to find it.
+    </p>
+
+    <h2>How listings get here</h2>
+    <p>
+      Most listings start as editorial entries written from public information. Companies can <a href="<%= sign_in_request_path %>">claim</a> their listing by verifying an email at the company's domain, then edit the entry directly. See <a href="<%= how_it_works_path %>">How It Works</a> for the full claim flow.
+    </p>
+
+    <h2>How decisions get made</h2>
+    <p>
+      Editorial decisions &mdash; what gets listed, what gets removed, how blurbs are written &mdash; are documented in <a href="<%= editorial_standards_path %>">Editorial Standards</a>.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Have a correction, want to be listed, or want to remove a listing? <a href="<%= contact_path %>">Contact us</a>. Response within a few days, usually faster.
+    </p>
+  </div>
+</article>

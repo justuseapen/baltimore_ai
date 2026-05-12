@@ -1,0 +1,13 @@
+New contact message via baltimore.ai
+
+From:    <%= @contact_message.name %> <<%= @contact_message.email %>>
+Subject: <%= @contact_message.subject.presence || "(none)" %>
+Sent:    <%= @contact_message.created_at.strftime("%Y-%m-%d %H:%M %Z") %>
+
+---
+
+<%= @contact_message.body %>
+
+---
+
+Reply to this email to respond directly. IP: <%= @contact_message.ip_address %>

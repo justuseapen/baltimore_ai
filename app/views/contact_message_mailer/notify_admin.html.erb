@@ -1,0 +1,12 @@
+<div style="font-family: -apple-system, sans-serif; max-width: 560px; padding: 24px; color: #1c1917;">
+  <h1 style="margin: 0 0 16px; font-size: 18px;">New contact message via baltimore.ai</h1>
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px;">
+    <tr><td style="padding: 4px 8px 4px 0; color: #78716c; width: 90px; vertical-align: top;">From</td><td style="padding: 4px 0;"><strong><%= @contact_message.name %></strong> &lt;<%= @contact_message.email %>&gt;</td></tr>
+    <tr><td style="padding: 4px 8px 4px 0; color: #78716c; vertical-align: top;">Subject</td><td style="padding: 4px 0;"><%= @contact_message.subject.presence || "(none)" %></td></tr>
+    <tr><td style="padding: 4px 8px 4px 0; color: #78716c; vertical-align: top;">Sent</td><td style="padding: 4px 0;"><%= @contact_message.created_at.strftime("%Y-%m-%d %H:%M %Z") %></td></tr>
+  </table>
+  <div style="padding: 16px; background: #fafaf9; border-left: 3px solid #b91c1c; white-space: pre-wrap; font-size: 15px; line-height: 1.5;"><%= @contact_message.body %></div>
+  <p style="margin-top: 20px; font-size: 13px; color: #78716c;">
+    Reply to this email to respond directly. IP: <%= @contact_message.ip_address %>
+  </p>
+</div>

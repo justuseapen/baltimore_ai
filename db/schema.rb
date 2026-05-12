@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_06_180218) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_12_135550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -55,6 +55,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_06_180218) do
     t.index ["company_id", "tag_id"], name: "index_company_tags_on_company_id_and_tag_id", unique: true
     t.index ["company_id"], name: "index_company_tags_on_company_id"
     t.index ["tag_id"], name: "index_company_tags_on_tag_id"
+  end
+
+  create_table "contact_messages", force: :cascade do |t|
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.string "email", null: false
+    t.string "ip_address"
+    t.string "name", null: false
+    t.string "subject"
+    t.datetime "updated_at", null: false
+    t.string "user_agent"
+    t.index ["created_at"], name: "index_contact_messages_on_created_at"
   end
 
   create_table "guides", force: :cascade do |t|

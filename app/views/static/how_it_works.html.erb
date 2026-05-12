@@ -1,0 +1,41 @@
+<% content_for :title, page_title("How It Works") %>
+<% content_for :meta_description, "How listings work on Baltimore.ai: curated entries, self-serve claim flow, moderation, and what to expect." %>
+
+<%= render "shared/breadcrumbs", crumbs: [ [ "Home", root_path ], [ "How It Works", nil ] ] %>
+
+<article class="max-w-2xl">
+  <header class="border-b border-stone-200 pb-8 mb-8">
+    <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-3">How it works</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight">How Baltimore.ai works</h1>
+  </header>
+
+  <div class="prose-editorial">
+    <h2>For everyone</h2>
+    <p>
+      Browse the directory at <a href="<%= companies_path %>">/companies</a>. Use <a href="<%= categories_path %>">categories</a> to filter by what kind of AI work. Read the <a href="<%= guides_path %>">guides</a> for opinionated takes on different parts of the Baltimore AI scene.
+    </p>
+
+    <h2>For companies</h2>
+    <ol>
+      <li><strong>Curated to start.</strong> If you fit the criteria in <a href="<%= editorial_standards_path %>">Editorial Standards</a>, we may have already written an entry for your company.</li>
+      <li><strong>Claim it.</strong> Visit <code>/claim/your-slug</code> on your listing page and enter an email at your company's domain. You get a 6-digit verification code.</li>
+      <li><strong>Edit it.</strong> Walk through a four-step wizard to update basics, story, links, and tags. The published listing reflects your edits within seconds.</li>
+      <li><strong>Sign back in.</strong> Need to update later? Request a sign-in link at <a href="<%= sign_in_request_path %>">/sign-in</a>. No password needed.</li>
+    </ol>
+
+    <h2>Auto-approve vs admin review</h2>
+    <p>
+      If your verification email matches your company's website domain (e.g. <code>@yourcompany.com</code> when the listing's website is <code>yourcompany.com</code>), the claim auto-approves. If it doesn't match, the claim goes to an admin queue and gets reviewed within seven days.
+    </p>
+
+    <h2>Removing a listing</h2>
+    <p>
+      <a href="<%= contact_path %>">Contact us</a>. We don't require justification and we don't try to talk you out of it.
+    </p>
+
+    <h2>What comes next</h2>
+    <p>
+      Coming soon: a "Request an introduction" flow that lets potential buyers reach out to listed companies. Vendors who opt in will receive matched inquiries. See <a href="<%= editorial_standards_path %>#what-featured-means">Editorial Standards</a> for how paid placements work.
+    </p>
+  </div>
+</article>

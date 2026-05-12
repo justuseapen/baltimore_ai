@@ -1,0 +1,48 @@
+<% content_for :title, page_title("Editorial Standards") %>
+<% content_for :meta_description, "How Baltimore.ai decides what to list, what's editorial, and what's sponsored." %>
+
+<%= render "shared/breadcrumbs", crumbs: [ [ "Home", root_path ], [ "Editorial Standards", nil ] ] %>
+
+<article class="max-w-2xl">
+  <header class="border-b border-stone-200 pb-8 mb-8">
+    <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-3">Editorial</p>
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight">Editorial Standards</h1>
+  </header>
+
+  <div class="prose-editorial">
+    <h2>What gets listed</h2>
+    <p>
+      Companies, research labs, and resources with a real Baltimore-area presence working in AI or applying machine learning at the core of their work. "Real presence" means at least one of: headquartered in the metro, a substantive multi-year office or program, or leadership based here. A distributed team with a single remote Baltimore engineer doesn't qualify.
+    </p>
+    <p>
+      When in doubt, we err toward not listing.
+    </p>
+
+    <h2>How blurbs are written</h2>
+    <p>
+      Editorial blurbs are written by the curator using publicly available information &mdash; company websites, press, public funding records, LinkedIn. Claimed companies can edit their own blurb through the claim flow.
+    </p>
+
+    <h2>What "Featured" means</h2>
+    <p>
+      Companies marked <strong>Featured</strong> have paid for placement at the top of category pages and the directory homepage. Featured slots are clearly labeled and capped at three per category. Featured status does not affect editorial coverage or how blurbs are written; it only affects placement.
+    </p>
+
+    <h2>What "Sponsored" means</h2>
+    <p>
+      Editorial guides marked <strong>Sponsored by [Company]</strong> are paid placements. Sponsored guides are written by Baltimore.ai's editorial team; the sponsor has the right to review for factual accuracy but not to dictate conclusions. Sponsorship is disclosed at the top of the article and in the meta description.
+    </p>
+
+    <h2>Removal and corrections</h2>
+    <p>
+      If you appear on Baltimore.ai and want to be removed, <a href="<%= contact_path %>">tell us</a> and we'll remove the listing. We don't require justification. If something is factually wrong, the same path applies.
+    </p>
+
+    <h2>What this directory is not</h2>
+    <ul>
+      <li>Not a paid review site &mdash; companies cannot pay for positive coverage.</li>
+      <li>Not a vendor-affiliated outlet &mdash; the editorial line is independent of the people we cover.</li>
+      <li>Not exhaustive &mdash; we list what we can verify. Missing companies aren't intentional exclusions.</li>
+    </ul>
+  </div>
+</article>
