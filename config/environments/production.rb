@@ -60,19 +60,22 @@ Rails.application.configure do
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST_NAME", "baltimore.ai"), protocol: "https" }
 
-  # SMTP via env vars — defaults to Postmark.
-  # Required env vars when SMTP_USERNAME/SMTP_PASSWORD are set:
-  #   SMTP_ADDRESS (default: smtp.postmarkapp.com)
-  #   SMTP_PORT    (default: 587)
-  #   SMTP_USERNAME, SMTP_PASSWORD
-  if ENV["SMTP_USERNAME"].present?
+  # SMTP via env vars — defaults to Resend.
+  # See docs/RESEND_SETUP.md for the full setup walkthrough.
+  # Required env vars when SMTP_PASSWORD is set:
+  #   SMTP_PASSWORD — Resend API key (re_...)
+  # Optional (have sensible defaults):
+  #   SMTP_ADDRESS  (default: smtp.resend.com)
+  #   SMTP_PORT     (default: 587 — STARTTLS)
+  #   SMTP_USERNAME (default: "resend" — Resend's literal SMTP username)
+  if ENV["SMTP_PASSWORD"].present?
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.smtp_settings = {
-      address: ENV.fetch("SMTP_ADDRESS", "smtp.postmarkapp.com"),
+      address: ENV.fetch("SMTP_ADDRESS", "smtp.resend.com"),
       port: ENV.fetch("SMTP_PORT", 587).to_i,
-      user_name: ENV["SMTP_USERNAME"],
+      user_name: ENV.fetch("SMTP_USERNAME", "resend"),
       password: ENV["SMTP_PASSWORD"],
       authentication: :plain,
       enable_starttls_auto: true

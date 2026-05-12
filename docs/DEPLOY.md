@@ -17,14 +17,11 @@ fly secrets set APP_HOST_NAME=baltimore.ai
 fly secrets set MAIL_FROM="Baltimore.ai <hello@baltimore.ai>"
 fly secrets set ADMIN_EMAIL=you@yourdomain.com
 
-# 4. Configure outbound email (Postmark)
-#    a. Sign up at postmarkapp.com
-#    b. Verify the baltimore.ai sender domain (DKIM + Return-Path DNS records)
-#    c. Generate a server token; that's the SMTP password
-fly secrets set SMTP_USERNAME=<postmark-server-token> SMTP_PASSWORD=<same-token>
-# Optional, defaults to Postmark:
-#   SMTP_ADDRESS=smtp.postmarkapp.com
-#   SMTP_PORT=587
+# 4. Configure outbound email (Resend)
+#    See docs/RESEND_SETUP.md for the full walkthrough.
+#    Short version: resend.com → verify baltimore.ai sender domain
+#    (add SPF + DKIM DNS records) → create an API key → set as SMTP_PASSWORD.
+fly secrets set SMTP_PASSWORD=re_xxxxxxxxxxxxxxxxxxxxxxx
 
 # 5. Deploy
 fly deploy
