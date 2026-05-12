@@ -521,14 +521,17 @@ RESOURCES = [
     founded_year: 1999,
     status: "published"
   },
+  # TODO(curator): The Baltimore AI/ML Meetup has been defunct for years.
+  # Hidden until a real, active replacement community is identified
+  # (or until we run our own).
   {
     slug: "baltimore-ai-meetup",
     name: "Baltimore AI/ML Meetup",
-    tagline: "The largest practitioner community for AI in Baltimore.",
-    description: "The Baltimore AI/ML Meetup brings together engineers, researchers, and founders for talks and demos across the city. It's the most reliable monthly touchpoint for the local applied-AI community.",
+    tagline: "Defunct as of 2026 — kept as a placeholder pending a replacement.",
+    description: "The Baltimore AI/ML Meetup is no longer active. This entry is kept hidden as a placeholder until a real, current AI practitioner community is identified or established in Baltimore.",
     website: "https://www.meetup.com",
     resource_type: "event_series",
-    status: "published"
+    status: "hidden"
   },
   {
     slug: "technical-ly-baltimore",

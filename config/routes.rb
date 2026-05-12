@@ -34,7 +34,16 @@ Rails.application.routes.draw do
     end
   end
 
-  # Static
+  # Foundational static pages
+  get "about",                to: "static#about"
+  get "editorial-standards",  to: "static#editorial_standards", as: :editorial_standards
+  get "how-it-works",         to: "static#how_it_works",        as: :how_it_works
+  get "contact",              to: "static#contact",             as: :contact
+  post "contact",             to: "contact_messages#create",    as: :contact_messages
+  get "privacy",              to: "static#privacy"
+  get "terms",                to: "static#terms"
+
+  # Robots
   get "robots", to: "static#robots", defaults: { format: "txt" }
 
   root "home#index"
