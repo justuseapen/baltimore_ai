@@ -1,6 +1,6 @@
 # Baltimore.ai fall 2026 launch copy
 
-Prepared: September 8, 2026. Status: ready to review; all copy is unsent and unposted. No publication or delivery is implied by this file.
+Prepared: September 8, 2026. First-wave execution authorized September 8. The LinkedIn launch and X networking post are published; the Technical.ly pitch was sent to Katie Malone after its form rejected the submission. The AI Collective form was submitted once, with delivery unconfirmed. Other copy remains prepared. See the [execution ledger](2026-09-execution.md) for verified outcomes.
 
 Baltimore.ai now helps readers find sourced local and regional AI companies, understand recent developments, and choose an upcoming event or application opportunity. The refresh includes 21 published company profiles, 13 resources, and seven guides. Company coverage includes Baltimore City and the surrounding region; it is not a count of city headquarters.
 
@@ -8,7 +8,7 @@ Use the event guide for the first promotion because its near-term dates give rea
 
 ## LinkedIn: personal launch post
 
-Account: Justus Eapen's personal account, if selected. Proposed publication: September 8–10. Retire this version after September 14.
+Published September 8 on [Justus Eapen's personal LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503141627100602368/). Do not repost this launch copy. Retire any unsent reuse after September 14.
 
 ```text
 Looking for a way into Baltimore's AI community this fall?
@@ -27,7 +27,7 @@ These are separate posts, not a thread. Each has one CTA. Character counts below
 
 ### X 1: meet practitioners
 
-Proposed publication: September 8–10. Retire after September 14. Length: 241 characters.
+Published September 8 at 13:14 Eastern on [@justuseapen](https://x.com/justuseapen/status/2097373100023136741). Do not duplicate. Retire any unsent reuse after September 14. Length: 241 characters.
 
 ```text
 Baltimore AI networking: Sept 15 at Spark, 6–8 p.m. Free, per the organizer. Get the details:
@@ -54,7 +54,7 @@ https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=x&utm_mediu
 
 ## Outreach email 1: AI Collective Baltimore organizers
 
-Status: draft only. Intended recipients: Khalif Cooper and Snehalraj Chugh, the hosts listed on the [event's organizer page](https://luma.com/human-side-ai). Use its “Contact the Host” route or an independently verified business address. No email address is inferred. Best window: September 8–10; retire after September 14.
+Status: host form submitted once September 8; delivery unconfirmed because no receipt was captured. Do not resend without checking. Intended recipients: Khalif Cooper and Snehalraj Chugh, the hosts listed on the [event's organizer page](https://luma.com/human-side-ai). Use its “Contact the Host” route or an independently verified business address. No email address is inferred. Best window: September 8–10; retire after September 14.
 
 Subject:
 
@@ -77,7 +77,7 @@ Baltimore.ai
 
 ## Outreach email 2: Technical.ly Baltimore editorial team
 
-Status: draft only. Route to a verified public editorial contact before sending; no recipient address or prior relationship is assumed. Best window: September 8–15. The reporting snapshot remains dated September 8 even if outreach occurs later.
+Status: sent September 8 at 13:23 Eastern to Katie Malone at her [published Technical.ly address](https://katie-malone.com/), after the contact form returned a validation error. Gmail SENT confirmed. The actual email salutation was “Hi Katie,”; the remainder matched this copy. Do not resend the initial pitch.
 
 Subject:
 
@@ -120,4 +120,4 @@ Baltimore.ai's September refresh adds a sourced AI field report and fall opportu
 - The [Techstars program page](https://www.techstars.com/accelerators/baltimore-ai-health), checked September 8, gives November 18, 2026 as the final application deadline and March 8, 2027 as the next accelerator start. Avoid calling this a 2026 cohort or treating participants as local headquarters.
 - The company names in the editorial pitch appear in the published [September field report](https://baltimore.ai/guides/baltimore-ai-scene-september-2026), with links to each underlying announcement. The catalog counts come from the published September 8 refresh.
 - UTM parameters identify the intended distribution source when used with compatible analytics or retained request data. The URLs alone do not measure visitors, organizer registrations, or conversions. Do not report those outcomes without supporting data.
-- Before sending outreach, choose and confirm the recipient, sender account, and final copy. No claims, sign-in, or newsletter CTA is used because production outbound email is not configured.
+- The first wave was explicitly authorized and executed September 8. Recheck dates and recipient routes before later distribution; do not duplicate sent items. No claims, sign-in, or newsletter CTA is used because production outbound email is not configured.

@@ -1,6 +1,6 @@
-# First-wave Gmail outreach drafts
+# First-wave Gmail outreach: sent copy
 
-Prepared: 2026-09-08. These three messages were saved as addressed drafts in the connected Gmail account and verified as DRAFT. Nothing was sent. Public recipient routes are documented in [distribution targets](2026-09-distribution-targets.md). Recheck dates before sending. Retire Pava's version after September 14 because it includes the September 15 networking night; retire Hopkins' deadline version after September 15.
+Sent: 2026-09-08, 13:14 Eastern, after the user's explicit execution instruction. All three messages were read back with Gmail's SENT label. This file preserves the sent text; do not recreate or resend these drafts. Public recipient routes are documented in [distribution targets](2026-09-distribution-targets.md). Retire any unsent Pava reuse after September 14 and Hopkins deadline reuse after September 15. Technical.ly's separate sent pitch is recorded in the [launch copy pack](2026-09-launch-copy.md).
 
 ## jhu dsai
 

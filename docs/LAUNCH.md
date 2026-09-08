@@ -22,9 +22,9 @@ The campaign asks readers to read, share, and follow organizer links. Production
 ## Priorities
 
 1. **Owned search discovery:** verify Google Search Console, submit the sitemap, inspect the two landing pages, and record a baseline when processing completes. Set up Bing when an authenticated owner account is available.
-2. **Personal LinkedIn, if selected:** one useful launch post, then a specific research finding the following week. Respond to substantive replies. Account selection remains open; no follower count is assumed.
+2. **Personal LinkedIn:** the launch post was published September 8 on Justus Eapen’s account. Follow with a specific research finding the following week and respond to substantive replies; no follower count is assumed.
 3. **Local organizers and newsletters:** start with AI Collective and Hopkins because September 15 and 16 are near. Then Technical.ly, Pava, and UpSurge; approach Techstars, TEDCO, and bwtech with audience-specific resources. Eight carefully matched contacts are sufficient for this experiment.
-4. **X, if selected:** three standalone posts on networking, poster submissions, and health founders. Space them out instead of repeating the launch announcement.
+4. **Personal X:** the networking post was published September 8 on @justuseapen. Keep the poster and health-founder posts in their later windows; do not repeat the launch announcement.
 
 The [distribution shortlist](marketing/2026-09-distribution-targets.md) contains verified public routes and pitch angles. A public contact route does not guarantee placement. Broader launch sites and unrelated communities are deferred because the strongest immediate use case is local. Avoid reciprocal links, paid backlinks, invented partnerships, and indiscriminate tagging.
 
@@ -48,11 +48,11 @@ The AI Collective's first Baltimore networking night is **September 15, 6–8 p.
 
 ## Assets and execution
 
-- [Launch copy pack](marketing/2026-09-launch-copy.md): one LinkedIn post, three X posts, two outreach templates, a partner blurb, and release copy. **Prepared; not posted.**
-- [Distribution targets](marketing/2026-09-distribution-targets.md): eight public routes checked September 8. **Researched; no messages sent.**
-- [Campaign links](marketing/2026-09-campaign-links.json): exact tagged URLs. **Prepared; no traffic implied.**
+- [Launch copy pack](marketing/2026-09-launch-copy.md): one LinkedIn post, three X posts, two outreach templates, a partner blurb, and release copy. **LinkedIn and X networking post published; remaining copy status is in the ledger.**
+- [Distribution targets](marketing/2026-09-distribution-targets.md): eight public routes checked September 8. **Four email pitches sent; AI Collective form submitted with delivery unconfirmed.**
+- [Campaign links](marketing/2026-09-campaign-links.json): exact tagged URLs. **Actual distribution status recorded; no traffic inferred from tagged URLs.**
 - [Execution ledger](marketing/2026-09-execution.md): actual actions and remaining account work, separate from proposed dates.
-- Three addressed drafts were created and verified in connected Gmail: Johns Hopkins DSAI, Pava Center, and UpSurge. **Saved; unsent.** AI Collective and Technical.ly copy remains in the pack because their verified routes are web contact forms.
+- Four email pitches are confirmed in Gmail Sent: Johns Hopkins DSAI, Pava Center, UpSurge, and Technical.ly’s Katie Malone. The AI Collective host form was submitted once; no delivery receipt was captured. Do not duplicate these approaches. The initial launch wave is executed; later dated work remains in the calendar.
 
 ## Measurement and decisions
 
@@ -78,8 +78,8 @@ Check the live interface for available generative-AI settings and reports; repos
 
 ## Dependencies and fallbacks
 
-- **Posting account unresolved:** search setup and publication-ready assets proceed. No new branded account is needed to test demand.
-- **Outbound messages:** addressed drafts are ready. A clear send / publish instruction is still needed for the selected account and channel. Planned outreach is not sent outreach.
+- **Posting accounts selected:** Justus Eapen’s personal LinkedIn and @justuseapen on X. Both first-wave posts are live; no branded account was created.
+- **Outbound messages:** first-wave sending was explicitly authorized and executed September 8. Record actual sends and replies; keep the AI Collective delivery status unconfirmed until a receipt or response is available.
 - **Bing login:** the browser reached its sign-in screen; no Bing submission is claimed.
 - **Conversion analytics unavailable:** use Search Console, native platform metrics, and the manual placement ledger. No new tracking script is installed.
 - **Application email:** configure and test transactional delivery before promoting claims or sign-in; see [RESEND_SETUP.md](RESEND_SETUP.md).

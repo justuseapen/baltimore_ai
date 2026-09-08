@@ -1,7 +1,7 @@
 {
   "created": "2026-09-08",
   "campaign": "baltimore_ai_fall_2026",
-  "note": "Prepared distribution URLs; UTM parameters alone do not collect analytics. No visitor or conversion counts are implied.",
+  "note": "Distribution status updated September 8. UTM parameters alone do not collect analytics. No visitor or conversion counts are implied.",
   "links": [
     {
       "id": "linkedin_personal_launch",
@@ -11,7 +11,9 @@
       "utm_medium": "social",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "personal_launch",
-      "status": "prepared; not distributed"
+      "status": "published",
+      "published_on": "2026-09-08",
+      "publication_url": "https://www.linkedin.com/feed/update/urn:li:share:7503141627100602368/"
     },
     {
       "id": "x_networking",
@@ -21,7 +23,9 @@
       "utm_medium": "social",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "networking",
-      "status": "prepared; not distributed"
+      "status": "published",
+      "published_on": "2026-09-08",
+      "publication_url": "https://x.com/justuseapen/status/2097373100023136741"
     },
     {
       "id": "x_posters",
@@ -51,7 +55,8 @@
       "utm_medium": "referral",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "host_outreach",
-      "status": "prepared; not distributed"
+      "status": "form submitted once; delivery unconfirmed",
+      "submitted_on": "2026-09-08"
     },
     {
       "id": "technically_editorial_pitch",
@@ -61,7 +66,8 @@
       "utm_medium": "referral",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "editorial_pitch",
-      "status": "prepared; not distributed"
+      "status": "email sent; Gmail SENT verified",
+      "sent_on": "2026-09-08"
     },
     {
       "id": "jhu_dsai_resource_outreach",
@@ -71,7 +77,8 @@
       "utm_medium": "referral",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "resource_outreach",
-      "status": "prepared; not distributed"
+      "status": "email sent; Gmail SENT verified",
+      "sent_on": "2026-09-08"
     },
     {
       "id": "pava_center_newsletter_outreach",
@@ -81,7 +88,8 @@
       "utm_medium": "referral",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "newsletter_outreach",
-      "status": "prepared; not distributed"
+      "status": "email sent; Gmail SENT verified",
+      "sent_on": "2026-09-08"
     },
     {
       "id": "upsurge_newsletter_outreach",
@@ -91,7 +99,8 @@
       "utm_medium": "referral",
       "utm_campaign": "baltimore_ai_fall_2026",
       "utm_content": "newsletter_outreach",
-      "status": "prepared; not distributed"
+      "status": "email sent; Gmail SENT verified",
+      "sent_on": "2026-09-08"
     }
   ]
 }
