@@ -22,3 +22,7 @@ Checked September 8, 2026. These are evidence-gap decisions, not assertions of c
 | Scopio Labs | [Product/contact](https://scopiolabs.com/contact/) supports AI; [privacy policy](https://scopiolabs.com/privacy-policy/) identifies Tel Aviv. bwtech operation not established. |
 | Sparkfly | [Contact](https://sparkfly.com/contact-us) identifies Atlanta. Baltimore presence and specific ML pipeline unverified. |
 | WillowTree | [Current TELUS Digital identity](https://www.telusdigital.com/willowtree-is-now-telus-digital) established; Baltimore studio and alleged Mindgrub acquisition unsupported. |
+
+## Production-only resource retirement
+
+The pre-deployment backup contained `baltimore-ai-meetup`, a public “Baltimore AI/ML Meetup” resource that linked only to `https://www.meetup.com`. It claimed to be the largest practitioner community and a reliable monthly gathering without an identifiable organizer page. The versioned catalog now retains it with `status: hidden`; its row and URL identity remain available for future review. This is separate from the sourced AI Collective Baltimore listing and its September 15 event.

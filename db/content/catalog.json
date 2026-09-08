@@ -1091,6 +1091,23 @@
       "status": "published",
       "meta_title": "Maryland AI Innovation Lab",
       "meta_description": "State-government AI prototyping and support initiative launched in May 2026."
+    },
+    {
+      "slug": "baltimore-ai-meetup",
+      "name": "Baltimore AI/ML Meetup",
+      "resource_type": "event_series",
+      "status": "hidden",
+      "website": null,
+      "tagline": null,
+      "description": "Archived September 8, 2026: the legacy entry linked only to the generic Meetup homepage. Its claims of being the largest practitioner community and a reliable monthly gathering lacked an identifiable organizer source. See the verified AI Collective Baltimore listing and dated events guide for documented opportunities.",
+      "city": null,
+      "state": null,
+      "country": "US",
+      "location_note": null,
+      "reviewed_on": null,
+      "source_references": [],
+      "meta_title": null,
+      "meta_description": null
     }
   ],
   "guides": [

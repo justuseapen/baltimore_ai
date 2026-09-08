@@ -68,4 +68,14 @@ class EditorialContentTest < ActionDispatch::IntegrationTest
     get sitemap_path
     assert_not_includes response.body, future.slug
   end
+
+  test "the unsupported legacy meetup is retained but excluded from public discovery" do
+    resource = Resource.find_by!(slug: "baltimore-ai-meetup")
+    assert_equal "hidden", resource.status
+    get resource_path(resource)
+    assert_response :not_found
+    get sitemap_path
+    assert_not_includes response.body, resource.slug
+    assert_equal 13, Resource.published.count
+  end
 end
