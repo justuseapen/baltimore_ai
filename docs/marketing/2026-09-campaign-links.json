@@ -1,0 +1,97 @@
+{
+  "created": "2026-09-08",
+  "campaign": "baltimore_ai_fall_2026",
+  "note": "Prepared distribution URLs; UTM parameters alone do not collect analytics. No visitor or conversion counts are implied.",
+  "links": [
+    {
+      "id": "linkedin_personal_launch",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=linkedin&utm_medium=social&utm_campaign=baltimore_ai_fall_2026&utm_content=personal_launch",
+      "utm_source": "linkedin",
+      "utm_medium": "social",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "personal_launch",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "x_networking",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=x&utm_medium=social&utm_campaign=baltimore_ai_fall_2026&utm_content=networking",
+      "utm_source": "x",
+      "utm_medium": "social",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "networking",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "x_posters",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=x&utm_medium=social&utm_campaign=baltimore_ai_fall_2026&utm_content=posters",
+      "utm_source": "x",
+      "utm_medium": "social",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "posters",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "x_founders",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=x&utm_medium=social&utm_campaign=baltimore_ai_fall_2026&utm_content=founders",
+      "utm_source": "x",
+      "utm_medium": "social",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "founders",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "ai_collective_host_outreach",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=ai_collective&utm_medium=referral&utm_campaign=baltimore_ai_fall_2026&utm_content=host_outreach",
+      "utm_source": "ai_collective",
+      "utm_medium": "referral",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "host_outreach",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "technically_editorial_pitch",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-scene-september-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-scene-september-2026?utm_source=technically&utm_medium=referral&utm_campaign=baltimore_ai_fall_2026&utm_content=editorial_pitch",
+      "utm_source": "technically",
+      "utm_medium": "referral",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "editorial_pitch",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "jhu_dsai_resource_outreach",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=jhu_dsai&utm_medium=referral&utm_campaign=baltimore_ai_fall_2026&utm_content=resource_outreach",
+      "utm_source": "jhu_dsai",
+      "utm_medium": "referral",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "resource_outreach",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "pava_center_newsletter_outreach",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-events-fall-2026?utm_source=pava_center&utm_medium=referral&utm_campaign=baltimore_ai_fall_2026&utm_content=newsletter_outreach",
+      "utm_source": "pava_center",
+      "utm_medium": "referral",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "newsletter_outreach",
+      "status": "prepared; not distributed"
+    },
+    {
+      "id": "upsurge_newsletter_outreach",
+      "destination": "https://baltimore.ai/guides/baltimore-ai-scene-september-2026",
+      "url": "https://baltimore.ai/guides/baltimore-ai-scene-september-2026?utm_source=upsurge&utm_medium=referral&utm_campaign=baltimore_ai_fall_2026&utm_content=newsletter_outreach",
+      "utm_source": "upsurge",
+      "utm_medium": "referral",
+      "utm_campaign": "baltimore_ai_fall_2026",
+      "utm_content": "newsletter_outreach",
+      "status": "prepared; not distributed"
+    }
+  ]
+}

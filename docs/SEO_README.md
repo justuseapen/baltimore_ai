@@ -23,4 +23,6 @@ Run `bin/rails test`, `bin/rubocop`, and `bin/brakeman --no-pager`; build Tailwi
 
 ## Account-level follow-up
 
-Search Console and Bing Webmaster Tools verification, sitemap submission and visibility measurement require the relevant site-owner accounts. Check whether the site is included in Google's generative AI features under current Search Console settings. Do not assume those settings are configured from a repository check. Email delivery separately requires the Resend domain and API-key setup in `RESEND_SETUP.md`.
+On September 8, 2026, the `https://baltimore.ai/` URL-prefix property was verified in Google Search Console using the public HTML meta tag in the application layout. Keep that tag in future deployments. Google successfully fetched `/sitemap.xml` and reported 55 discovered pages. Indexing requests for the September field report and fall events guide were accepted; this does not mean the pages are already indexed. Performance and indexing reports were still processing.
+
+The live Settings → Search generative AI screen showed inherited default **Current control: Include**. No change was necessary. Bing Webmaster Tools remains pending an authenticated owner session. See the [campaign execution ledger](marketing/2026-09-execution.md) for completed actions and remaining measurement work. Email delivery separately requires the Resend domain and API-key setup in `RESEND_SETUP.md`.
