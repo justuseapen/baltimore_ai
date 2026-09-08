@@ -5,20 +5,20 @@
     "@graph" => [
       {
         "@type" => "Organization",
-        "@id" => "#{request.base_url}/#organization",
+        "@id" => "#{canonical_url(root_path)}#organization",
         "name" => "Baltimore.ai",
-        "url" => request.base_url,
+        "url" => canonical_url(root_path),
         "description" => "A curated directory of AI companies, research labs, and resources in the Baltimore metro."
       },
       {
         "@type" => "WebSite",
-        "@id" => "#{request.base_url}/#website",
-        "url" => request.base_url,
+        "@id" => "#{canonical_url(root_path)}#website",
+        "url" => canonical_url(root_path),
         "name" => "Baltimore.ai",
-        "publisher" => { "@id" => "#{request.base_url}/#organization" }
+        "publisher" => { "@id" => "#{canonical_url(root_path)}#organization" }
       }
     ]
   }
-  raw ld.to_json
+  raw json_escape(ld.to_json)
 %>
 </script>

@@ -1,6 +1,5 @@
 <% content_for :title, page_title("Editorial Standards") %>
-<% content_for :meta_description, "How Baltimore.ai decides what to list, what's editorial, and what's sponsored." %>
-
+<% content_for :meta_description, "How Baltimore.ai verifies AI work, regional connections, sources, review dates, and corrections for its company directory and guides." %>
 <%= render "shared/breadcrumbs", crumbs: [ [ "Home", root_path ], [ "Editorial Standards", nil ] ] %>
 
 <article class="max-w-2xl">
@@ -8,41 +7,27 @@
     <p class="text-xs uppercase tracking-[0.2em] text-red-700 font-semibold mb-3">Editorial</p>
     <h1 class="text-4xl md:text-5xl font-black tracking-tight">Editorial Standards</h1>
   </header>
-
   <div class="prose-editorial">
     <h2>What gets listed</h2>
-    <p>
-      Companies, research labs, and resources with a real Baltimore-area presence working in AI or applying machine learning at the core of their work. "Real presence" means at least one of: headquartered in the metro, a substantive multi-year office or program, or leadership based here. A distributed team with a single remote Baltimore engineer doesn't qualify.
-    </p>
-    <p>
-      When in doubt, we err toward not listing.
-    </p>
+    <p>Company entries need evidence of AI or machine-learning work and a documented connection to Baltimore or its surrounding region. We distinguish Baltimore City headquarters, offices in surrounding counties, regional operations, and clearly labeled Baltimore-founded businesses that have been acquired. A remote employee or an accelerator appearance alone does not establish a local headquarters.</p>
+    <p>Resources include research labs, universities, founder programs, training, and community organizers. Some serve all of Maryland or are open only to specific participants. Each listing explains its scope.</p>
 
-    <h2>How blurbs are written</h2>
-    <p>
-      Editorial blurbs are written by the curator using publicly available information &mdash; company websites, press, public funding records, LinkedIn. Claimed companies can edit their own blurb through the claim flow.
-    </p>
+    <h2>How research works</h2>
+    <p>We use AI-assisted research and writing, with links to the underlying evidence. We prioritize company and institution websites, government records, organizer event pages, and original announcements. Company-maintained profiles and job postings can support a regional connection, but their limitations are stated. Secondary reporting helps identify leads; our own directory is never evidence for a company claim.</p>
+    <p>Product descriptions are attributed accounts, not independent performance tests. We do not infer clinical effectiveness, regulatory approval, funding totals, headcount, or a specific AI mechanism from a broad marketing claim. Unsupported details are omitted.</p>
 
-    <h2>What "Featured" means</h2>
-    <p>
-      Companies marked <strong>Featured</strong> have paid for placement at the top of category pages and the directory homepage. Featured slots are clearly labeled and capped at three per category. Featured status does not affect editorial coverage or how blurbs are written; it only affects placement.
-    </p>
+    <h2>What a review date means</h2>
+    <p>A sources-checked date records when the cited information was examined. It is not a guarantee that every fact remains unchanged, a company endorsement, or verification by the company itself. Source publication dates, source update dates, and our review dates are distinct. When a source gives only a year, we preserve that precision.</p>
+    <p>Guides show their publication and modification information in structured data, and their research date on the page. Scheduled events and deadlines are identified as such. A past event announcement is not proof that the event took place.</p>
 
-    <h2>What "Sponsored" means</h2>
-    <p>
-      Editorial guides marked <strong>Sponsored by [Company]</strong> are paid placements. Sponsored guides are written by Baltimore.ai's editorial team; the sponsor has the right to review for factual accuracy but not to dictate conclusions. Sponsorship is disclosed at the top of the article and in the meta description.
-    </p>
+    <h2>Company-managed listings</h2>
+    <p>Companies can claim and edit their listings through the <a href="<%= how_it_works_path %>">claim process</a>. Editorial content imports preserve company-managed records. Claimed status confirms control through that process; it is not a certification of product quality.</p>
 
-    <h2>Removal and corrections</h2>
-    <p>
-      If you appear on Baltimore.ai and want to be removed, <a href="<%= contact_path %>">tell us</a> and we'll remove the listing. We don't require justification. If something is factually wrong, the same path applies.
-    </p>
+    <h2>Corrections and exclusions</h2>
+    <p>If a company’s AI work or local connection cannot be supported, we can hide its listing pending better evidence. That means evidence is missing, not that the company has closed or has no AI work. We preserve existing records and ownership relationships rather than deleting them during a content refresh.</p>
+    <p><a href="<%= contact_path %>">Send a correction or removal request</a>, ideally with a current primary source. The directory is a curated selection, not an exhaustive count or a ranking.</p>
 
-    <h2>What this directory is not</h2>
-    <ul>
-      <li>Not a paid review site &mdash; companies cannot pay for positive coverage.</li>
-      <li>Not a vendor-affiliated outlet &mdash; the editorial line is independent of the people we cover.</li>
-      <li>Not exhaustive &mdash; we list what we can verify. Missing companies aren't intentional exclusions.</li>
-    </ul>
+    <h2>Commercial independence</h2>
+    <p>The September 2026 research release contains no paid rankings. Any future sponsored coverage or paid placement must be visibly disclosed. Inclusion does not endorse a vendor or promise its services are suitable for a particular use.</p>
   </div>
 </article>

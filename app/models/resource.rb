@@ -1,4 +1,6 @@
 class Resource < ApplicationRecord
+  include ResearchProvenance
+
   TYPES = %w[lab accelerator program university event_series].freeze
   STATUSES = %w[draft published hidden].freeze
 

@@ -1,4 +1,4 @@
-<% content_for :title, "Baltimore.ai · The directory of AI in Baltimore" %>
+<% content_for :title, page_title("Baltimore AI companies, research & events") %>
 <% content_for :meta_description, "A curated directory of #{@total_companies} AI companies, research labs, and resources across the Baltimore metro." %>
 
 <section class="py-8 md:py-16 border-b border-stone-200">
@@ -8,7 +8,7 @@
       The directory of <span class="text-red-700">AI</span> in Baltimore.
     </h1>
     <p class="mt-6 text-xl text-stone-600 leading-relaxed">
-      <%= @total_companies %> companies, <%= @resources.size %> labs and accelerators, and the people building applied AI in the city &mdash; from Hopkins APL spinouts to Hampden basements.
+      <%= @total_companies %> companies and <%= @total_resources %> research, learning, and community resources across Baltimore and the surrounding region. Find what they do, where they work, and the sources behind each listing.
     </p>
     <div class="mt-8 flex gap-3 flex-wrap">
       <%= link_to "Browse companies →", companies_path, class: "inline-block bg-stone-900 text-white px-5 py-3 text-sm font-semibold rounded-md hover:bg-stone-700" %>
@@ -17,9 +17,22 @@
   </div>
 </section>
 
+<% if @field_report %>
+  <section class="my-10 p-6 md:p-8 bg-stone-900 text-white rounded-md" aria-labelledby="field-report-title">
+    <p class="text-xs uppercase tracking-[0.15em] text-stone-300 mb-3">Research briefing · September 2026</p>
+    <h2 id="field-report-title" class="text-2xl md:text-3xl font-black tracking-tight">What’s happening in Baltimore AI?</h2>
+    <p class="mt-3 max-w-3xl text-stone-200 leading-relaxed"><%= @field_report.intro %></p>
+    <div class="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
+      <%= link_to "Read the September field report →", guide_path(@field_report), class: "inline-block px-4 py-3 bg-white text-stone-900 rounded-md hover:bg-stone-200" %>
+      <%= link_to "Fall AI events & opportunities →", guide_path("baltimore-ai-events-fall-2026"), class: "inline-block px-4 py-3 border border-stone-500 rounded-md hover:bg-stone-800" %>
+    </div>
+    <p class="mt-4 text-xs text-stone-400">Sources checked September 8, 2026. A dated snapshot, with organizer links for current details.</p>
+  </section>
+<% end %>
+
 <section class="py-12">
   <div class="flex items-baseline justify-between mb-6">
-    <h2 class="text-2xl font-black tracking-tight">Recently added</h2>
+    <h2 class="text-2xl font-black tracking-tight">Recently updated</h2>
     <%= link_to "All companies →", companies_path, class: "text-sm text-stone-600 hover:text-stone-900" %>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">

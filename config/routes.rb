@@ -43,7 +43,9 @@ Rails.application.routes.draw do
   get "privacy",              to: "static#privacy"
   get "terms",                to: "static#terms"
 
-  # Robots
+  # Crawl discovery is served dynamically; do not add matching public files.
+  get "sitemap.xml.gz", to: "discovery#legacy_sitemap", format: false
+  get "sitemap.xml", to: "discovery#sitemap", as: :sitemap, format: false, defaults: { format: "xml" }
   get "robots", to: "static#robots", defaults: { format: "txt" }
 
   root "home#index"

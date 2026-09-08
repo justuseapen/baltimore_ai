@@ -6,7 +6,7 @@ A pragmatic, ordered runbook for going from "deployed" to "publicly launched." D
 
 Follow [DEPLOY.md](DEPLOY.md). Ends with:
 - baltimore.ai resolving to Fly behind HTTPS
-- Postmark configured and a test email delivered to your own inbox
+- Resend configured and a test email delivered to your own inbox
 - `/up` returning 200
 - `bin/rails db:seed` run on production with `ADMIN_EMAIL=you@yourdomain.com`
 
@@ -19,7 +19,7 @@ Before anyone else hits the site:
 - [ ] Visit `/companies/redshred` (or any unclaimed listing).
 - [ ] Click "Claim this listing."
 - [ ] Enter your name + an email at a domain you control.
-- [ ] Confirm code arrives via Postmark.
+- [ ] Confirm code arrives via Resend.
 - [ ] Walk all 4 wizard steps; complete the claim.
 - [ ] Verify the listing now shows "Claimed" and you can edit.
 - [ ] Visit `/admin/profile_claims` — verify the claim appears as `auto_approved`.
@@ -31,7 +31,7 @@ If any step fails, fix before proceeding.
 
 - [ ] **Google Search Console**: Add `https://baltimore.ai` (URL prefix property). Verify via DNS TXT or HTML file.
 - [ ] **Bing Webmaster Tools**: Same.
-- [ ] Submit `https://baltimore.ai/sitemap.xml.gz` to both.
+- [ ] Submit `https://baltimore.ai/sitemap.xml` to both.
 - [ ] In GSC, request indexing for: `/`, `/companies`, `/guides`, `/companies/redshred` (or any 1 company), `/guides/ai-companies-baltimore-2026`.
 
 ## 4. Citations (days 2-4)

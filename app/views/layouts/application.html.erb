@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= content_for(:title) || "Baltimore.ai · The directory of AI in Baltimore" %></title>
+    <% title = content_for(:title).presence || page_title("AI Companies, Research & Events in Baltimore") %>
+    <% description = content_for(:meta_description).presence || "Explore AI companies, research labs, communities, and practical guides across Baltimore and the surrounding Maryland region." %>
+    <% social_image = canonical_url(image_path("og-default.png")) %>
+    <title><%= title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="<%= content_for(:meta_description) || 'A curated directory of AI companies, research labs, and resources in the Baltimore metro.' %>">
+    <meta name="description" content="<%= description %>">
     <meta name="theme-color" content="#0a0a0a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Baltimore.ai">
@@ -12,18 +15,18 @@
     <link rel="canonical" href="<%= canonical_url %>">
 
     <meta property="og:type" content="<%= content_for(:og_type) || 'website' %>">
-    <meta property="og:title" content="<%= content_for(:title) || 'Baltimore.ai' %>">
-    <meta property="og:description" content="<%= content_for(:meta_description) || 'A curated directory of AI companies, research labs, and resources in the Baltimore metro.' %>">
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:description" content="<%= description %>">
     <meta property="og:url" content="<%= canonical_url %>">
     <meta property="og:site_name" content="Baltimore.ai">
-    <meta property="og:image" content="<%= image_url('og-default.png') %>">
+    <meta property="og:image" content="<%= social_image %>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= content_for(:title) || 'Baltimore.ai' %>">
-    <meta name="twitter:description" content="<%= content_for(:meta_description) || 'A curated directory of AI companies, research labs, and resources in the Baltimore metro.' %>">
-    <meta name="twitter:image" content="<%= image_url('og-default.png') %>">
+    <meta name="twitter:title" content="<%= title %>">
+    <meta name="twitter:description" content="<%= description %>">
+    <meta name="twitter:image" content="<%= social_image %>">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -42,12 +45,12 @@
 
   <body class="bg-stone-50 text-stone-900 antialiased font-sans">
     <header class="border-b border-stone-200 bg-white">
-      <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <%= link_to root_path, class: "flex items-baseline gap-1" do %>
+      <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <%= link_to root_path, class: "flex shrink-0 items-baseline gap-1", aria: { label: "Baltimore.ai home" } do %>
           <span class="text-2xl font-black tracking-tight text-stone-900">baltimore</span>
           <span class="text-2xl font-black tracking-tight text-red-700">.ai</span>
         <% end %>
-        <nav class="flex items-center gap-6 text-sm font-medium text-stone-600">
+        <nav aria-label="Main navigation" class="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-medium text-stone-600 sm:gap-x-6">
           <%= link_to "Companies", companies_path, class: "hover:text-stone-900" %>
           <%= link_to "Categories", categories_path, class: "hover:text-stone-900" %>
           <%= link_to "Guides", guides_path, class: "hover:text-stone-900" %>

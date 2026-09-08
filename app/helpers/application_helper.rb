@@ -29,11 +29,15 @@ module ApplicationHelper
   end
 
   def page_title(*parts)
-    parts.compact.push("Baltimore.ai").join(" · ")
+    suffix = " · Baltimore.ai"
+    title = parts.compact_blank.join(" · ")
+    title.present? ? title.truncate(60 - suffix.length, separator: " ") + suffix : "Baltimore.ai"
   end
 
   def render_markdown(text)
     return "" if text.blank?
-    sanitize(Commonmarker.to_html(text, options: { extension: { table: true, strikethrough: true, autolink: true } }))
+    html = Commonmarker.to_html(text, options: { extension: { table: true, strikethrough: true, autolink: true } })
+    sanitize(html, tags: self.class.sanitized_allowed_tags.to_a + %w[table thead tbody tfoot tr th td],
+      attributes: self.class.sanitized_allowed_attributes.to_a + %w[id aria-hidden])
   end
 end

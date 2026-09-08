@@ -1,4 +1,4 @@
-<% content_for :title, page_title(@company.name, "Baltimore AI directory") %>
+<% content_for :title, page_title(@company.meta_title.presence || @company.name) %>
 <% content_for :meta_description, (@company.meta_description.presence || @company.tagline.presence || "#{@company.name} — a Baltimore-area #{category_label(@company.primary_category)} company on the Baltimore.ai directory.") %>
 <% content_for :og_type, "article" %>
 
@@ -44,7 +44,7 @@
       <% end %>
       <div>
         <dt class="text-xs uppercase tracking-wider text-stone-500">Location</dt>
-        <dd class="mt-1 font-semibold text-stone-900"><%= [ @company.city, @company.state ].compact_blank.join(", ") %></dd>
+        <dd class="mt-1 font-semibold text-stone-900"><%= [ @company.city, @company.state ].compact_blank.join(", ").presence || "See regional connection below" %></dd>
       </div>
       <% if @company.website.present? %>
         <div>
@@ -55,6 +55,9 @@
         </div>
       <% end %>
     </dl>
+    <% if @company.location_note.present? %>
+      <p class="mt-5 text-sm text-stone-600"><%= @company.location_note %></p>
+    <% end %>
   </header>
 
   <% if @company.description.present? %>
@@ -62,6 +65,8 @@
       <%= simple_format(@company.description) %>
     </div>
   <% end %>
+
+  <%= render "shared/research_sources", record: @company %>
 
   <% if @company.tags.any? %>
     <div class="mb-10">
@@ -112,18 +117,20 @@
   org = {
     "@context" => "https://schema.org",
     "@type" => "Organization",
+    "@id" => "#{canonical_url}#organization",
     "name" => @company.name,
+    "mainEntityOfPage" => canonical_url,
     "url" => @company.website,
     "description" => @company.description,
-    "address" => {
+    "address" => (@company.city.present? ? {
       "@type" => "PostalAddress",
       "addressLocality" => @company.city,
       "addressRegion" => @company.state,
       "addressCountry" => @company.country
-    }.compact,
+    }.compact : nil),
     "sameAs" => [ @company.linkedin_url, @company.github_url, @company.crunchbase_url, @company.twitter_url ].compact_blank,
     "foundingDate" => @company.founded_year&.to_s
   }.compact
-  raw org.to_json
+  raw json_escape(org.to_json)
 %>
 </script>

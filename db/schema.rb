@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_12_135550) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_08_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -26,13 +26,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_12_135550) do
     t.string "github_url"
     t.datetime "last_verified_at"
     t.string "linkedin_url"
+    t.string "location_note"
     t.string "logo_url"
     t.string "meta_description"
     t.string "meta_title"
     t.string "name", null: false
     t.string "primary_category", null: false
+    t.date "reviewed_on"
     t.string "slug", null: false
     t.string "source", default: "curator"
+    t.jsonb "source_references", default: [], null: false
     t.string "state", default: "MD"
     t.string "status", default: "draft", null: false
     t.string "tagline"
@@ -76,7 +79,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_12_135550) do
     t.string "meta_description"
     t.string "meta_title"
     t.datetime "published_at"
+    t.date "reviewed_on"
     t.string "slug", null: false
+    t.jsonb "source_references", default: [], null: false
     t.string "status", default: "draft", null: false
     t.string "title", null: false
     t.datetime "updated_at", null: false
@@ -113,12 +118,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_12_135550) do
     t.datetime "created_at", null: false
     t.text "description"
     t.integer "founded_year"
+    t.string "location_note"
     t.string "logo_url"
     t.string "meta_description"
     t.string "meta_title"
     t.string "name", null: false
     t.string "resource_type", null: false
+    t.date "reviewed_on"
     t.string "slug", null: false
+    t.jsonb "source_references", default: [], null: false
     t.string "state", default: "MD"
     t.string "status", default: "draft", null: false
     t.string "tagline"

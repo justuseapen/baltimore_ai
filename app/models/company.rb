@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  include ResearchProvenance
+
   CATEGORIES = %w[
     applied_ai
     infrastructure
@@ -37,6 +39,12 @@ class Company < ApplicationRecord
 
   def claimed?
     claimed
+  end
+
+  def clear_editorial_review
+    # Source checks cover the researched copy, not later owner edits.
+    assign_attributes(reviewed_on: nil, source_references: [],
+      location_note: nil, meta_title: nil, meta_description: nil)
   end
 
   def domain

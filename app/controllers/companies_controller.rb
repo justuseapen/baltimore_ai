@@ -19,14 +19,21 @@ class CompaniesController < ApplicationController
   end
 
   def update
-    if @company.update(company_params)
-      @company.tag_ids = Array(params[:tag_ids]).reject(&:blank?).map(&:to_i) if params.key?(:tag_ids)
+    @company.assign_attributes(company_params)
+    tag_ids = Array(params[:tag_ids]).reject(&:blank?).map(&:to_i).uniq if params.key?(:tag_ids)
+    @company.clear_editorial_review if @company.changed? || (tag_ids && tag_ids.sort != @company.tag_ids.sort)
+    Company.transaction do
+      @company.save!
+      @company.tag_ids = tag_ids if tag_ids
       @company.update!(last_verified_at: Time.current)
-      redirect_to company_path(@company), notice: "Listing updated."
-    else
-      flash.now[:alert] = @company.errors.full_messages.to_sentence
-      render :edit, status: :unprocessable_entity
     end
+    redirect_to company_path(@company), notice: "Listing updated."
+  rescue ActiveRecord::RecordInvalid => error
+    flash.now[:alert] = error.record.errors.full_messages.to_sentence
+    render :edit, status: :unprocessable_entity
+  rescue ActiveRecord::RecordNotFound
+    flash.now[:alert] = "A selected tag is no longer available. Please choose again."
+    render :edit, status: :unprocessable_entity
   end
 
   private
