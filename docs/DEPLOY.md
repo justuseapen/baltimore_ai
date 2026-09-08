@@ -39,16 +39,19 @@ fly deploy
 
 The release command runs `bin/rails db:prepare`, which is idempotent.
 
-## Sitemap regeneration
+## Publishing a researched content refresh
 
-The sitemap is regenerated as part of release if you add to the release script,
-or run on demand:
+Run migrations with the normal deployment, then import the versioned research catalog:
 
 ```sh
-fly ssh console -C "bundle exec rake sitemap:create"
+fly ssh console --app baltimore-ai -C "./bin/rails content:refresh"
 ```
 
-For now, run locally before deploy or wire into the release command if it grows.
+The content task preserves company-managed records and makes all changes in one database transaction. It does not create admin accounts or send mail. Before a production refresh, save a private backup of the current curated content; the retirement list hides records without deleting them. Check the resulting company/resource/guide counts and verify the published field report.
+
+## Sitemap
+
+`/sitemap.xml` is generated from current published records on each request. It includes current modification dates and excludes hidden records and thin categories. The legacy `/sitemap.xml.gz` URL redirects to it. Do not generate files under `public/sitemap.xml*`, because a static file would shadow these routes.
 
 ## Monitoring
 

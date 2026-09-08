@@ -1,0 +1,27 @@
+<% if record.reviewed_on.present? && record.source_references.any? %>
+  <section class="max-w-3xl my-10 p-5 bg-white border border-stone-200 rounded-md" aria-label="Research sources">
+    <h2 class="text-lg font-bold">Sources &amp; review</h2>
+    <p class="mt-2 text-sm text-stone-600">
+      Sources checked <time datetime="<%= record.reviewed_on.iso8601 %>"><%= record.reviewed_on.strftime("%B %-d, %Y") %></time>.
+      Product descriptions reflect the cited sources; inclusion is not an endorsement.
+      <%= link_to "How we research", editorial_standards_path, class: "text-red-700 underline" %>.
+    </p>
+    <ul class="mt-4 space-y-3 text-sm break-words">
+      <% record.source_references.each do |source| %>
+        <li>
+          <%= link_to source.fetch("title"), source.fetch("url"), class: "text-red-700 hover:underline", rel: "noopener", target: "_blank" %>
+          <span class="block text-stone-500">
+            <%= source["publisher"] %>
+            <% if source["updated_on"].present? %>
+              · Updated <%= source["updated_on"] %>
+            <% elsif source["published_on"].present? %>
+              · Published <%= source["published_on"] %>
+            <% else %>
+              · Publication date not stated
+            <% end %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

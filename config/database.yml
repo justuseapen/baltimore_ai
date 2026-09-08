@@ -57,6 +57,8 @@ development:
 test:
   <<: *default
   database: baltimore_ai_test
+  # Tests create their own records; content tests import the catalog explicitly.
+  seeds: false
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

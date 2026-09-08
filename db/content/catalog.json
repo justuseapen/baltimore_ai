@@ -1,0 +1,1535 @@
+{
+  "release_date": "2026-09-08",
+  "companies": [
+    {
+      "slug": "redshred",
+      "name": "Redshred",
+      "city": "Catonsville",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "applied_ai",
+      "tagline": "AI for technical documentation, search, and procedural guidance.",
+      "description": "Redshred turns technical manuals and other complex documents into searchable, structured information using AI and machine learning. Its COACH product supports procedural guidance. In July 2026 the company announced selection for a BlueTIDE demonstration; that announcement establishes selection, rather than confirming the later demonstration took place. Its company profile lists Catonsville in Baltimore County.",
+      "website": "https://www.redshred.com/",
+      "location_note": "Greater Baltimore · Catonsville address listed on the company-maintained profile.",
+      "source_references": [
+        {
+          "title": "Technical Documentation AI",
+          "url": "https://www.redshred.com/",
+          "publisher": "Redshred"
+        },
+        {
+          "title": "Company location",
+          "url": "https://www.linkedin.com/company/redshred",
+          "publisher": "Redshred"
+        },
+        {
+          "title": "COACH selected for BlueTIDE",
+          "url": "https://www.redshred.com/news/redshred-selected-to-demo-at-bluetide-2026-showcasing-ai-powered-procedural-guidance-for-maritime-operations",
+          "publisher": "Redshred",
+          "published_on": "2026-07-14"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Redshred",
+      "meta_description": "AI for technical documentation, search, and procedural guidance.",
+      "tags": [
+        "machine-learning",
+        "natural-language-processing",
+        "search"
+      ]
+    },
+    {
+      "slug": "mindgrub",
+      "name": "Mindgrub",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "consulting",
+      "tagline": "Baltimore AI consulting, custom software, copilots, and workflow automation.",
+      "description": "Mindgrub is a technology consultancy headquartered on East Fort Avenue in Baltimore. Its current services include AI strategy and implementation, copilots, triage agents, decision systems, and fractional AI leadership. It is a services firm for organizations adopting AI, rather than a single-product AI startup.",
+      "website": "https://mindgrub.com/",
+      "location_note": "Baltimore City · headquarters at 1215 East Fort Avenue.",
+      "source_references": [
+        {
+          "title": "About and headquarters",
+          "url": "https://mindgrub.com/about/",
+          "publisher": "Mindgrub"
+        },
+        {
+          "title": "Services",
+          "url": "https://mindgrub.com/services/",
+          "publisher": "Mindgrub"
+        },
+        {
+          "title": "AI interfaces and implementation examples",
+          "url": "https://mindgrub.com/blog/the-future-of-ai-interfaces-beyond-just-in-time-video/",
+          "publisher": "Mindgrub",
+          "published_on": "2026-03-26"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Mindgrub",
+      "meta_description": "Baltimore AI consulting, custom software, copilots, and workflow automation.",
+      "tags": [
+        "ai-consulting",
+        "llm"
+      ]
+    },
+    {
+      "slug": "fearless",
+      "name": "Fearless",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "govtech",
+      "tagline": "Baltimore digital services with AI, data engineering, and human-reviewed automation.",
+      "description": "Fearless is a Baltimore digital services company whose data practice includes AI and machine learning, predictive modeling, natural-language processing, and conversational AI. Its published projects include drafting museum image descriptions and permit-related content with human review. These examples establish specific AI work without implying that every Fearless project uses AI.",
+      "website": "https://fearless.com/",
+      "location_note": "Baltimore City · company identifies its home in Baltimore.",
+      "source_references": [
+        {
+          "title": "Company overview",
+          "url": "https://fearless.com/",
+          "publisher": "Fearless"
+        },
+        {
+          "title": "Data and AI services",
+          "url": "https://fearless.com/services/data",
+          "publisher": "Fearless"
+        },
+        {
+          "title": "AI-assisted alt text case study",
+          "url": "https://fearless.com/case-studies/ai-alt-text",
+          "publisher": "Fearless"
+        },
+        {
+          "title": "AI content governance case study",
+          "url": "https://fearless.com/case-studies/ai-content-governance",
+          "publisher": "Fearless"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Fearless",
+      "meta_description": "Baltimore digital services with AI, data engineering, and human-reviewed automation.",
+      "tags": [
+        "ai-consulting",
+        "natural-language-processing",
+        "llm"
+      ]
+    },
+    {
+      "slug": "tenable",
+      "name": "Tenable",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "applied_ai",
+      "tagline": "Columbia-based exposure management with agentic AI for cybersecurity workflows.",
+      "description": "Tenable is an exposure-management company headquartered in Columbia, Howard County. Its Tenable One platform includes Hexa AI. On May 20, 2026, Tenable announced work with Anthropic on Claude-powered workflows and agentic capabilities. This is a Greater Baltimore cybersecurity company; its Columbia headquarters should not be described as a Baltimore City office.",
+      "website": "https://www.tenable.com/",
+      "location_note": "Greater Baltimore · Columbia headquarters, Howard County.",
+      "source_references": [
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.tenable.com/about-tenable/contact-tenable",
+          "publisher": "Tenable"
+        },
+        {
+          "title": "Anthropic partnership",
+          "url": "https://www.tenable.com/press-releases/tenable-partners-with-anthropic-for-ai-driven-exposure-management",
+          "publisher": "Tenable",
+          "published_on": "2026-05-20"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Tenable",
+      "meta_description": "Columbia-based exposure management with agentic AI for cybersecurity workflows.",
+      "tags": [
+        "cybersecurity-ai",
+        "llm"
+      ]
+    },
+    {
+      "slug": "zerofox",
+      "name": "ZeroFox",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "applied_ai",
+      "tagline": "Baltimore external cybersecurity company using AI analytics; privately held since 2024.",
+      "description": "ZeroFox provides external cybersecurity services and AI analytics, with headquarters on Whetstone Way in Baltimore. Haveli Investments completed its acquisition on May 13, 2024, and the company was delisted. Older accounts of ZeroFox as a publicly traded company need that ownership update.",
+      "website": "https://www.zerofox.com/",
+      "location_note": "Baltimore City · current headquarters listed on Whetstone Way.",
+      "source_references": [
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.zerofox.com/contact-us/",
+          "publisher": "ZeroFox"
+        },
+        {
+          "title": "Haveli acquisition completed",
+          "url": "https://www.zerofox.com/press-release/haveli-completes-acquisition-of-zerofox/",
+          "publisher": "ZeroFox",
+          "published_on": "2024-05-13"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "ZeroFox",
+      "meta_description": "Baltimore external cybersecurity company using AI analytics; privately held since 2024.",
+      "tags": [
+        "cybersecurity-ai",
+        "machine-learning"
+      ]
+    },
+    {
+      "slug": "huntress",
+      "name": "Huntress",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "applied_ai",
+      "tagline": "Managed cybersecurity and an AI-centric security operations platform, based in Columbia.",
+      "description": "Huntress offers managed endpoint and identity security and says its platform is backed and operated by an AI-centric security operations center. Its current contact and privacy pages list a Columbia address. The company operates with a distributed team, so its regional base should not be read as a count of employees working locally.",
+      "website": "https://www.huntress.com/",
+      "location_note": "Greater Baltimore · Columbia contact address; distributed workforce.",
+      "source_references": [
+        {
+          "title": "Contact",
+          "url": "https://www.huntress.com/contact-us",
+          "publisher": "Huntress"
+        },
+        {
+          "title": "Platform",
+          "url": "https://www.huntress.com/",
+          "publisher": "Huntress"
+        },
+        {
+          "title": "Privacy policy and address",
+          "url": "https://www.huntress.com/privacy-policy",
+          "publisher": "Huntress",
+          "published_on": "2026-06-03"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Huntress",
+      "meta_description": "Managed cybersecurity and an AI-centric security operations platform, based in Columbia.",
+      "tags": [
+        "cybersecurity-ai",
+        "machine-learning"
+      ]
+    },
+    {
+      "slug": "cyberpoint",
+      "name": "CyberPoint International",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "consulting",
+      "tagline": "Columbia AI strategy, model development, and MLOps through the AIZEN team.",
+      "description": "CyberPoint International lists its headquarters in Columbia, Maryland. Its AIZEN team offers AI strategy, model development, and machine-learning operations. The current headquarters information supersedes older descriptions placing the company in Baltimore City.",
+      "website": "https://www.cyberpointllc.com/",
+      "location_note": "Greater Baltimore · Columbia headquarters at 7142 Columbia Gateway Drive.",
+      "source_references": [
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.cyberpointllc.com/contact.php",
+          "publisher": "CyberPoint"
+        },
+        {
+          "title": "AIZEN AI research and solutions",
+          "url": "https://www.cyberpointllc.com/aizen.php",
+          "publisher": "CyberPoint"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "CyberPoint International",
+      "meta_description": "Columbia AI strategy, model development, and MLOps through the AIZEN team.",
+      "tags": [
+        "ai-consulting",
+        "machine-learning",
+        "cybersecurity-ai"
+      ]
+    },
+    {
+      "slug": "leidos-baltimore",
+      "name": "Leidos (Greater Baltimore operations)",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "consulting",
+      "tagline": "Regional agentic AI development through Leidos company Kudu Dynamics in Columbia.",
+      "description": "Leidos is a national technology company with documented AI work in Greater Baltimore. A May 2026 Kudu Dynamics recruiting page identifies an onsite Columbia role building agents, retrieval-augmented generation, and multi-agent workflows. This supports a regional operating presence, not a Baltimore headquarters claim. A job posting is evidence of the role described at publication; it does not guarantee a vacancy remains open.",
+      "website": "https://www.leidos.com/",
+      "location_note": "Greater Baltimore operations · Columbia role documented; parent headquarters outside Baltimore.",
+      "source_references": [
+        {
+          "title": "Agentic AI Developer, Columbia",
+          "url": "https://careers.leidos.com/jobs/17772715-agentic-ai-developer",
+          "publisher": "Leidos",
+          "published_on": "2026-05-22"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Leidos (Greater Baltimore operations)",
+      "meta_description": "Regional agentic AI development through Leidos company Kudu Dynamics in Columbia.",
+      "tags": [
+        "ai-consulting",
+        "llm",
+        "defense-ai"
+      ]
+    },
+    {
+      "slug": "axle-informatics",
+      "name": "Axle",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "research",
+      "tagline": "Maryland AI and research services firm with documented federal laboratory work in Baltimore.",
+      "description": "Axle provides AI services including language models, computer vision, analytics, and MLOps. A company-managed 2026 laboratory posting documents onsite support for the National Institute on Aging in Baltimore. The local laboratory work and company-wide AI practice are separate verified facts; the posting does not show that every AI capability is deployed in that Baltimore lab.",
+      "website": "https://axleinfo.com/",
+      "location_note": "Baltimore research operations · federal laboratory work; not a local headquarters claim.",
+      "source_references": [
+        {
+          "title": "Artificial intelligence services",
+          "url": "https://axleinfo.com/expertise/technology/artificial-intelligence-machine-learning/",
+          "publisher": "Axle"
+        },
+        {
+          "title": "Baltimore laboratory role, requisition 2026-3419",
+          "url": "https://job-boards.greenhouse.io/axle/jobs/5227811007",
+          "publisher": "Axle"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Axle",
+      "meta_description": "Maryland AI and research services firm with documented federal laboratory work in Baltimore.",
+      "tags": [
+        "machine-learning",
+        "computer-vision",
+        "llm"
+      ]
+    },
+    {
+      "slug": "personal-genome-diagnostics",
+      "name": "PGDx, part of Labcorp",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "healthcare_ai",
+      "tagline": "Baltimore-origin genomics business using machine learning in cancer-testing analysis.",
+      "description": "Personal Genome Diagnostics became part of Labcorp in February 2022. Labcorp describes machine-learning algorithms and automated data curation in PGDx elio testing solutions. PGDx has documented Baltimore roots and current Labcorp recruiting identifies Baltimore work. Historical corporate materials list Boston Street; we do not treat that older address as a freshly verified office location.",
+      "website": "https://www.labcorp.com/oncology/providers/testing-solutions/kitted-solutions",
+      "location_note": "Baltimore-origin acquired business · local work documented; historical street address not reverified.",
+      "source_references": [
+        {
+          "title": "PGDx acquisition completed",
+          "url": "https://ir.labcorp.com/node/33121",
+          "publisher": "Labcorp",
+          "published_on": "2022-02-21"
+        },
+        {
+          "title": "PGDx elio kitted solutions",
+          "url": "https://www.labcorp.com/oncology/providers/testing-solutions/kitted-solutions",
+          "publisher": "Labcorp"
+        },
+        {
+          "title": "PGDx corporate overview",
+          "url": "https://www.personalgenome.com/uploads/downloads/19987_FLY_PGDxCorporateOverview.pdf",
+          "publisher": "PGDx",
+          "published_on": "2022"
+        },
+        {
+          "title": "Baltimore bioinformatics role",
+          "url": "https://labcorp.wd1.myworkdayjobs.com/external/job/usa---md---baltimore---2000-baltimore-street/bioinformatics-software-engineer-ii_2624805",
+          "publisher": "Labcorp"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "PGDx, part of Labcorp",
+      "meta_description": "Baltimore-origin genomics business using machine learning in cancer-testing analysis.",
+      "tags": [
+        "healthcare-ai",
+        "machine-learning",
+        "genomics"
+      ]
+    },
+    {
+      "slug": "protenus",
+      "name": "Protenus, acquired by Bluesight",
+      "city": null,
+      "state": null,
+      "country": "US",
+      "primary_category": "healthcare_ai",
+      "tagline": "Baltimore-founded AI compliance analytics business, acquired by Bluesight in 2025.",
+      "description": "Protenus developed AI-based healthcare compliance analytics and was acquired by Bluesight on January 9, 2025. Its patient-privacy solution was subsequently renamed PrivacyPro. This entry preserves a Baltimore-founded company’s history while identifying its current parent and product identity. A current independent Protenus headquarters has not been verified.",
+      "website": "https://bluesight.com/",
+      "location_note": "Baltimore-founded · acquired business; current independent local office not verified.",
+      "source_references": [
+        {
+          "title": "Bluesight acquires Protenus",
+          "url": "https://bluesight.com/news/bluesight-expands-compliance-capabilities-and-strengthens-platform-through-acquisition-of-protenus/",
+          "publisher": "Bluesight",
+          "published_on": "2025-01-09"
+        },
+        {
+          "title": "PrivacyPro rebrand",
+          "url": "https://bluesight.com/news/ceo-blog-bluesight-rebrands-privacy-solution-to-privacypro/",
+          "publisher": "Bluesight",
+          "published_on": "2025"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Protenus, acquired by Bluesight",
+      "meta_description": "Baltimore-founded AI compliance analytics business, acquired by Bluesight in 2025.",
+      "tags": [
+        "healthcare-ai",
+        "machine-learning"
+      ]
+    },
+    {
+      "slug": "sonavex",
+      "name": "Sonavex",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "healthcare_ai",
+      "tagline": "Johns Hopkins spinout developing ultrasound and AI for dialysis-access visualization.",
+      "description": "Sonavex is a Baltimore company spun out of Johns Hopkins. Its April 2025 announcement describes EchoMap combining 3D ultrasound and AI to visualize dialysis access before cannulation, and reports FDA 510(k) clearance. EchoMap must be distinguished from EchoMark and EchoSure: the company currently labels those products investigational and unavailable commercially for AV-access use. Product clearance is not evidence for every proposed clinical benefit.",
+      "website": "https://www.sonavex.com/",
+      "location_note": "Baltimore City · Johns Hopkins spinout, as identified by the company.",
+      "source_references": [
+        {
+          "title": "EchoMap clearance announcement",
+          "url": "https://www.sonavex.com/2025/04/28/sonavex-receives-fda-510k-clearance-for-echomap-device/",
+          "publisher": "Sonavex",
+          "published_on": "2025-04-28"
+        },
+        {
+          "title": "Product and investigational-use information",
+          "url": "https://www.sonavex.com/",
+          "publisher": "Sonavex"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Sonavex",
+      "meta_description": "Johns Hopkins spinout developing ultrasound and AI for dialysis-access visualization.",
+      "tags": [
+        "healthcare-ai",
+        "computer-vision"
+      ]
+    },
+    {
+      "slug": "b-well-connected-health",
+      "name": "b.well Connected Health",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "healthcare_ai",
+      "tagline": "Baltimore connected-health platform offering AI navigation and interoperable patient data.",
+      "description": "b.well Connected Health lists a Baltimore address and offers conversational AI and natural-language care navigation. In July 2026 the company announced its CMS Aligned Network was live. CMS independently describes the network as operating in production in an August 5 update. That confirms network activity, not the clinical effectiveness of b.well’s AI products.",
+      "website": "https://www.icanbwell.com/",
+      "location_note": "Baltimore City · legal contact at 145 West Ostend Street.",
+      "source_references": [
+        {
+          "title": "Patient rights and contact",
+          "url": "https://www.icanbwell.com/legal/patient-rights-and-requests/",
+          "publisher": "b.well",
+          "published_on": "2026-04-27"
+        },
+        {
+          "title": "Artificial intelligence solutions",
+          "url": "https://www.icanbwell.com/artificial-intelligence-solutions/",
+          "publisher": "b.well"
+        },
+        {
+          "title": "CMS Aligned Network showcase",
+          "url": "https://www.cms.gov/initiatives/health-technology-ecosystem/overview/pledge-demo-showcase/b-well",
+          "publisher": "Centers for Medicare & Medicaid Services",
+          "updated_on": "2026-08-05"
+        },
+        {
+          "title": "CMS Aligned Network launch",
+          "url": "https://resources.icanbwell.com/bwells-cms-aligned-network-goes-live-real-patient-data-now-exchanging-across-major-health-plans-digital-platforms-and-health-systems/",
+          "publisher": "b.well",
+          "published_on": "2026-07-29"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "b.well Connected Health",
+      "meta_description": "Baltimore connected-health platform offering AI navigation and interoperable patient data.",
+      "tags": [
+        "healthcare-ai",
+        "llm",
+        "data-platform"
+      ]
+    },
+    {
+      "slug": "junebrain",
+      "name": "JuneBrain",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "healthcare_ai",
+      "tagline": "Baltimore retinal-imaging AI for research; investigational use, not clinical diagnosis.",
+      "description": "JuneBrain develops AI analysis of retinal optical coherence tomography (OCT) imaging. Its current company page identifies Baltimore headquarters and collaborations with Johns Hopkins and the University of Maryland, Baltimore. The company advertises a 2026 AI-powered OCT analysis pilot. Its products and services are for investigational use only and are not for clinical diagnosis.",
+      "website": "https://www.junebrain.com/",
+      "location_note": "Baltimore City · headquarters confirmed on the company’s about page.",
+      "source_references": [
+        {
+          "title": "Company and Baltimore headquarters",
+          "url": "https://www.junebrain.com/about",
+          "publisher": "JuneBrain"
+        },
+        {
+          "title": "2026 pilot and investigational-use notice",
+          "url": "https://www.junebrain.com/",
+          "publisher": "JuneBrain"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "JuneBrain",
+      "meta_description": "Baltimore retinal-imaging AI for research; investigational use, not clinical diagnosis.",
+      "tags": [
+        "healthcare-ai",
+        "computer-vision"
+      ]
+    },
+    {
+      "slug": "welldoc",
+      "name": "Welldoc",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "healthcare_ai",
+      "tagline": "Columbia digital-health company with an AI Lab focused on cardiometabolic care.",
+      "description": "Welldoc develops digital-health technology and maintains an AI Lab for research, data science, and AI-enabled support for cardiometabolic care. Its US office is in Columbia, Howard County. Welldoc’s AI Lab describes collaboration with Johns Hopkins. This listing describes the company’s work without independently evaluating clinical or commercial performance.",
+      "website": "https://www.welldoc.com/",
+      "location_note": "Greater Baltimore · US office at 10221 Wincopin Circle, Columbia.",
+      "source_references": [
+        {
+          "title": "US office",
+          "url": "https://www.welldoc.com/contact-us",
+          "publisher": "Welldoc"
+        },
+        {
+          "title": "AI Lab",
+          "url": "https://www.welldoc.com/ai-lab",
+          "publisher": "Welldoc"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Welldoc",
+      "meta_description": "Columbia digital-health company with an AI Lab focused on cardiometabolic care.",
+      "tags": [
+        "healthcare-ai",
+        "machine-learning"
+      ]
+    },
+    {
+      "slug": "infinite-biomedical-technologies",
+      "name": "Infinite Biomedical Technologies",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "robotics",
+      "tagline": "Baltimore prosthetic-control company with documented machine-learning development.",
+      "description": "Infinite Biomedical Technologies (IBT) develops prosthetic-control technology and traces its origins to Johns Hopkins. Its current team includes machine-learning engineering, and its office is at 8 Market Place in Baltimore. FDA’s AI-enabled-device list includes the Sense System with IBT Electrodes. That establishes a specific AI-enabled product history; it does not mean every current IBT product uses AI.",
+      "website": "https://www.i-biomed.com/",
+      "location_note": "Baltimore City · office at 8 Market Place, Suite 500.",
+      "source_references": [
+        {
+          "title": "Company, team, and address",
+          "url": "https://www.i-biomed.com/about",
+          "publisher": "Infinite Biomedical Technologies"
+        },
+        {
+          "title": "AI-enabled medical devices",
+          "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-enabled-medical-devices",
+          "publisher": "US Food and Drug Administration"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Infinite Biomedical Technologies",
+      "meta_description": "Baltimore prosthetic-control company with documented machine-learning development.",
+      "tags": [
+        "robotics",
+        "machine-learning",
+        "healthcare-ai"
+      ]
+    },
+    {
+      "slug": "mind-over-machines",
+      "name": "Mind Over Machines",
+      "city": "Owings Mills",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "consulting",
+      "tagline": "Owings Mills AI integration, business automation, and workforce adoption consulting.",
+      "description": "Mind Over Machines helps organizations integrate AI into business workflows, including chatbots, machine learning, and natural-language processing. Its services combine software integration, automation, and workforce adoption. The company lists its office in Owings Mills, Baltimore County.",
+      "website": "https://www.mindovermachines.com/",
+      "location_note": "Greater Baltimore · Owings Mills office at 10451 Mill Run Circle.",
+      "source_references": [
+        {
+          "title": "Contact and office",
+          "url": "https://www.mindovermachines.com/contact-us/",
+          "publisher": "Mind Over Machines"
+        },
+        {
+          "title": "AI integration services",
+          "url": "https://www.mindovermachines.com/automation-ai-workforce/artificial-intelligence/",
+          "publisher": "Mind Over Machines"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Mind Over Machines",
+      "meta_description": "Owings Mills AI integration, business automation, and workforce adoption consulting.",
+      "tags": [
+        "ai-consulting",
+        "machine-learning",
+        "natural-language-processing"
+      ]
+    },
+    {
+      "slug": "catalyte",
+      "name": "Catalyte",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "applied_ai",
+      "tagline": "Baltimore talent and technology company using predictive AI in talent discovery.",
+      "description": "Catalyte identifies Baltimore as its headquarters and describes using predictive technology to identify potential technical talent beyond traditional credentials. Its services include apprenticeships, technology consulting, and AI advisory work. Claims about the predictive effectiveness of its system are company claims; this directory does not independently validate hiring accuracy or bias reduction.",
+      "website": "https://www.catalyte.io/",
+      "location_note": "Baltimore City · headquarters identified in the company FAQ.",
+      "source_references": [
+        {
+          "title": "Company FAQs and headquarters",
+          "url": "https://www.catalyte.io/about/faqs/",
+          "publisher": "Catalyte"
+        },
+        {
+          "title": "Catalyte AI",
+          "url": "https://www.catalyte.io/about/catalyte-ai/",
+          "publisher": "Catalyte"
+        },
+        {
+          "title": "Current services",
+          "url": "https://www.catalyte.io/",
+          "publisher": "Catalyte"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Catalyte",
+      "meta_description": "Baltimore talent and technology company using predictive AI in talent discovery.",
+      "tags": [
+        "machine-learning",
+        "ai-consulting"
+      ]
+    },
+    {
+      "slug": "enveil",
+      "name": "Enveil",
+      "city": "Fulton",
+      "state": "MD",
+      "country": "US",
+      "primary_category": "infrastructure",
+      "tagline": "Fulton privacy-preserving software for encrypted analytics and machine learning.",
+      "description": "Enveil develops software for privacy-preserving searches, analytics, and machine learning across organizational boundaries. Its ZeroReveal ML offering includes encrypted federated learning. The company-maintained profile lists Fulton, Howard County. On September 2, 2026, Enveil announced Carahsoft as its public-sector distributor, expanding distribution channels for its secure data-use software.",
+      "website": "https://www.enveil.com/",
+      "location_note": "Greater Baltimore · Fulton address from the company-maintained profile; described broadly as DC metro on its site.",
+      "source_references": [
+        {
+          "title": "Secure AI",
+          "url": "https://www.enveil.com/secureai/",
+          "publisher": "Enveil"
+        },
+        {
+          "title": "Company location",
+          "url": "https://www.linkedin.com/company/enveil",
+          "publisher": "Enveil"
+        },
+        {
+          "title": "Carahsoft partnership",
+          "url": "https://www.enveil.com/enveil-partners-with-carahsoft/",
+          "publisher": "Enveil",
+          "published_on": "2026-09-02"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Enveil",
+      "meta_description": "Fulton privacy-preserving software for encrypted analytics and machine learning.",
+      "tags": [
+        "ai-infrastructure",
+        "machine-learning",
+        "cybersecurity-ai"
+      ]
+    },
+    {
+      "slug": "ecomap-technologies",
+      "name": "EcoMap Technologies",
+      "city": "Baltimore",
+      "primary_category": "applied_ai",
+      "tagline": "Baltimore AI resource mapping and conversational navigation for local ecosystems.",
+      "description": "EcoMap Technologies develops AI-enabled resource mapping and conversational navigation tools for economic-development organizations, chambers, and other ecosystem builders. TEDCO identifies EcoMap as Baltimore-based and announced a Seed Funds investment of more than $100,000 on June 22, 2026. That amount describes the TEDCO investment, not necessarily the total financing round.",
+      "website": "https://www.ecomap.tech/",
+      "location_note": "Baltimore City · location identified by TEDCO in June 2026.",
+      "source_references": [
+        {
+          "title": "TEDCO invests in EcoMap",
+          "url": "https://www.tedcomd.com/press-release/tedco-invests-ecomap-technologies",
+          "publisher": "TEDCO",
+          "published_on": "2026-06-22"
+        },
+        {
+          "title": "AI ecosystem intelligence platform",
+          "url": "https://www.ecomap.tech/",
+          "publisher": "EcoMap Technologies"
+        }
+      ],
+      "tags": [
+        "llm",
+        "data-platform",
+        "search"
+      ],
+      "state": "MD",
+      "country": "US",
+      "status": "published",
+      "reviewed_on": "2026-09-08",
+      "meta_title": "EcoMap Technologies",
+      "meta_description": "Baltimore AI resource mapping and conversational navigation for local ecosystems."
+    },
+    {
+      "slug": "pixee",
+      "name": "Pixee",
+      "city": "Baltimore",
+      "primary_category": "applied_ai",
+      "tagline": "AI application-security triage and code remediation, with a Baltimore company base.",
+      "description": "Pixee develops AI tools for triaging application-security findings and producing code fixes. Its company-maintained profile lists Baltimore as headquarters and an additional location in Palo Alto. This supports a city-level company connection; a current staffed Baltimore street address has not been independently verified.",
+      "website": "https://www.pixee.ai/",
+      "location_note": "Baltimore headquarters per company-maintained profile · also lists Palo Alto; local street address not independently verified.",
+      "source_references": [
+        {
+          "title": "AI security platform",
+          "url": "https://www.pixee.ai/about",
+          "publisher": "Pixee"
+        },
+        {
+          "title": "Company locations",
+          "url": "https://www.linkedin.com/company/pixee",
+          "publisher": "Pixee"
+        }
+      ],
+      "tags": [
+        "cybersecurity-ai",
+        "llm"
+      ],
+      "state": "MD",
+      "country": "US",
+      "status": "published",
+      "reviewed_on": "2026-09-08",
+      "meta_title": "Pixee",
+      "meta_description": "AI application-security triage and code remediation, with a Baltimore company base."
+    }
+  ],
+  "resources": [
+    {
+      "slug": "johns-hopkins-apl",
+      "name": "Johns Hopkins Applied Physics Laboratory",
+      "city": "Laurel",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "lab",
+      "tagline": "Applied AI, autonomy, and mission-focused research at Johns Hopkins APL in Laurel.",
+      "description": "Johns Hopkins APL conducts applied AI and autonomy research across national security, space, and health-related missions. The laboratory is in Laurel, not on the university’s Homewood campus in Baltimore. Its April 2026 account of in-house language-model training provides a concrete example of current AI research. Public articles and careers pages are useful entry points; campus access and eligibility depend on the specific opportunity.",
+      "website": "https://www.jhuapl.edu/",
+      "location_note": "Greater Baltimore · Laurel, at 11100 Johns Hopkins Road.",
+      "source_references": [
+        {
+          "title": "Artificial intelligence at APL",
+          "url": "https://www.jhuapl.edu/work/impact/artificial-intelligence",
+          "publisher": "Johns Hopkins APL"
+        },
+        {
+          "title": "Location and laboratory overview",
+          "url": "https://www.jhuapl.edu/",
+          "publisher": "Johns Hopkins APL"
+        },
+        {
+          "title": "In-house LLM training",
+          "url": "https://www.jhuapl.edu/news/news-releases/260413-apl-in-house-llm",
+          "publisher": "Johns Hopkins APL",
+          "published_on": "2026-04-13"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Johns Hopkins APL laboratory",
+      "meta_description": "Applied AI, autonomy, and mission-focused research at Johns Hopkins APL in Laurel."
+    },
+    {
+      "slug": "jhu-mathematical-institute-data-science",
+      "name": "Johns Hopkins Mathematical Institute for Data Science",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "lab",
+      "tagline": "MINDS connects theoretical data science with language, vision, robotics, and other research.",
+      "description": "MINDS is the Johns Hopkins Mathematical Institute for Data Science. Its work covers foundations of data analysis and applications including computer vision, language and speech processing, robotics, and medicine. Its site links to research, education, and seminars. MINDS and the broader Data Science and AI Institute are distinct organizations; use the relevant program’s own page when planning a visit or applying.",
+      "website": "https://www.minds.jhu.edu/",
+      "location_note": "Johns Hopkins University · Baltimore research community.",
+      "source_references": [
+        {
+          "title": "Institute, research, and education",
+          "url": "https://www.minds.jhu.edu/",
+          "publisher": "Johns Hopkins MINDS"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Johns Hopkins MINDS",
+      "meta_description": "MINDS connects theoretical data science with language, vision, robotics, and other research."
+    },
+    {
+      "slug": "jhu-data-science-and-ai-institute",
+      "name": "Johns Hopkins Data Science and AI Institute",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "lab",
+      "tagline": "Johns Hopkins AI research, education, and interdisciplinary events in Baltimore.",
+      "description": "The Data Science and AI Institute supports research and education across fields including neuroscience, medicine, climate, and public-sector innovation. Johns Hopkins announced construction of its new Homewood buildings for 2026, with completion scheduled for 2029. The buildings are a future facility, not an already-open campus hub. Current institute programs and events operate through the university’s published locations.",
+      "website": "https://ai.jhu.edu/",
+      "location_note": "Baltimore · university-wide institute; new Homewood buildings under development.",
+      "source_references": [
+        {
+          "title": "Institute and current contact",
+          "url": "https://ai.jhu.edu/",
+          "publisher": "Johns Hopkins"
+        },
+        {
+          "title": "Construction announcement",
+          "url": "https://hub.jhu.edu/2026/01/02/hopkins-data-science-ai-institute-wyman-park-drive-closure/",
+          "publisher": "Johns Hopkins Hub",
+          "published_on": "2026-01-02"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Johns Hopkins Data Science and AI",
+      "meta_description": "Johns Hopkins AI research, education, and interdisciplinary events in Baltimore."
+    },
+    {
+      "slug": "umbc-ai-cybersecurity-collaboratory",
+      "name": "UMBC Center for Artificial Intelligence",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "university",
+      "tagline": "UMBC AI research, faculty, labs, seminars, and educational opportunities.",
+      "description": "UMBC’s Center for Artificial Intelligence connects research, applications, and education across the university. Its current website provides faculty and laboratory directories, AI news, opportunities, and an event calendar. UMBC’s main campus is in Baltimore County near Catonsville. Official university pages disagree on whether the center was established in 2023 or 2024, so this listing does not assign a founding year.",
+      "website": "https://ai.umbc.edu/",
+      "location_note": "Greater Baltimore · UMBC main campus, Baltimore County.",
+      "source_references": [
+        {
+          "title": "AI center and calendar",
+          "url": "https://ai.umbc.edu/",
+          "publisher": "UMBC"
+        },
+        {
+          "title": "Center overview",
+          "url": "https://coeit.umbc.edu/cai/",
+          "publisher": "UMBC"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "UMBC Center for AI",
+      "meta_description": "UMBC AI research, faculty, labs, seminars, and educational opportunities."
+    },
+    {
+      "slug": "bwtech-umbc",
+      "name": "bwtech@UMBC",
+      "city": "Halethorpe",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "accelerator",
+      "tagline": "UMBC research park supporting AI, cybersecurity, health technology, and business growth.",
+      "description": "bwtech@UMBC supports companies from early concepts through growing businesses across AI, cybersecurity, health technology, and other technical fields. Its current website provides program, company, and event information. It is a broad technology research park rather than an AI-only accelerator, and event access or program eligibility should be checked with the organizer.",
+      "website": "https://bwtech.umbc.edu/",
+      "location_note": "Greater Baltimore · research park at UMBC, Baltimore County.",
+      "source_references": [
+        {
+          "title": "Programs and current park information",
+          "url": "https://bwtech.umbc.edu/",
+          "publisher": "bwtech@UMBC"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "bwtech@UMBC",
+      "meta_description": "UMBC research park supporting AI, cybersecurity, health technology, and business growth."
+    },
+    {
+      "slug": "fastforward-u",
+      "name": "Pava Marie LaPere Center for Entrepreneurship",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "accelerator",
+      "tagline": "Johns Hopkins founder programs, formerly known as FastForward U.",
+      "description": "The Pava Center is the current identity for the Johns Hopkins entrepreneurship center previously known as FastForward U. Its programs serve student, alumni, and community ventures, with separate eligibility rules. Spark, Fuel, and the Social Innovation Lab are entry points listed on its site. It supports a wider range of ventures than AI alone.",
+      "website": "https://pavacenter.jhu.edu/",
+      "location_note": "Baltimore City · Johns Hopkins entrepreneurship community.",
+      "source_references": [
+        {
+          "title": "Programs and current center identity",
+          "url": "https://pavacenter.jhu.edu/",
+          "publisher": "Johns Hopkins Pava Center"
+        },
+        {
+          "title": "FastForward U renaming announcement",
+          "url": "https://hub.jhu.edu/2024/04/04/remembering-pava-lapere/",
+          "publisher": "Johns Hopkins Hub",
+          "published_on": "2024-04-04"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Pava Center at Johns Hopkins",
+      "meta_description": "Johns Hopkins founder programs, formerly known as FastForward U."
+    },
+    {
+      "slug": "tedco",
+      "name": "TEDCO",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "program",
+      "tagline": "Maryland technology funding and commercialization support, with Baltimore-region programs.",
+      "description": "TEDCO supports technology and life-science entrepreneurship across Maryland. Its Maryland Innovation Initiative connects participating universities with commercialization support, while the Baltimore Innovation Initiative focuses on the region. A July 2026 announcement reported another BII award round. Program participation and funding depend on the current eligibility and application requirements, not simply on being an AI company.",
+      "website": "https://www.tedcomd.com/",
+      "location_note": "Statewide Maryland resource · based in Columbia.",
+      "source_references": [
+        {
+          "title": "Maryland Innovation Initiative",
+          "url": "https://www.tedcomd.com/department/maryland-innovation-initiative",
+          "publisher": "TEDCO",
+          "published_on": "2026-08-28"
+        },
+        {
+          "title": "Baltimore Innovation Initiative awards",
+          "url": "https://www.tedcomd.com/insight/tedcos-maryland-innovation-initiative-announces-664448-granted-latest-baltimore-innovation",
+          "publisher": "TEDCO",
+          "published_on": "2026-07-14"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "TEDCO",
+      "meta_description": "Maryland technology funding and commercialization support, with Baltimore-region programs."
+    },
+    {
+      "slug": "etc-baltimore",
+      "name": "ETC Baltimore",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "accelerator",
+      "tagline": "Baltimore startup support, funding connections, and an active technology portfolio.",
+      "description": "ETC Baltimore supports technology and biotech entrepreneurs in Baltimore City through funding and ecosystem connections. Its current site lists a South Charles Street address. A February 2026 announcement added JuneBrain to its portfolio, providing a specific connection to a local AI imaging company.",
+      "website": "https://etcbaltimore.com/",
+      "location_note": "Baltimore City · 36 South Charles Street.",
+      "source_references": [
+        {
+          "title": "Current mission, location, and portfolio news",
+          "url": "https://etcbaltimore.com/",
+          "publisher": "ETC Baltimore"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "ETC Baltimore",
+      "meta_description": "Baltimore startup support, funding connections, and an active technology portfolio."
+    },
+    {
+      "slug": "technical-ly-baltimore",
+      "name": "Technical.ly Baltimore",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "program",
+      "tagline": "Local reporting on Baltimore startups, technology, work, and entrepreneurship.",
+      "description": "Technical.ly’s Baltimore coverage is a discovery source for local technology news, founder interviews, and ecosystem changes. It is a journalism resource rather than an AI lab or accelerator. Check the publication date and follow links to the original organization when a story informs an application, event plan, or vendor decision.",
+      "website": "https://technical.ly/baltimore/",
+      "location_note": "Baltimore coverage · regional technology journalism.",
+      "source_references": [
+        {
+          "title": "Baltimore coverage",
+          "url": "https://technical.ly/baltimore/",
+          "publisher": "Technical.ly"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Technical.ly Baltimore",
+      "meta_description": "Local reporting on Baltimore startups, technology, work, and entrepreneurship."
+    },
+    {
+      "slug": "techstars-ai-health-baltimore",
+      "name": "Techstars AI Health Baltimore",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "accelerator",
+      "tagline": "Health-AI accelerator connecting founders with Baltimore clinical, payer, and university partners.",
+      "description": "Techstars AI Health Baltimore connects health-technology founders with Johns Hopkins, CareFirst, MedStar, the University of Maryland, Baltimore, and the University of Maryland Medical System. Its current page lists a November 18, 2026 application deadline for a program scheduled to start March 8, 2027. Participation in a Baltimore cohort does not establish a company’s headquarters in the region; check the live program page for changed dates.",
+      "website": "https://www.techstars.com/accelerators/baltimore-ai-health",
+      "location_note": "Baltimore accelerator · participating startups can be headquartered elsewhere.",
+      "source_references": [
+        {
+          "title": "Current program and application dates",
+          "url": "https://www.techstars.com/accelerators/baltimore-ai-health",
+          "publisher": "Techstars"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Techstars AI Health Baltimore",
+      "meta_description": "Health-AI accelerator connecting founders with Baltimore clinical, payer, and university partners."
+    },
+    {
+      "slug": "ai-collective-baltimore",
+      "name": "The AI Collective — Baltimore",
+      "city": "Baltimore",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "event_series",
+      "tagline": "A Baltimore AI community launching with a September 15, 2026 networking night.",
+      "description": "The AI Collective’s Baltimore chapter has announced its first networking night, The Human Side of AI, for September 15, 2026 at Spark Coworking. The organizer invites builders, people using AI at work, students, and curious newcomers. This is evidence of a new local community, not an established recurrence schedule. Follow the organizer for future gatherings and registration details.",
+      "website": "https://luma.com/human-side-ai",
+      "location_note": "Baltimore City · announced event at Spark Coworking, 8 Market Place.",
+      "source_references": [
+        {
+          "title": "The Human Side of AI — organizer listing",
+          "url": "https://luma.com/human-side-ai",
+          "publisher": "The AI Collective"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "AI Collective Baltimore",
+      "meta_description": "A Baltimore AI community launching with a September 15, 2026 networking night."
+    },
+    {
+      "slug": "umbc-ai-training",
+      "name": "UMBC Training Centers — AI",
+      "city": "Columbia",
+      "state": "MD",
+      "country": "US",
+      "resource_type": "program",
+      "tagline": "Professional AI and machine-learning training with a current course schedule.",
+      "description": "UMBC Training Centers offers professional training in AI and machine learning. Its course calendar lists scheduled learning options, including AI for deep research. These are professional-development offerings, separate from the university’s academic degree programs. Course dates, delivery format, price, and prerequisites vary; consult the current schedule before enrolling.",
+      "website": "https://www.umbctraining.com/course-schedule/?technology=ai-learning-pass",
+      "location_note": "Maryland provider · course delivery may be online; check each listing.",
+      "source_references": [
+        {
+          "title": "Professional development programs",
+          "url": "https://www.umbctraining.com/",
+          "publisher": "UMBC Training Centers"
+        },
+        {
+          "title": "AI course schedule",
+          "url": "https://www.umbctraining.com/course-schedule/?technology=ai-learning-pass",
+          "publisher": "UMBC Training Centers"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "UMBC AI professional training",
+      "meta_description": "Professional AI and machine-learning training with a current course schedule."
+    },
+    {
+      "slug": "maryland-ai-innovation-lab",
+      "name": "Maryland AI Innovation Lab",
+      "city": null,
+      "state": null,
+      "country": "US",
+      "resource_type": "program",
+      "tagline": "State-government AI prototyping and support initiative launched in May 2026.",
+      "description": "Maryland announced the AI Innovation Lab within its Department of Information Technology on May 28, 2026. The initiative supports state agencies with AI prototyping, technical consultation, training, and security evaluation. It is a state-government program, not a public coworking lab or a general startup accelerator.",
+      "website": "https://ai.maryland.gov/",
+      "location_note": "Statewide government initiative · not a public walk-in Baltimore lab.",
+      "source_references": [
+        {
+          "title": "AI Innovation Lab announcement",
+          "url": "https://governor.maryland.gov/news/press-releases/governor-moore-launches-new-ai-innovation-lab-upscale-ai-adoption-and-experimentation",
+          "publisher": "Maryland Governor’s Office",
+          "published_on": "2026-05-28"
+        }
+      ],
+      "reviewed_on": "2026-09-08",
+      "status": "published",
+      "meta_title": "Maryland AI Innovation Lab",
+      "meta_description": "State-government AI prototyping and support initiative launched in May 2026."
+    },
+    {
+      "slug": "baltimore-ai-meetup",
+      "name": "Baltimore AI/ML Meetup",
+      "resource_type": "event_series",
+      "status": "hidden",
+      "website": null,
+      "tagline": null,
+      "description": "Archived September 8, 2026: the legacy entry linked only to the generic Meetup homepage. Its claims of being the largest practitioner community and a reliable monthly gathering lacked an identifiable organizer source. See the verified AI Collective Baltimore listing and dated events guide for documented opportunities.",
+      "city": null,
+      "state": null,
+      "country": "US",
+      "location_note": null,
+      "reviewed_on": null,
+      "source_references": [],
+      "meta_title": null,
+      "meta_description": null
+    }
+  ],
+  "guides": [
+    {
+      "slug": "ai-companies-baltimore-2026",
+      "title": "AI companies in Baltimore: the 2026 field guide",
+      "meta_title": "AI companies in Baltimore (2026)",
+      "meta_description": "A sourced guide to Baltimore AI companies, regional offices, acquired businesses, and the differences that matter when choosing who to contact.",
+      "intro": "A sourced guide to Baltimore AI companies, regional offices, acquired businesses, and the differences that matter when choosing who to contact.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "About and headquarters",
+          "url": "https://mindgrub.com/about/",
+          "publisher": "Mindgrub"
+        },
+        {
+          "title": "Services",
+          "url": "https://mindgrub.com/services/",
+          "publisher": "Mindgrub"
+        },
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.tenable.com/about-tenable/contact-tenable",
+          "publisher": "Tenable"
+        },
+        {
+          "title": "Anthropic partnership",
+          "url": "https://www.tenable.com/press-releases/tenable-partners-with-anthropic-for-ai-driven-exposure-management",
+          "publisher": "Tenable",
+          "published_on": "2026-05-20"
+        },
+        {
+          "title": "Bluesight acquires Protenus",
+          "url": "https://bluesight.com/news/bluesight-expands-compliance-capabilities-and-strengthens-platform-through-acquisition-of-protenus/",
+          "publisher": "Bluesight",
+          "published_on": "2025-01-09"
+        }
+      ]
+    },
+    {
+      "slug": "healthcare-ai-baltimore-hopkins",
+      "title": "Healthcare AI in Baltimore: companies and research",
+      "meta_title": "Healthcare AI in Baltimore",
+      "meta_description": "Baltimore healthcare AI: connected health, medical imaging, acquired Hopkins businesses, and the Techstars accelerator, with product-status caveats.",
+      "intro": "Baltimore healthcare AI: connected health, medical imaging, acquired Hopkins businesses, and the Techstars accelerator, with product-status caveats.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "Artificial intelligence solutions",
+          "url": "https://www.icanbwell.com/artificial-intelligence-solutions/",
+          "publisher": "b.well"
+        },
+        {
+          "title": "CMS Aligned Network showcase",
+          "url": "https://www.cms.gov/initiatives/health-technology-ecosystem/overview/pledge-demo-showcase/b-well",
+          "publisher": "Centers for Medicare & Medicaid Services",
+          "updated_on": "2026-08-05"
+        },
+        {
+          "title": "Company and Baltimore headquarters",
+          "url": "https://www.junebrain.com/about",
+          "publisher": "JuneBrain"
+        },
+        {
+          "title": "2026 pilot and investigational-use notice",
+          "url": "https://www.junebrain.com/",
+          "publisher": "JuneBrain"
+        },
+        {
+          "title": "EchoMap clearance announcement",
+          "url": "https://www.sonavex.com/2025/04/28/sonavex-receives-fda-510k-clearance-for-echomap-device/",
+          "publisher": "Sonavex",
+          "published_on": "2025-04-28"
+        },
+        {
+          "title": "Product and investigational-use information",
+          "url": "https://www.sonavex.com/",
+          "publisher": "Sonavex"
+        },
+        {
+          "title": "Expanded health accelerator collaboration",
+          "url": "https://www.techstars.com/newsroom/baltimore-ecosystem-announces-expanded-anchor-collaboration-techstars-ai-health-baltimore",
+          "publisher": "Techstars",
+          "published_on": "2026-02-24"
+        },
+        {
+          "title": "Spring 2026 accelerator class",
+          "url": "https://www.techstars.com/newsroom/meet-the-startups-joining-techstars-spring-2026-accelerator-programs",
+          "publisher": "Techstars",
+          "published_on": "2026-03-09"
+        }
+      ]
+    },
+    {
+      "slug": "cybersecurity-ai-baltimore-dc-corridor",
+      "title": "Cybersecurity AI in the Baltimore–DC corridor",
+      "meta_title": "Cybersecurity AI near Baltimore",
+      "meta_description": "Current AI security companies in Baltimore, Columbia, and Fulton, including Tenable, ZeroFox, Huntress, CyberPoint, and Enveil.",
+      "intro": "Current AI security companies in Baltimore, Columbia, and Fulton, including Tenable, ZeroFox, Huntress, CyberPoint, and Enveil.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.tenable.com/about-tenable/contact-tenable",
+          "publisher": "Tenable"
+        },
+        {
+          "title": "Anthropic partnership",
+          "url": "https://www.tenable.com/press-releases/tenable-partners-with-anthropic-for-ai-driven-exposure-management",
+          "publisher": "Tenable",
+          "published_on": "2026-05-20"
+        },
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.zerofox.com/contact-us/",
+          "publisher": "ZeroFox"
+        },
+        {
+          "title": "Haveli acquisition completed",
+          "url": "https://www.zerofox.com/press-release/haveli-completes-acquisition-of-zerofox/",
+          "publisher": "ZeroFox",
+          "published_on": "2024-05-13"
+        },
+        {
+          "title": "Secure AI",
+          "url": "https://www.enveil.com/secureai/",
+          "publisher": "Enveil"
+        },
+        {
+          "title": "Company location",
+          "url": "https://www.linkedin.com/company/enveil",
+          "publisher": "Enveil"
+        },
+        {
+          "title": "Carahsoft partnership",
+          "url": "https://www.enveil.com/enveil-partners-with-carahsoft/",
+          "publisher": "Enveil",
+          "published_on": "2026-09-02"
+        },
+        {
+          "title": "Contact and headquarters",
+          "url": "https://www.cyberpointllc.com/contact.php",
+          "publisher": "CyberPoint"
+        },
+        {
+          "title": "AIZEN AI research and solutions",
+          "url": "https://www.cyberpointllc.com/aizen.php",
+          "publisher": "CyberPoint"
+        }
+      ]
+    },
+    {
+      "slug": "hopkins-apl-spinouts",
+      "title": "Johns Hopkins APL: AI research in Laurel",
+      "meta_title": "Johns Hopkins APL AI research",
+      "meta_description": "What APL does in AI, where its Laurel laboratory fits, and how to distinguish research programs from documented Johns Hopkins spinouts.",
+      "intro": "What APL does in AI, where its Laurel laboratory fits, and how to distinguish research programs from documented Johns Hopkins spinouts.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "Artificial intelligence at APL",
+          "url": "https://www.jhuapl.edu/work/impact/artificial-intelligence",
+          "publisher": "Johns Hopkins APL"
+        },
+        {
+          "title": "Location and laboratory overview",
+          "url": "https://www.jhuapl.edu/",
+          "publisher": "Johns Hopkins APL"
+        },
+        {
+          "title": "In-house LLM training",
+          "url": "https://www.jhuapl.edu/news/news-releases/260413-apl-in-house-llm",
+          "publisher": "Johns Hopkins APL",
+          "published_on": "2026-04-13"
+        },
+        {
+          "title": "Institute, research, and education",
+          "url": "https://www.minds.jhu.edu/",
+          "publisher": "Johns Hopkins MINDS"
+        },
+        {
+          "title": "Programs and current center identity",
+          "url": "https://pavacenter.jhu.edu/",
+          "publisher": "Johns Hopkins Pava Center"
+        },
+        {
+          "title": "FastForward U renaming announcement",
+          "url": "https://hub.jhu.edu/2024/04/04/remembering-pava-lapere/",
+          "publisher": "Johns Hopkins Hub",
+          "published_on": "2024-04-04"
+        }
+      ]
+    },
+    {
+      "slug": "where-to-learn-ai-baltimore",
+      "title": "Where to learn AI in Baltimore in 2026",
+      "meta_title": "Where to learn AI in Baltimore (2026)",
+      "meta_description": "Compare Baltimore-area AI degrees, professional training, research communities, and public events using current university and organizer sources.",
+      "intro": "Compare Baltimore-area AI degrees, professional training, research communities, and public events using current university and organizer sources.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "UMBC MS in AI announcement",
+          "url": "https://www.csee.umbc.edu/news-events/post/160791/",
+          "publisher": "UMBC",
+          "published_on": "2026-06-20"
+        },
+        {
+          "title": "Online AI master’s program",
+          "url": "https://ep.jhu.edu/programs/artificial-intelligence/",
+          "publisher": "Johns Hopkins Engineering for Professionals"
+        },
+        {
+          "title": "Professional development programs",
+          "url": "https://www.umbctraining.com/",
+          "publisher": "UMBC Training Centers"
+        },
+        {
+          "title": "AI course schedule",
+          "url": "https://www.umbctraining.com/course-schedule/?technology=ai-learning-pass",
+          "publisher": "UMBC Training Centers"
+        },
+        {
+          "title": "Programs and current center identity",
+          "url": "https://pavacenter.jhu.edu/",
+          "publisher": "Johns Hopkins Pava Center"
+        },
+        {
+          "title": "FastForward U renaming announcement",
+          "url": "https://hub.jhu.edu/2024/04/04/remembering-pava-lapere/",
+          "publisher": "Johns Hopkins Hub",
+          "published_on": "2024-04-04"
+        }
+      ]
+    },
+    {
+      "slug": "baltimore-ai-scene-september-2026",
+      "title": "Baltimore AI: the September 2026 field report",
+      "meta_title": "Baltimore AI: September 2026 update",
+      "meta_description": "What changed in Baltimore AI: recent company announcements, health-data infrastructure, public programs, and the next community opportunities.",
+      "intro": "What changed in Baltimore AI: recent company announcements, health-data infrastructure, public programs, and the next community opportunities.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "Carahsoft partnership",
+          "url": "https://www.enveil.com/enveil-partners-with-carahsoft/",
+          "publisher": "Enveil",
+          "published_on": "2026-09-02"
+        },
+        {
+          "title": "CMS Aligned Network showcase",
+          "url": "https://www.cms.gov/initiatives/health-technology-ecosystem/overview/pledge-demo-showcase/b-well",
+          "publisher": "Centers for Medicare & Medicaid Services",
+          "updated_on": "2026-08-05"
+        },
+        {
+          "title": "CMS Aligned Network launch",
+          "url": "https://resources.icanbwell.com/bwells-cms-aligned-network-goes-live-real-patient-data-now-exchanging-across-major-health-plans-digital-platforms-and-health-systems/",
+          "publisher": "b.well",
+          "published_on": "2026-07-29"
+        },
+        {
+          "title": "COACH selected for BlueTIDE",
+          "url": "https://www.redshred.com/news/redshred-selected-to-demo-at-bluetide-2026-showcasing-ai-powered-procedural-guidance-for-maritime-operations",
+          "publisher": "Redshred",
+          "published_on": "2026-07-14"
+        },
+        {
+          "title": "Anthropic partnership",
+          "url": "https://www.tenable.com/press-releases/tenable-partners-with-anthropic-for-ai-driven-exposure-management",
+          "publisher": "Tenable",
+          "published_on": "2026-05-20"
+        },
+        {
+          "title": "Maryland Innovation Team July newsletter",
+          "url": "https://content.govdelivery.com/accounts/MDGOV/bulletins/41ff420",
+          "publisher": "Maryland Governor’s Office",
+          "published_on": "2026-07-16"
+        },
+        {
+          "title": "AI Innovation Lab launch",
+          "url": "https://governor.maryland.gov/news/press-releases/governor-moore-launches-new-ai-innovation-lab-upscale-ai-adoption-and-experimentation",
+          "publisher": "Maryland Governor’s Office",
+          "published_on": "2026-05-28"
+        },
+        {
+          "title": "2026 Greater Baltimore Ecosystem Report (2025 data)",
+          "url": "https://upsurgebaltimore.com/wp-content/uploads/2026/05/2026-Greater-Baltimore-Ecosystem-Report.pdf",
+          "publisher": "UpSurge Baltimore / Greater Baltimore Committee",
+          "published_on": "2026"
+        },
+        {
+          "title": "TEDCO invests in EcoMap",
+          "url": "https://www.tedcomd.com/press-release/tedco-invests-ecomap-technologies",
+          "publisher": "TEDCO",
+          "published_on": "2026-06-22"
+        }
+      ]
+    },
+    {
+      "slug": "baltimore-ai-events-fall-2026",
+      "title": "Baltimore AI events and opportunities: fall 2026",
+      "meta_title": "Baltimore AI events: fall 2026",
+      "meta_description": "Confirmed organizer listings for Baltimore AI networking, a public Hopkins symposium, training calendars, and the next Techstars application deadline.",
+      "intro": "Confirmed organizer listings for Baltimore AI networking, a public Hopkins symposium, training calendars, and the next Techstars application deadline.",
+      "reviewed_on": "2026-09-08",
+      "published_at": "2026-09-08T12:00:00Z",
+      "status": "published",
+      "source_references": [
+        {
+          "title": "The Human Side of AI",
+          "url": "https://luma.com/human-side-ai",
+          "publisher": "The AI Collective"
+        },
+        {
+          "title": "AI and Human Learning symposium",
+          "url": "https://hub.jhu.edu/events/2026/10/27/johns-hopkins-data-science-and-ai-institute-fall-2026-symposium-artificial-intelligence-and-human-learning/",
+          "publisher": "Johns Hopkins Hub"
+        },
+        {
+          "title": "Current accelerator application dates",
+          "url": "https://www.techstars.com/accelerators/baltimore-ai-health",
+          "publisher": "Techstars"
+        },
+        {
+          "title": "Professional development programs",
+          "url": "https://www.umbctraining.com/",
+          "publisher": "UMBC Training Centers"
+        },
+        {
+          "title": "AI course schedule",
+          "url": "https://www.umbctraining.com/course-schedule/?technology=ai-learning-pass",
+          "publisher": "UMBC Training Centers"
+        }
+      ]
+    }
+  ],
+  "retired_companies": [
+    {
+      "slug": "haystack-oncology",
+      "reason": "Acquired genomics business; explicit product AI evidence not established."
+    },
+    {
+      "slug": "emocha-health",
+      "reason": "Rebranded Scene Health in 2022; seeded computer-vision claims not supported."
+    },
+    {
+      "slug": "clearmask",
+      "reason": "Baltimore connection established; seeded AI quality-control claim not supported."
+    },
+    {
+      "slug": "anchor-health",
+      "reason": "No matching primary evidence for this entity and its AI/local claims."
+    },
+    {
+      "slug": "expii",
+      "reason": "Current founder evidence locates company in Pittsburgh; Baltimore operations unverified."
+    },
+    {
+      "slug": "huntr",
+      "reason": "Company identifies Seattle; Baltimore operations unverified."
+    },
+    {
+      "slug": "blackpoint-cyber",
+      "reason": "Current Maryland office unverified; company materials identify Denver or remote headquarters."
+    },
+    {
+      "slug": "stride-pharma",
+      "reason": "Current entity and Baltimore operations unverified; domain redirects to sale page."
+    },
+    {
+      "slug": "remesh",
+      "reason": "Company lists Cleveland headquarters; Baltimore operations unverified."
+    },
+    {
+      "slug": "next-tier-concepts",
+      "reason": "Verified Tysons headquarters; Baltimore office unverified."
+    },
+    {
+      "slug": "qomplx",
+      "reason": "Current company identifies Reston; Baltimore office unverified."
+    },
+    {
+      "slug": "rooferrate",
+      "reason": "Public pages do not establish the seeded AI mechanism or a Baltimore operating presence."
+    },
+    {
+      "slug": "thread-research",
+      "reason": "AI work established; Baltimore operating presence unverified."
+    },
+    {
+      "slug": "loop-genomics",
+      "reason": "Element Biosciences lists San Diego; Baltimore facility unverified."
+    },
+    {
+      "slug": "cresta-baltimore",
+      "reason": "Vita offices elsewhere; Baltimore and specific ML claim unverified."
+    },
+    {
+      "slug": "scopio-labs-bwtech",
+      "reason": "AI work established; claimed bwtech operation unverified."
+    },
+    {
+      "slug": "argo-ai-baltimore",
+      "reason": "Sparkfly lists Atlanta; Baltimore operation and specific AI claim unverified."
+    },
+    {
+      "slug": "lumen-ai-baltimore",
+      "reason": "WillowTree is now TELUS Digital; Baltimore studio and Mindgrub acquisition claim unverified."
+    }
+  ]
+}

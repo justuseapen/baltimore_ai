@@ -1,12 +1,12 @@
 <% content_for :title, page_title("AI companies in Baltimore") %>
-<% content_for :meta_description, "Browse #{@companies.size} AI companies based in or with significant presence in Baltimore, Maryland." %>
+<% content_for :meta_description, "Browse #{@companies.size} AI companies with documented Baltimore-area connections, source links, and location notes." %>
 
 <%= render "shared/breadcrumbs", crumbs: [ [ "Home", root_path ], [ "Companies", nil ] ] %>
 
 <header class="mb-10">
   <h1 class="text-4xl md:text-5xl font-black tracking-tight">AI companies in Baltimore</h1>
   <p class="mt-3 text-lg text-stone-600 max-w-2xl">
-    Companies headquartered in Baltimore or with significant operations in the metro that are building AI products or applying machine learning at the core of their work.
+    Companies building or applying AI with documented Baltimore-area connections. Each profile distinguishes local headquarters, regional operations, and historical ties.
   </p>
 </header>
 
@@ -27,11 +27,11 @@
       {
         "@type" => "ListItem",
         "position" => i + 1,
-        "url" => URI.join(request.base_url, company_path(company)).to_s,
+        "url" => canonical_url(company_path(company)),
         "name" => company.name
       }
     end
   }
-  raw ld.to_json
+  raw json_escape(ld.to_json)
 %>
 </script>

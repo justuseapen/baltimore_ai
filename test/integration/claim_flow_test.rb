@@ -11,6 +11,8 @@ class ClaimFlowTest < ActionDispatch::IntegrationTest
   end
 
   test "scenario 1: domain-match auto-approves end-to-end" do
+    @company.update!(reviewed_on: Date.new(2026, 9, 8),
+      source_references: [ { title: "Company source", url: @company.website } ])
     assert_emails 1 do
       post "/claim/#{@company.slug}/verify",
            params: { email: "founder@acme-ai.example", claimant_name: "Jamie" }
@@ -29,6 +31,8 @@ class ClaimFlowTest < ActionDispatch::IntegrationTest
     patch "/claim/#{@company.slug}/wizard/basics",
           params: { company: { tagline: "We do AI", website: @company.website, city: "Baltimore", state: "MD", founded_year: 2024 } }
     assert_redirected_to "/claim/#{@company.slug}/wizard/story"
+    assert_nil @company.reload.reviewed_on
+    assert_empty @company.source_references
 
     patch "/claim/#{@company.slug}/wizard/story",
           params: { company: { description: "Acme AI does cool things.", employee_count_bucket: "11-50" } }

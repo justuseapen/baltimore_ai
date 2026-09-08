@@ -1,4 +1,5 @@
-<%# locals: (crumbs: []) — array of [label, path] %>
+<%# locals: (crumbs: []) %>
+<%# Each crumb contains a label and an optional path. %>
 <nav aria-label="Breadcrumb" class="text-sm text-stone-500 mb-6">
   <ol class="flex flex-wrap items-center gap-2">
     <% crumbs.each_with_index do |(label, path), i| %>
@@ -26,10 +27,10 @@
         "@type" => "ListItem",
         "position" => i + 1,
         "name" => label,
-        "item" => path ? URI.join(request.base_url, path).to_s : nil
+        "item" => path ? canonical_url(path) : nil
       }.compact
     end
   }
-  raw ld.to_json
+  raw json_escape(ld.to_json)
 %>
 </script>

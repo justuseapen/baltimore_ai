@@ -1,4 +1,6 @@
 class Guide < ApplicationRecord
+  include ResearchProvenance
+
   STATUSES = %w[draft published hidden].freeze
 
   validates :slug, presence: true, uniqueness: true, format: { with: /\A[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z/ }
@@ -8,7 +10,7 @@ class Guide < ApplicationRecord
 
   before_validation :generate_slug, on: :create
 
-  scope :published, -> { where(status: "published").where.not(published_at: nil) }
+  scope :published, -> { where(status: "published").where(published_at: ..Time.current) }
 
   def to_param
     slug

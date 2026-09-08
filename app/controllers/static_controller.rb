@@ -19,15 +19,17 @@ class StaticController < ApplicationController
   end
 
   def robots
-    host = request.base_url
     body = <<~ROBOTS
       User-agent: *
       Allow: /
       Disallow: /admin
       Disallow: /claim
+      Disallow: /sign-in
+      Disallow: /sign-out
+      Disallow: /companies/*/edit
       Disallow: /up
 
-      Sitemap: #{host}/sitemap.xml.gz
+      Sitemap: #{public_site_url}/sitemap.xml
     ROBOTS
     render plain: body, content_type: "text/plain"
   end

@@ -1,4 +1,4 @@
-<% content_for :title, page_title(@resource.name) %>
+<% content_for :title, page_title(@resource.meta_title.presence || @resource.name) %>
 <% content_for :meta_description, (@resource.meta_description.presence || @resource.tagline.presence || "#{@resource.name} — a Baltimore AI #{resource_type_label(@resource.resource_type).downcase}.") %>
 <% content_for :og_type, "article" %>
 
@@ -15,6 +15,9 @@
     <% if @resource.tagline.present? %>
       <p class="mt-3 text-xl text-stone-600 max-w-3xl"><%= @resource.tagline %></p>
     <% end %>
+    <% if @resource.location_note.present? %>
+      <p class="mt-5 text-sm text-stone-600"><%= @resource.location_note %></p>
+    <% end %>
   </header>
 
   <% if @resource.description.present? %>
@@ -22,6 +25,8 @@
       <%= simple_format(@resource.description) %>
     </div>
   <% end %>
+
+  <%= render "shared/research_sources", record: @resource %>
 
   <% if @resource.website.present? %>
     <div>
@@ -36,11 +41,13 @@
   ld = {
     "@context" => "https://schema.org",
     "@type" => "Organization",
+    "@id" => "#{canonical_url}#organization",
+    "mainEntityOfPage" => canonical_url,
     "name" => @resource.name,
     "url" => @resource.website,
     "description" => @resource.description,
     "foundingDate" => @resource.founded_year&.to_s
   }.compact
-  raw ld.to_json
+  raw json_escape(ld.to_json)
 %>
 </script>

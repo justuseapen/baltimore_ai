@@ -55,3 +55,20 @@
   border-top: 1px solid #e7e5e4;
   margin: 2em 0;
 }
+
+.prose-editorial { overflow-wrap: anywhere; }
+.prose-editorial table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.prose-editorial th, .prose-editorial td {
+  padding: 0.75rem;
+  border: 1px solid #d6d3d1;
+  text-align: left;
+  vertical-align: top;
+  min-width: 9rem;
+}
+.prose-editorial th { background: #f5f5f4; font-weight: 700; }

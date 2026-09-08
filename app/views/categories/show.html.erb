@@ -36,12 +36,12 @@
   <% label = category_label(@category) %>
   <% sample_names = @companies.first(3).map(&:name).join(", ") %>
   <% faqs = [
-    [ "How many #{label} companies are based in Baltimore?",
-      "Baltimore.ai lists #{@companies.size} #{label} #{@companies.size == 1 ? 'company' : 'companies'} in or with significant presence in the Baltimore metro." ],
-    [ "Who are the most established #{label} companies in Baltimore?",
-      "Notable #{label} companies in Baltimore include #{sample_names}. See the full list above." ],
-    [ "Where in Baltimore is the #{label} cluster concentrated?",
-      "Baltimore-area #{label} companies are clustered around Johns Hopkins's East Baltimore campus, the bwtech@UMBC research park, and the I-95 / Fort Meade corridor between Baltimore and DC." ],
+    [ "How many #{label} entries are in this directory?",
+      "Baltimore.ai currently lists #{@companies.size} #{label} #{@companies.size == 1 ? 'company' : 'companies'}. This is a curated selection, not a census of the region." ],
+    [ "Which #{label} companies can I explore?",
+      "Entries include #{sample_names}. The list is alphabetical, not a ranking by size, age, or performance." ],
+    [ "Are all these companies headquartered in Baltimore City?",
+      "No. Profiles distinguish Baltimore City, surrounding counties, regional operations, and clearly labeled historical connections. Check each listing’s location note and sources." ],
     [ "How can a #{label} company get listed on Baltimore.ai?",
       "Baltimore.ai accepts self-serve claims. If you work at a Baltimore-area #{label} company that should be listed, contact us or claim an existing listing to add or update an entry." ]
   ] %>
@@ -58,7 +58,7 @@
       }
     end
   }
-  raw ld.to_json
+  raw json_escape(ld.to_json)
 %>
 </script>
 

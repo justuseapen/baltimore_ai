@@ -121,8 +121,9 @@ class ProfileClaimsController < ApplicationController
   end
 
   def update_tags_and_finalize
-    tag_ids = Array(params[:tag_ids]).reject(&:blank?).map(&:to_i)
+    tag_ids = Array(params[:tag_ids]).reject(&:blank?).map(&:to_i).uniq
     Company.transaction do
+      @company.clear_editorial_review if tag_ids.sort != @company.tag_ids.sort
       @company.tag_ids = tag_ids
       @company.save!
       finalize_claim!
@@ -135,6 +136,7 @@ class ProfileClaimsController < ApplicationController
   end
 
   def save_step_or_render(step, next_step:)
+    @company.clear_editorial_review if @company.changed?
     if @company.save
       @claim.update!(current_step: next_step)
       redirect_to claim_wizard_step_path(@company, next_step)
